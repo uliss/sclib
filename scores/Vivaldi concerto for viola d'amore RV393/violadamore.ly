@@ -13,6 +13,26 @@ info-instrument = "Viola d'amore"
 
 #(set-global-staff-size 19)
 
+scordatura = \markup {
+  \raise #5.5 
+  \score {
+    \new Staff \with {
+      \remove "Time_signature_engraver"
+      fontSize = #-5
+      \override StaffSymbol.staff-space = #(magstep -5)
+    } {
+      %\set Staff.instrumentName= \markup \huge "Viola d'amore"
+      \clef bass \cadenzaOn
+      <d, a, d f a d'>1\markup{\italic "Tuning"}
+    }
+    \layout {
+      ragged-right = ##t
+      indent = 1\cm
+    }
+  }
+  \hspace #.5
+}
+
 \book {
   % title page
   \bookpart {
@@ -20,7 +40,7 @@ info-instrument = "Viola d'amore"
     \pageBreak
   }
 
- % main part
+  % main part
   \bookpart {
     \header {
       title = \markup { \markup-title {  \smallCaps "Concerto" "in Re minore" }}
@@ -33,6 +53,9 @@ info-instrument = "Viola d'amore"
     \score {
       \header {
         piece = \markup \markup-piece "I. (Allegro)"
+      }
+      \new Staff \with {
+        instrumentName = \scordatura
       }
       {
         \set Score.skipBars = ##t
