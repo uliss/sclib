@@ -14,20 +14,23 @@ info-instrument = "Viola d'amore"
 #(set-global-staff-size 19)
 
 scordatura = \markup {
-  \raise #5.5 
+  \raise #5
   \score {
     \new Staff \with {
       \remove "Time_signature_engraver"
-      fontSize = #-5
-      \override StaffSymbol.staff-space = #(magstep -5)
+      \remove "Key_engraver"
+      fontSize = #-4
+      \override StaffSymbol.staff-space = #(magstep -4)
     } {
-      %\set Staff.instrumentName= \markup \huge "Viola d'amore"
-      \clef bass \cadenzaOn
-      <d, a, d f a d'>1\markup{\italic "Tuning"}
+      \override Staff.Clef #'space-alist #'first-note = #'(extra-space . 3)
+      \clef alto
+      \cadenzaOn
+      <d a d' f' a' d''>1
     }
     \layout {
       ragged-right = ##t
       indent = 1\cm
+      line-width = 2\cm
     }
   }
   \hspace #.5

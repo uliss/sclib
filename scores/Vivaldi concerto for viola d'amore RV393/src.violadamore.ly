@@ -81,12 +81,12 @@ exposition-a = {
     \fig f a |
   }
   <a, e'>4 r8 f'
-  \figA e cis d
+  e16( cis) d8
   \figA e cis d
   g4. f16 e f a f d e g e cis |
-  d8 a d[ f]
-  \figA e cis d
-  \figA e cis d
+  d8 a d,[ f']
+  e16( cis) d8
+  e16( cis) d8
   g4. f16 e f a f d e g e cis |
 }
 
@@ -121,23 +121,31 @@ vdaPartOne = \relative c' {
   g c c, e' f a16 g f8 c a c f, f' e c r a' |
   \repeat unfold 2 { \fig g c \figA f c f \figA e c e \figA f c f  }
   \fig g c \figA f c f e4 r8 a |
-  \figA g e f \figA g e f bes,4. a16 g |
+  g16( e) f8 g16( e) f8 bes,4. a16 g |
   a8 f' g e f4 r8 a |
-  \figA g e f \figA g e f bes,4. a16 g |
+  g16( e) f8 g16( e) f8 bes,4. a16 g |
   a8 f' g e <f, c' f>^\markup\sp-solo a'16 g f c f c |
   <f, c' f>8 a'16 g f c f c bes e e g g e e bes |
   bes e e g g e e bes
   <f bes>8 <f a> r a |
   \tuplet 3/2 8 {
-    \repeat unfold 4 {f'16[ g a]}
+    \repeat unfold 4 {f'16[( g) a]}
+    \tuplet-hide
     \repeat unfold 4 {d,[ e f]}
     \repeat unfold 4 {b,[ c d] }
   }
   gis,4 r 8 b |
   c16( a) e'( b) c( a) e'( b) c( a) a'( e) f( d) a'( e) |
-  \tuplet 3/2 8 {f16 a g f e d e g f e d c d f e d c b c e d c b a}
+  \set subdivideBeams = ##t
+  \set baseMoment = #(ly:make-moment 1 8)
+  \tuplet-number-only
+  \tuplet 3/2 8 {f16( a g f e d) }
+  \tuplet-hide
+  \tuplet 3/2 8 { e( g f e d c) d( f e d c b) c( e d c b a) }
+  \set subdivideBeams = ##f
+
   e16( gis b c) d( c b a) d,( gis b c) d( c b a) |
-  a' e c a b8.\trill a16 a8^\markup\sp-tutti c16 a a8 e' |
+  a' e c a b8.\trill a16 a8^\markup\sp-tutti c16 b a8 e' |
   c e a, a' gis b16 a  gis8 e |
   gis, b e, d' c a r e' |
   \fig d e \fig c e \fig b e \fig c e |
@@ -146,21 +154,22 @@ vdaPartOne = \relative c' {
   a c e c a c e a, b e gis e b e gis e |
   a, c e c a c e a, b e gis e b e gis e |
   a, c e c a c e a, b8 e, r4 |
-  d'16 f a f d f a f cis e a e cis e a e |
+  d'16 f a f d f a d, cis e a e cis e a e |
   d f a f d f a d, cis e a e cis e a e |
   d f a f d f a d, cis8 a r a' |
   bes, g' a, f' g, e' f, d' |
   << {e f16 e f8 f f\trill e s f e f16 e f8 f f\trill[ e]} \\ {a,8 a a a a a b\rest a a a a a a[ a]} >>
   r a' |
   <<
-    {fis8 fis16 e fis8 fis g g16 f g8 f e e16 d e8 e f f16 e f8 e d d16 cis d d d cis}
+    {fis8 fis16 e fis8 fis g g16 f g8 f e e16 d e8 e f f16 e f8 e d d16 cis d8 d d[ cis] }
     \\
-    {c4           c8   c   bes4    bes8 bes  bes4 bes8 bes a4 a8 a a4 a8 a a a}
+    {c4           c8   c   bes4    s8 s  bes4 bes8 bes a4 s8 s a4 a8 a a[ a] }
   >>
   r a' |
-  \repeat unfold 2 {
-    gis16( e) g8 fis16( d) f8 e16 d cis b a8 a |
-  }
+
+  gis16( e) g8 fis16( d) f8 e16 d cis b a8 a' |
+  gis16( e) g8 fis16( d) f8 e16 d cis b a8 a |
+
   b b16 a b8 cis d8 c16 bes a8 a |
   b b16 a b8 cis d8 c16 bes a8 e' |
   f16( a f d) e( g e cis) \appoggiatura cis8 d4 r8 a' |

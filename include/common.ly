@@ -201,4 +201,19 @@ sp-custosNote =
        \markup \italic "Solo"
      #}))
 
+tuplet-number-show = { \undo \omit TupletNumber }
+
+tuplet-number-hide = { \omit TupletNumber }
+
+tuplet-bracket-show = { \override TupletBracket.bracket-visibility = ##t }
+
+tuplet-bracket-hide = { \override TupletBracket.bracket-visibility = ##f }
+
+tuplet-show  = { \tuplet-number-show \tuplet-bracket-show }
+
+tuplet-hide = { \tuplet-bracket-hide \tuplet-number-hide  }
+
+tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide } 
+
+
 
