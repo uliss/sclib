@@ -144,13 +144,13 @@ celloPartThree = \relative c {
     c8. f16 g4 g, | % 16
     c4 
     \once \override TextScript.X-offset = #2 
-    c,^\fermata  r_\sp-markup-fine
+    c,^\fermata  r_\smarkup-fine
   }
   \break
   | % 17
   \repeat volta 2 {
     | % 17
-     \mark \markup \sp-markup-trio
+     \mark \smarkup-trio
     g''2 as4 | % 18
     g2 as4 | % 19
     \grace { as8 } g4. c8 bes as | \barNumberCheck #20
@@ -184,7 +184,7 @@ celloPartThree = \relative c {
     g8 es' ( f g as bes ) | % 45
     c8 ( bes ) bes ( as ) as ( g ) | % 46
     g8 ( f ) f es f g | % 47
-    as4 bes bes,_\sp-markup-dc-fine | % 48
+    as4 bes bes,_\smarkup-dc-fine | % 48
     es4 es,2
   }
 }

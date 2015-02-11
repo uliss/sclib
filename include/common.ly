@@ -19,24 +19,13 @@ sp-header-copyright = \markup {
             "Licensed under a Creative Commons 3.0"
           }
           \line {
-            "source files: " \with-url  #"https://github.com/uliss/splib" {
-              "https://github.com/uliss/splib"
+            "source files: " \with-url  #"https://github.com/uliss/sclib" {
+              "https://github.com/uliss/sclib"
             }
           }
         }
       }
     }
-  }
-}
-
-sp-tagline = \markup {
-  \abs-fontsize #6
-  \sans
-  \fill-line {
-    {
-      \with-url #"http://lilypond.org" { #(string-append "engraved by lilypond version " (lilypond-version))}
-    }
-    \null
   }
 }
 
@@ -46,23 +35,24 @@ sp-title-page = \markup {
       \right-column {
         \abs-fontsize #100
         \with-color #(rgb-color 0.95 0.95 0.95)
-        { \fontsize #1 \sp-tp-composer }
-        { \italic \fontsize #-3 \sp-tp-title }
+        { \fontsize #1 \info-composer }
+        { \italic \fontsize #-3 \info-title }
       }
       \vspace #4
       \with-color #(rgb-color 0 0 0)
       \override #'(baseline-skip . 4)
       \left-column {
-        {\abs-fontsize #30  \sp-tp-composer }
+        {\abs-fontsize #30  \info-composer }
         { \draw-line #'(-60 . 0)  \vspace #1 }
-        {\abs-fontsize #20 \sans \sp-tp-title }
-        {\abs-fontsize #16  \italic \sp-tp-subtitle }
+        {\abs-fontsize #20 \sans \info-title }
+        {\abs-fontsize #16  \italic \info-subtitle }
       }
       \vspace #29
-      \fill-line { 
-        { \with-color #(rgb-color 0.3 0.3 0.3) \sans \bold \sp-tp-instrument }
-        \null 
-        \sp-header-copyright }
+      \fill-line {
+        { \with-color #(rgb-color 0.3 0.3 0.3) \sans \bold \info-instrument }
+        \null
+        \sp-header-copyright
+      }
     }
   }
 }
@@ -113,11 +103,12 @@ sp-spacing-quoters = \override SpacingSpanner.common-shortest-duration = #(ly:ma
 sp-spacing-eights = \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
 sp-spacing-sixteens = \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
 
-sp-markup-fine = \markup {\bold \italic "Fine"}
-sp-markup-dc-fine = \markup {\italic "Da Capo al Fine"}
-sp-markup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
+smarkup-fine = \markup {\normalsize \fontsize #1 \smallCaps "Fine"}
+smarkup-dc-fine = \markup {\italic "Da Capo al Fine"}
+smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
 
-#(define-markup-command (sp-composer layout props composer years) (markup? markup?)
+#(define-markup-command (markup-composer layout props composer years)
+   (markup? markup?)
    (interpret-markup layout props
      #{
        \markup
@@ -131,19 +122,58 @@ sp-markup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
      )
    )
 
-#(define-markup-command (sp-style-piece layout props text) (markup?)
-   "Style of piece in header"
+#(define-markup-command (markup-piece layout props text) (markup?)
+   "Markup of piece"
    (interpret-markup layout props
      #{
        \markup { \fontsize #1.5 \smallCaps { #text } }
      #}))
 
-%sp-paper-landscape = #(set-default-paper-size "a4" 'landscape)
-
-#(define-markup-command (sp-style-piece layout props text) (markup?)
-   "Style of piece in header"
+#(define-markup-command (markup-title layout props text) (markup?)
+   "Markup of score title"
    (interpret-markup layout props
-     (markup #:large #:smallCaps text)))
+     #{
+       \markup \normal-text { #text }
+     #}))
+
+#(define-markup-command (markup-subtitle layout props text) (markup?)
+   "Markup of score subtitle"
+   (interpret-markup layout props
+     #{
+       \markup \normal-text { #text }
+     #}))
+
+#(define-markup-command (markup-subsubtitle layout props text) (markup?)
+   "Markup of score subsubtitle"
+   (interpret-markup layout props
+     #{
+       \markup { #text }
+     #}))
+
+#(define-markup-command (markup-instrument layout props text) (markup?)
+   "Markup of instrument"
+   (interpret-markup layout props
+     #{
+       \markup \normal-text \italic { #text }
+     #}))
+
+#(define-markup-command (markup-tagline layout props) ()
+   "Markup of tagline"
+   (interpret-markup layout props
+     #{
+       \markup {
+         \abs-fontsize #6
+         \sans
+         \fill-line {
+           {
+             \with-url #"http://lilypond.org" { 
+               #(string-append "engraved by lilypond version " (lilypond-version))
+             }
+           }
+           \null
+         }
+       }
+     #}))
 
 sp-custosNote =
 #(define-music-function

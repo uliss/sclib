@@ -1,17 +1,17 @@
 \version "2.18.2"
 
-sp-tp-composer = "Luigi Boccherini"
-sp-tp-title = "Sonata for viola and cello"
-sp-tp-subtitle = "(c–moll)"
-sp-tp-instrument = "Violoncello"
+info-composer = "Luigi Boccherini"
+info-composer-years = "(1743 – 1805)"
+info-title = "Sonata for viola and cello"
+info-subtitle = "(c–moll)"
+info-instrument = "Violoncello"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 \include "src.cello.ly"
 
-%\sp-paper-landscape
-#(set-global-staff-size 20)
+#(set-global-staff-size 19)
 
 \book {
   \bookpart {
@@ -21,18 +21,18 @@ sp-tp-instrument = "Violoncello"
 
   \bookpart {
     \header {
-      title = "Sonata"
-      subsubtitle = "for viola and cello"
-      composer = \markup { \sp-composer "Luigi Boccherini" "(1743–1805)" }
-      instrument = "Violoncello"
-      tagline = \sp-tagline
+      title = \markup { \markup-title \info-title }
+      %subsubtitle = "for viola and cello"
+      composer = \markup { \markup-composer \info-composer \info-composer-years }
+      instrument = \markup {\markup-instrument \info-instrument }
+      tagline = \markup { \markup-tagline }
     }
     \score {
       {
         \celloPartOne
       }
       \header {
-        piece = \markup \sp-style-piece "I. Moderato"
+        piece = \markup \markup-piece "I. Moderato"
       }
       \layout {
         \context {
@@ -47,7 +47,7 @@ sp-tp-instrument = "Violoncello"
         \celloPartTwo
       }
       \header {
-        piece = \markup \sp-style-piece "II. Largo"
+        piece = \markup \markup-piece "II. Largo"
         breakbefore = ##t
       }
       \layout {
@@ -63,7 +63,7 @@ sp-tp-instrument = "Violoncello"
         \celloPartThree
       }
       \header {
-        piece = \markup \sp-style-piece "III. Minuetto"
+        piece = \markup \markup-piece "III. Minuetto"
       }
     }
   }

@@ -64,15 +64,12 @@ figA = #(define-music-function (parser location p1 p2 p3) (ly:pitch? ly:pitch? l
           )
 
 theme-one = {
-   f16 e d8 a f a d, d' |
+  f16 e d8 a f a d, d'
   cis e16 d cis8 a e a a,
 }
 
-vdaPartOne = \relative c' {
-  \key d \minor
-  \time 4/4
-  \clef treble
-  d'8^\markup\sp-tutti \theme-one cis ' |
+exposition-a = {
+  \theme-one cis '
   d8 f16 e d8 a f a d, d' |
   cis a r a'
   \fig  g a
@@ -91,6 +88,14 @@ vdaPartOne = \relative c' {
   \figA e cis d
   \figA e cis d
   g4. f16 e f a f d e g e cis |
+}
+
+vdaPartOne = \relative c' {
+  \key d \minor
+  \time 4/4
+  \clef treble
+  d'8^\markup\sp-tutti
+  \exposition-a
   d8^\markup\sp-solo \theme-one cis' |
   d16 e f g a f e d cis e cis e a,8 <a f'> |
   <a e'> <a f'> <a g'> <a f'> << {f'\trill[ e]} \\ { a,[ a]} >> r <a, f'> |
@@ -98,8 +103,8 @@ vdaPartOne = \relative c' {
   f16 e f d g f g e f e f d g f g e |
   f8 e16 d e4\trill d r8 e, |
   f16 e f d g f g e f e f d g f g e |
-  f8 e16 d e4\trill d8^\markup\sp-tutti f'16 e d8 a f a d, d' |
-  cis e16 d cis8 a e a a, e'' |
+  f8 e16 d e4\trill d8^\markup\sp-tutti f'16 e d8 a f a d, d'
+  cis e16 d cis8 a e a a, e''
   f d a f |
   f'16^\markup\sp-solo g a g f e d cis? d e f e d c? bes a |
   bes c d c bes a g f c'4 r8 <c f> |
@@ -131,9 +136,41 @@ vdaPartOne = \relative c' {
   gis,4 r 8 b |
   c16( a) e'( b) c( a) e'( b) c( a) a'( e) f( d) a'( e) |
   \tuplet 3/2 8 {f16 a g f e d e g f e d c d f e d c b c e d c b a}
-  
-  
-
+  e16( gis b c) d( c b a) d,( gis b c) d( c b a) |
+  a' e c a b8.\trill a16 a8^\markup\sp-tutti c16 a a8 e' |
+  c e a, a' gis b16 a  gis8 e |
+  gis, b e, d' c a r e' |
+  \fig d e \fig c e \fig b e \fig c e |
+  \fig d e \fig c e b16 d d gis gis d d c |
+  c8 a' b, gis' a^\markup\sp-solo g16 f e d c b |
+  a c e c a c e a, b e gis e b e gis e |
+  a, c e c a c e a, b e gis e b e gis e |
+  a, c e c a c e a, b8 e, r4 |
+  d'16 f a f d f a f cis e a e cis e a e |
+  d f a f d f a d, cis e a e cis e a e |
+  d f a f d f a d, cis8 a r a' |
+  bes, g' a, f' g, e' f, d' |
+  << {e f16 e f8 f f\trill e s f e f16 e f8 f f\trill[ e]} \\ {a,8 a a a a a b\rest a a a a a a[ a]} >>
+  r a' |
+  <<
+    {fis8 fis16 e fis8 fis g g16 f g8 f e e16 d e8 e f f16 e f8 e d d16 cis d d d cis}
+    \\
+    {c4           c8   c   bes4    bes8 bes  bes4 bes8 bes a4 a8 a a4 a8 a a a}
+  >>
+  r a' |
+  \repeat unfold 2 {
+    gis16( e) g8 fis16( d) f8 e16 d cis b a8 a |
+  }
+  b b16 a b8 cis d8 c16 bes a8 a |
+  b b16 a b8 cis d8 c16 bes a8 e' |
+  f16( a f d) e( g e cis) \appoggiatura cis8 d4 r8 a' |
+  g16 f e d cis b a g f g f e d8 a'' |
+  g, g' f,  f' e, e' d, d' |
+  cis16 d cis b a8 a b b16 a b8 cis |
+  d8 c?16 bes? a8 e' f16( a f d) e( g e cis) |
+  \appoggiatura cis8 d4. e8 f16( a f d) e( g e cis) |
+  \appoggiatura cis8 d8^\markup\sp-tutti \exposition-a
+  d4\fermata r r2 \bar "|."
 
 }
 

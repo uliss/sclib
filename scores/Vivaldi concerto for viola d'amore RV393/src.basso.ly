@@ -183,7 +183,7 @@ celloPartThree = \relative c {
   a16 a g f e f e d cis d cis b |
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
-  d4^\fermata_\markup{\italic  "Fine"} \bar "||" \noBreak  r r 
+  d4^\fermata_\smarkup-fine \bar "||" \noBreak  r r 
   a r r |
   a r r |
   d d d d d d d d d d d' d |
@@ -234,7 +234,7 @@ celloPartThree = \relative c {
      r8 a' a, r r4 |
      \startMeasureCount
      \repeat "unfold" 21 {a2.~}
-     a2.~_\markup{\italic "D.C. al Fine"}
+     a2.~_\smarkup-dc-fine
      a2.
      \stopMeasureCount
      
