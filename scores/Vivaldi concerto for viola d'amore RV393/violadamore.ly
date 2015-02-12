@@ -101,6 +101,10 @@ scordatura = \markup {
           \Staff
           \consists #Measure_counter_engraver
         }
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
       }
     }
   }

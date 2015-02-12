@@ -187,10 +187,214 @@ vdaPartTwo = \relative c' {
   \key d \minor
   \time 3/4
   \clef treble
+  \repeat volta 2 {
+    r8. e'16 f8. d16 e8. e16 d8. a16 f8. a16 d,8. d'16 e8. e16 cis8. a16 g8. e'16 |
+    f8. a16 f8.( e32 d) c8.( bes32 a) |
+    bes8. g'16 e8.( d32 c) bes8.( a32 g) |
+    a8. c16 d8. bes16 e8. c16 f8. a,16 c8. a16 c8. a16 f'8. a,16 c8. a16 c8. a16 f'8. a16
+    g4.\trill f8 |
+    f2.
+  }
+  \break
+  \repeat volta 2 {
+    r8. g16 a8. f16 c8. f16 e8. c16 bes8. e16 g8. bes,16 a8. a16 d8. f16 e8. d16 cis8. d16
+    e4 r |
+    d8. f16 d8. a16 bes8. c16 bes8. g'16 e8. b16 cis8. d16 cis8. e16 f8. d16 e8. e16 |
+    d8. a16 f8. a16 d,8. d'16 e8. e16 cis8. a16 g8. e'16 |
+    f8. g16 e4.\trill d8 d2.^\fermata
+  }
 }
 
 vdaPartThree = \relative c' {
   \key d \minor
   \time 3/4
   \clef treble
+  \repeat unfold 2 {
+    d8 d' \tuplet 3/2 4 {f8( e) f f( e) f }
+  }
+  a,, e'' \tuplet 3/2 4 {g( f) g g( f) g }
+  a,, e'' \tuplet 3/2 4 {g( f) g g( f) e } |
+  f8 a4 f d8 |
+  bes' g4 e bes8 |
+  a a \tuplet 3/2 4 {cis( b ) a} d a |
+  a a \tuplet 3/2 4 {cis( b ) a} e' a, |
+  a a \tuplet 3/2 4 {cis( b ) a} f' a, |
+  a a \tuplet 3/2 4 {cis( b ) a} g'8. g16 |
+  g4 r r |
+  \tuplet 3/2 4 { g8 f g e d e cis b cis } |
+  a,4 r r |
+  \tuplet 3/2 4 { g''8 f g e d e cis b cis } |
+  a,4 r r |
+  a'16 a g f e f e d cis d cis b |
+  a8 e' cis a e' a, |
+  d16 d' c bes a bes a g f g f e |
+  <d f a d>8_\smarkup-fine d'^\markup\sp-solo  \tuplet 3/2 4 { f( e) d f ( e) d } |
+  d d  \tuplet 3/2 4 { f( e) d f ( e) d } |
+  e e \tuplet 3/2 4 { g( f) e g( f) e } |
+  e e \tuplet 3/2 4 { g( f) e g( f) e } |
+  \tuplet 3/2 4 {
+    d f d d f d d f d
+    \tuplet-hide
+    f, a f f a f f a f d f d d f d d f d |
+    <d f a d>( d' e f g a f e d) |
+    e( c d e f g e d c) |
+    d bes( c d e f e f g) |
+    \tuplet-number-only
+    cis, e16( d cis b) a8 e'16( d cis b) a8 g' e |
+    f a,16( g f e) d8 a'16( g f e) d8 d' a |
+    bes d16( c bes a) g8 d'16( c bes a) g8 c bes |
+    \tuplet-hide
+    a f a c a c f c f  e g e e g e e g e f a f f a f f a f |
+    \tuplet-number-only
+    e g16( f e d) c8 g'16( f e d) c8 d bes |
+    a8 c16( bes a g) f8 c'16( bes a g) f8 a c |
+    f c16( bes a g) f8 c'16( bes a g) f8 a c |
+    f c a'
+  }
+  << {g4.\trill} \\ {c,4.} >> f8 |
+  f^\markup\sp-tutti f \tuplet 3/2 4 {a8( g) a a( g) a } |
+  f, c'\tuplet 3/2 4 {a'8( g) a a( g) a } |
+  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
+  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
+  \tuplet 3/2 4 {a g a f e f a g a g f g e d e g f g bes a bes g f g e d e } |
+  f16 f e d c d c bes a bes a g f f' e d c d c bes a bes a g |
+  f8 bes c4 c, |
+  \break
+  \tuplet 3/2 4 {
+    f'8^\markup\sp-solo c a f' c a f' c a |
+    \tuplet-hide
+    g' e c 
+    g' e c 
+    g' e c 
+    a' f c
+    a' f c
+    a' f c
+    g' e c 
+    g' e c 
+    g' e c 
+    a' e cis
+    a' e cis
+    a' e cis
+    a' f d
+    a' f d
+    a' f d
+    g d b
+    g' d b
+    g' d b
+    g' e c
+    g' e c
+    g' e c
+    f c a
+    f' c a
+    f' c a
+    f' d b
+    f' d b
+    f' d b
+    e b gis
+    e' b gis
+    e' b gis
+    e' c a
+    e' c a
+    e' c a
+    a' e c
+    a' e c
+    a' e c
+    a' f d
+    a' f d
+    a' f d
+    a' f d
+    a' f d
+    a' f d
+    gis e b
+    gis' e b
+    gis' e b
+    a' e c
+    a' e c
+    a' e c
+    a' e b
+    a' e b
+    a' e b
+    gis' e b
+    gis' e b
+    gis' e b
+  }
+  \break
+  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c b c c b c }
+  a,8 a' \tuplet 3/2 4 {c b c c b c }
+  e, b' \tuplet 3/2 4 { d c d d c d } |
+  e, b' \tuplet 3/2 4 { d c d d c b } |
+  e,4 gis b |
+  \tuplet 3/2 4 { d8 c d b a b gis fis gis } |
+  e4 r r |
+  \tuplet 3/2 4 { d'8 c d b a b gis fis gis } |
+  e4 r r |
+  r16 e' d c b c b a gis a gis fis |
+  e8 b' gis e b' e, |
+  r16 e' d c b c b a gis a gis fis |
+  e8 a c a e' e, |
+  a'16^\markup\sp-solo g f e 
+  a g f e
+  a g f e
+  f8 a, d, a' d, a' |
+  g'16 f e d 
+  g16 f e d 
+  g16 f e d 
+  e8 g, c, g' c, g' |
+  f'16 e d c
+  f16 e d c
+  f16 e d c
+  d8 f, bes, f' bes, f' |
+  g'16 f e d
+  g16 f e d
+  g16 f e d
+  cis8 a a, a'16( b) cis( b) cis( a) |
+  d8 a a, a'16( b) cis( b) cis( a) |
+  e'8 a, a, a'16( b) cis( b) cis( a) |
+  f'8 a, a, a'16( b) cis( b) cis( a) |
+  g'16( f g) a f( e f) g e( d e) f |
+  d( cis d) e cis( b cis) d b( a b) cis |
+  a a' g f a, g' f e a, f' e d |
+  a a' g f a, g' f e a, f' e d |
+  a8 a bes16( a bes c) bes d c bes |
+  f8 f g16( f g a) g bes a g |
+  d8 a' bes16( a bes c) bes d c bes |
+  f8 f g16( f g a) g bes a g |
+  d8 f' a16( g) f( e) d( c) bes( a) g8 e' 
+  g16( f) e( d) c( bes) a( g) |
+  f8 d' f16( e) d( c) bes( a) g( f) |
+  e8 cis' e16( d) cis( b) a( g) f( e) |
+  <d f a> a' a a
+  <d, f a> a' a a
+  <d, f a> a' a a
+  <f a d> d' d d
+  <f, a d> d' d d
+  <f, a d> d' d d
+  <d, f a> a' a a
+  <d, f a> a' a a
+  <d, f a> a' a a
+  <d, g bes> bes' bes bes
+  <d, g bes> bes' bes bes
+  <d, g bes> bes' bes bes
+  <d, g b> b' b b
+  <d, g b> b' b b
+  <d, g b> b' b b
+  <e, g cis> cis' cis cis
+  <e, g cis> cis' cis cis
+  <e, g cis> cis' cis cis
+  <f, a d> d' d d
+  <f, a d> d' d d
+  <f, a d> d' d d
+  <e, g cis> cis' cis cis
+  <e, g cis> cis' cis cis
+  <e, g cis> cis' cis cis
+  <f, a d> d' d d
+  <f, a d> d' d d
+  <f, a d> d' d d
+  <e, g d'> d' d d
+  <e, g d'> d' d d
+  <e, g d'> d' d d
+  <e, g cis> cis' cis cis
+  <e, g cis>_\smarkup-dc-fine cis' cis cis
+  <e, g cis> cis' cis cis
+  \bar "|."
 }

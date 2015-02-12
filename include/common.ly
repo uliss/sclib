@@ -167,7 +167,7 @@ smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
          \fill-line {
            {
              \with-url #"http://lilypond.org" { 
-               #(string-append "engraved by lilypond version " (lilypond-version))
+               #(string-append "engraved by Serj Poltavski using lilypond version " (lilypond-version))
              }
            }
            \null
