@@ -11,6 +11,8 @@ info-instrument = "Viola d'amore"
 \include "../../include/housestyle.ly"
 \include "src.violadamore.ly"
 
+%\noPointAndClick
+
 #(set-global-staff-size 19)
 
 scordatura = \markup {

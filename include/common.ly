@@ -1,5 +1,19 @@
 \version "2.18.2"
 
+#(use-modules (ice-9 popen))
+#(use-modules (ice-9 rdelim))
+
+#(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
+%#(display git-hash)
+
+
+noPointAndClick =
+#(define-void-function
+  (parser location)
+  ()
+  (ly:set-option 'point-and-click #f))
+
+
 % Default  creative commons copyright
 sp-header-copyright = \markup {
   \vspace #1.5
@@ -166,8 +180,11 @@ smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
          \sans
          \fill-line {
            {
-             \with-url #"http://lilypond.org" { 
-               #(string-append "engraved by Serj Poltavski using lilypond version " (lilypond-version))
+             \left-column {
+               \with-url #"http://lilypond.org" {
+                 #(string-append "engraved by Serj Poltavski using lilypond v" (lilypond-version))
+               }
+               { #(string-append "git hash: " git-hash) }
              }
            }
            \null
@@ -213,7 +230,7 @@ tuplet-show  = { \tuplet-number-show \tuplet-bracket-show }
 
 tuplet-hide = { \tuplet-bracket-hide \tuplet-number-hide  }
 
-tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide } 
+tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
 
 
 
