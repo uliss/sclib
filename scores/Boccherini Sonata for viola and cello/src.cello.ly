@@ -23,22 +23,37 @@ celloPartOne =  \relative c {
     as8 g ( f g ) as ( g f ) es | % 17
     d4 es bes' c | % 18
     d8 es f g as as16. g32 as8 as | % 19
-    ges8 ges ( f es ) r ges ( f es ) |
+    ges8[ ges ( f es] ) r ges[ ( f es] ) |
     \barNumberCheck #20
-    r8 ges f es d4 d8 r \fermata | % 21
-    bes4. as8 g es' d c | % 22
-    bes4. as8 g es' d es | % 23
-    as,8 as as as as as a a | % 24
-    bes8 bes bes bes es16 bes' as g f es d c
+    r8 ges[ f es] d4 d8 r \fermata | % 21
+    bes4. as8 
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    g es' d c | % 22
+    bes4. as8 
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    g es' d es | % 23
+    as,8[ as as as] as[ as a a] | % 24
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    bes8 bes bes bes 
+    \set Timing.baseMoment = #(ly:make-moment 1/4)
+    es16 bes' as g f es d c
+    
     | % 25
-    bes4. as8 g c bes as | % 26
-    g4. f8 es c' bes c | % 27
-    as8 as as as as as a a | % 28
+    bes4. as8 
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    g c bes as | % 26
+    g4. f8 
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    es c' bes c | % 27
+    as8[ as as as] as[ as a a] | % 28
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
     bes8 bes bes bes es es, es r
   }
   \partbreak
   \repeat volta 2 {
-    g'8 es g es bes' g g es | \barNumberCheck #30
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    g'8[ es g es] bes'[ g g es] | \barNumberCheck #30
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
     e8 e e e f4 es | % 31
     d4 r8 d es4 d | % 32
     es4 r8 c d4 c | % 33
@@ -51,7 +66,8 @@ celloPartOne =  \relative c {
     as2 g | \barNumberCheck #40
     fis1 | % 41
     g2 r \fermata | % 42
-    r8 c es c d d d c | % 43
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    r8 c[ es c] d d d c | % 43
     b8 b b b c c c c | % 44
     g1 ~ | % 45
     g8 g b c g4 ~ g16 g' d b | % 46
@@ -59,13 +75,19 @@ celloPartOne =  \relative c {
     g8 g b c g g b g | % 48
     as2 g | % 49
     b2 c4 es8 c | \barNumberCheck #50
-    g'4. f8 es c b as | % 51
-    g4. f'8 es c b c | % 52
-    f,8 f f f f f fis fis | % 53
-    g8 g g g c16 g' f es d c b as | % 54
-    g4. f'8 es c b as | % 55
-    g4. f'8 es c b c | % 56
-    f,8 f f f f f fis fis | % 57
+    g'4. f8
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    es c b as | % 51
+    g4. f'8 es[ c b c] | % 52
+    f,8[ f f f] f[ f fis fis] | % 53
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
+    g8 g g g 
+    \set Timing.baseMoment = #(ly:make-moment 1/4)
+    c16 g' f es d c b as | % 54
+    g4. f'8 es[ c b as] | % 55
+    g4. f'8 es[ c b c] | % 56
+    f,8[ f f f] f[ f fis fis] | % 57
+    \set Timing.baseMoment = #(ly:make-moment 1/2)
     g8 g g g c g c, r
   }
 }
@@ -80,10 +102,12 @@ celloPartTwo =   \relative c, {
     <<{ s8 es d4 d8 s8}\\ {c8 c c c  b g} >>  | % 2
     <c, g' ees' c'>8 g''16.[ es32]
     <<{ s8 es d4 d8 s8}\\ {c8 c c c  b g} >> | % 3
+    \scorebreak
     c16 c ( b g ) c g d' g, es' ( c' b ) f
     es16 ( c' b ) f | % 4
     es32 c ( b c d es ) f d es8. fis16 g8 g, g r
     | % 5
+    \scorebreak
     es'8 es d16 f as f es8 es d16 f as f | % 6
     es8 es es es es es g es | % 7
     c8 d es a, as g16 as bes c as bes | % 8
@@ -99,8 +123,8 @@ celloPartTwo =   \relative c, {
     | % 12
     es''8 bes16. g32 es8 des c des c bes | % 13
     as8 bes c c f f, f r | % 14
-    f'8[ f] f f e[ e] es es | % 15
-    d8[ d] des des c[ c] bes as | % 16
+    f'8[ f] f[ f] e[ e] es[ es] | % 15
+    d8[ d] des[ des] c[ c] bes as | % 16
     g8 as e' f c c4 bes8 | % 17
     as4 as g g16 g' d b | % 18
     g8 g b[ g] c g'16.[ es32]

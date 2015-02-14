@@ -16,7 +16,7 @@ scorebreak = \break
 \include "src.viola.ly"
 \include "src.cello.ly"
 
-#(set-global-staff-size 17)
+#(set-global-staff-size 16)
 
 \book {
   \bookpart {
@@ -67,11 +67,15 @@ scorebreak = \break
           <<
             \new Staff \with {
             } {
+              \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
+              \override Score.SpacingSpanner.strict-note-spacing = ##t
               \violaPartTwo
             }
             \new Staff \with {
             }
             {
+              \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
+              \override Score.SpacingSpanner.strict-note-spacing = ##t
               \celloPartTwo
             }
           >>
@@ -84,7 +88,7 @@ scorebreak = \break
       \layout {
         \context {
           \Score
-          \sp-spacing-quoters
+          \sp-spacing-halfs
         }
       }
     }

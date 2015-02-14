@@ -1,6 +1,9 @@
 \version "2.18.2"
 
-parta = { bes'16 as? f d es g bes d << {s8 bes4.} \\ {ees8[ g, f ees]} >> | }
+parta = { 
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  bes'16 as? f d es g bes d << {s8 bes4.} \\ {ees8[ g, f ees]} >> |
+}
 
 partb = {
   \set Timing.baseMoment = #(ly:make-moment 1/8)
@@ -41,7 +44,10 @@ partd = {
   >> r8 | % 7
 }
 
-parte = { g16 f d b c es g b << { s8 g4. } \\ {c8[ ees, d c]} >> }
+parte = { 
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  g16 f d b c es g b << { s8 g4. } \\ {c8[ ees, d c]} >> 
+}
 
 partf = {
   \set Timing.baseMoment = #(ly:make-moment 1/8)
@@ -106,7 +112,10 @@ violaPartOne =  \relative g' {
   \scorebreak
   \repeat volta 2 {
     bes''4 c des8 bes4 c8 | \barNumberCheck #30
-    des16 c c4 bes8 as16 c ( bes as ) g as ( bes
+    
+    des16 c c4 bes8 
+    \set Timing.baseMoment = #(ly:make-moment 1/4)
+    as16 c ( bes as ) g as ( bes
     c16 ) | % 31
     d16 es f es d c bes as g bes as g
     f16 g as bes | % 32
@@ -123,10 +132,12 @@ violaPartOne =  \relative g' {
     <g e' d'> <g e' c'>
     <g ees' c'>1
     <aes ees' c'>2 <g ees' c'>
+    \set Timing.baseMoment = #(ly:make-moment 1/4)
     fis16 a c es fis a c es es4 d8 c | % 41
     c4.\trill b16 as g4 \fermata r | % 42
     \partc
     \partd
+    \set Timing.baseMoment = #(ly:make-moment 1/4)
     f'8 f16. f32 f8 c' b8. c16 d4 ~ | % 49
     d16 c b as g f es d es8. f16 g8 g |
     \barNumberCheck #50
