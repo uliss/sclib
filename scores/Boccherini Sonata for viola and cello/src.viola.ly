@@ -10,6 +10,7 @@ partb = {
 }
 
 partc = {
+  \override DynamicLineSpanner.staff-padding = #3
   <g, ees' c'>8\f  g'4 as8
   \p \acciaccatura { g8 ( } f16 ) e \acciaccatura {
     g8 (
@@ -17,6 +18,7 @@ partc = {
   <g, f' d'>8 \f f'4 g8 \p \acciaccatura { f ( } es16 ) d
   \acciaccatura { f8 ( } es16 ) d \grace { d8 ( } es4 )
   | % 3
+  \override DynamicLineSpanner.staff-padding = #1
   << { c'8 b4 c8 d c4 } \\ {ees,8 d4 ees8 f ees4 } >>  d'8 | % 4
   es4 \f ( d8 ) c
 
@@ -39,7 +41,7 @@ partd = {
   >> r8 | % 7
 }
 
-parte = { g16 f d b c es g b << { s8 g4. } \\ {c8 ees, d c} >> }
+parte = { g16 f d b c es g b << { s8 g4. } \\ {c8[ ees, d c]} >> }
 
 partf = {
   \set Timing.baseMoment = #(ly:make-moment 1/8)
@@ -53,7 +55,6 @@ violaPartOne =  \relative g' {
     \clef "alto"
     \key c \minor
     \time 4/4 | % 1
-    %\override DynamicLineSpanner.staff-padding = #2
     \partc
     \partd
     << { bes'8. \f c16 bes es es d c4 bes } \\ {ees,2 ees} >> | % 8
@@ -112,9 +113,9 @@ violaPartOne =  \relative g' {
     f16 g as | % 33
     b16 c d c b as g f es g f es d
     es16 f g | % 34
-    as16 b c b c g es c g -\markup{
+    as16 b c b c g es c g ^\markup{
       \italic
-      {arpegg.o}
+      {arpegg\super o}
     } d'16 b' d, g, d' b' d, | % 35
     <g, ees' c'>4 <g ees' c'> <g ees' c'>2 | % 36
     <g d' b'> <g f' d'>

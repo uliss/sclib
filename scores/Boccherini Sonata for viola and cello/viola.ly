@@ -14,7 +14,7 @@ partpagebreak = \pageBreak
 partbreak = \break
 \include "src.viola.ly"
 
-#(set-global-staff-size 19)
+#(set-global-staff-size 20)
 
 \book {
   \bookpart {
@@ -55,7 +55,7 @@ partbreak = \break
       \layout {
         \context {
           \Score
-          \sp-spacing-sixteens
+          \sp-spacing-quoters
         }
       }
     }
@@ -66,6 +66,7 @@ partbreak = \break
       }
       \header {
         piece = \markup \markup-piece "III. Minuetto"
+        breakbefore = ##t
       }
     }
   }
