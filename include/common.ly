@@ -232,5 +232,62 @@ tuplet-hide = { \tuplet-bracket-hide \tuplet-number-hide  }
 
 tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
 
+#(begin
+  (define emus (make-music
+                'SequentialMusic
+                'elements
+                (list)))
+  (define scorebreak emus)
+  (define scorepagebreak emus)
+  (define partbreak emus)
+  (define partpagebreak emus)
+
+  (define sp-linebreak (make-music
+                        'SequentialMusic
+                        'elements
+                        (list (make-music
+                               'LineBreakEvent
+                               'break-permission
+                               'force))))
+
+  (define sp-pagebreak (make-music
+                        'SequentialMusic
+                        'elements
+                        (list (make-music
+                               'EventChord
+                               'elements
+                               (list (make-music
+                                      'LineBreakEvent
+                                      'break-permission
+                                      'force)
+                                 (make-music
+                                  'PageBreakEvent
+                                  'break-permission
+                                  'force))
+                               'page-break-permission
+                               'force
+                               'line-break-permission
+                               'force
+                               'page-marker
+                               #t))))
+  )
+
+
+#(define (make-parts arg)
+   (if arg (begin
+            (set! partbreak sp-linebreak)
+            (set! partpagebreak sp-pagebreak)
+            (set! scorebreak emus)
+            (set! scorepagebreak emus)
+            )
+       (begin
+        (set! partbreak emus)
+        (set! partpagebreak emus)
+        (set! scorebreak sp-linebreak)
+        (set! scorepagebreak sp-pagebreak)
+        )
+       )
+   )
+
 
 
