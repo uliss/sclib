@@ -105,7 +105,7 @@ celloPartTwo =   \relative c, {
     \scorebreak
     c16 c ( b g ) c g d' g, es' ( c' b ) f
     es16 ( c' b ) f | % 4
-    es32 c ( b c d es ) f d es8. fis16 g8 g, g r
+    es32[ c ( b c] d es ) f d es8. fis16 g8 g, g r
     | % 5
     \scorebreak
     es'8 es d16 f as f es8 es d16 f as f | % 6
