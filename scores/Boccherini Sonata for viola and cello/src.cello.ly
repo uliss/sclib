@@ -36,7 +36,7 @@ celloPartOne =  \relative c {
     as8 as as as as as a a | % 28
     bes8 bes bes bes es es, es r
   }
-  \break
+  \partbreak
   \repeat volta 2 {
     g'8 es g es bes' g g es | \barNumberCheck #30
     e8 e e e f4 es | % 31
@@ -94,7 +94,7 @@ celloPartTwo =   \relative c, {
     r2 bes8 bes es16 f32 d es16[ a,] | % 11
     bes8 bes bes bes es,4 r
   }
-  \break
+  \partbreak
   \repeat volta 2 {
     | % 12
     es''8 bes16. g32 es8 des c des c bes | % 13
@@ -132,7 +132,7 @@ celloPartThree = \relative c {
     c8 es f d es c | % 8
     g4 g2
   }
-  \break
+  \partbreak
   | % 9
   \repeat volta 2 {
     b'2 c4 | \barNumberCheck #10
@@ -144,9 +144,9 @@ celloPartThree = \relative c {
     c8. f16 g4 g, | % 16
     c4 
     \once \override TextScript.X-offset = #2 
-    c,^\fermata  r_\smarkup-fine
+    c,^\fermata_\smarkup-fine  r
   }
-  \break
+  \partbreak
   | % 17
   \repeat volta 2 {
     | % 17
@@ -184,7 +184,7 @@ celloPartThree = \relative c {
     g8 es' ( f g as bes ) | % 45
     c8 ( bes ) bes ( as ) as ( g ) | % 46
     g8 ( f ) f es f g | % 47
-    as4 bes bes,_\smarkup-dc-fine | % 48
-    es4 es,2
+    as4 bes bes, | % 48
+    es4_\smarkup-dc-fine es,2
   }
 }

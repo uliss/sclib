@@ -18,7 +18,7 @@ partc = {
   <g, f' d'>8 \f f'4 g8 \p \acciaccatura { f ( } es16 ) d
   \acciaccatura { f8 ( } es16 ) d \grace { d8 ( } es4 )
   | % 3
-  \override DynamicLineSpanner.staff-padding = #1
+  \revert DynamicLineSpanner.staff-padding
   << { c'8 b4 c8 d c4 } \\ {ees,8 d4 ees8 f ees4 } >>  d'8 | % 4
   es4 \f ( d8 ) c
 
@@ -103,6 +103,7 @@ violaPartOne =  \relative g' {
     bes,4 f'\trill es8[ es, es] r
   }
   \partbreak
+  \scorebreak
   \repeat volta 2 {
     bes''4 c des8 bes4 c8 | \barNumberCheck #30
     des16 c c4 bes8 as16 c ( bes as ) g as ( bes
@@ -180,7 +181,9 @@ violaPartTwo = \relative c' {
     << { \acciaccatura es8 d8} \\ { \acciaccatura c b8} >> r | % 5
     << { bes'2 bes bes8 } \\ {g16 es g es as f as f g es g es as f as f g8} >>
     as16[ g f es] \acciaccatura { b'16 ( } {} c ) c c32
-    d32 es d c[ d a bes] bes8 \times 2/3 {
+    d32 es d c[ d a bes] bes8
+    \tuplet-bracket-hide
+    \times 2/3 {
       es,16 g16 bes
     }
     | % 7
@@ -196,6 +199,7 @@ violaPartTwo = \relative c' {
     es4 \grace { d16 ees } f4\trill es r
     | % 12
   }
+  \scorebreak
   es'8 bes16. g32 es8 bes'
   \times 2/3  {
     bes16 g16 e
@@ -301,15 +305,10 @@ violaPartThree = \relative c' {
     b,8[ d d f] f r | % 7
     es8 g as b c es, | % 8
     \grace { f8 } {} es4 d2
-
-    | % 9
-    d2 es4 |
-    \grace { es8 } {} d2 es4 | % 11
-    d8. es16 f4 es | % 12
-    \grace { f8 } {} es4 d2 | % 13
   }
 
   \partbreak
+  \scorebreak
   \repeat volta 2 {
     << {d2 es4 \grace es8 d2 es4 d8. es16 f4 es \grace f8 es4 d2} \\ {g,2. g g g} >>
     d'8 f ( as b d ) f | % 14
@@ -318,6 +317,7 @@ violaPartThree = \relative c' {
     c4 c,_\smarkup-fine r
   }
   \partbreak
+  \scorebreak
   \repeat volta 2 {
     | % 17
     \mark\smarkup-trio
