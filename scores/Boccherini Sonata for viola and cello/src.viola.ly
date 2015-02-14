@@ -375,6 +375,7 @@ violaPartThree = \relative c' {
     bes2.
   }
   \partbreak
+  \scorebreak
   \repeat volta 2 {
     | % 33
     bes2 es4 | % 34

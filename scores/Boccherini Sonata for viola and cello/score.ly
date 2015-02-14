@@ -10,9 +10,7 @@ info-instrument = "Score"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-partpagebreak = {}
-partbreak = {}
-scorebreak = \break
+#(make-parts #f)
 \include "src.viola.ly"
 \include "src.cello.ly"
 
@@ -68,14 +66,14 @@ scorebreak = \break
             \new Staff \with {
             } {
               \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
-              \override Score.SpacingSpanner.strict-note-spacing = ##t
+              %\override Score.SpacingSpanner.strict-note-spacing = ##t
               \violaPartTwo
             }
             \new Staff \with {
             }
             {
               \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
-              \override Score.SpacingSpanner.strict-note-spacing = ##t
+              %\override Score.SpacingSpanner.strict-note-spacing = ##t
               \celloPartTwo
             }
           >>

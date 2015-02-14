@@ -10,11 +10,8 @@ info-instrument = "Violoncello"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-partpagebreak = \pageBreak
-partbreak = \break
-scorebreak = {}
-scorepagebreak = {}
 
+#(make-parts #t)
 \include "src.cello.ly"
 
 #(set-global-staff-size 19)

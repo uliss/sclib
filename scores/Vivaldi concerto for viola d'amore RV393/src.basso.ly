@@ -184,6 +184,7 @@ celloPartThree = \relative c {
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
   d4^\fermata_\smarkup-fine \bar "||" \noBreak  r r 
+  \partbreak
   a r r |
   a r r |
   d d d d d d d d d d d' d |

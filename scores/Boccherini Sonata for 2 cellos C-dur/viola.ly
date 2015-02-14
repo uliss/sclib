@@ -11,6 +11,7 @@ info-instrument = "Viola"
 \include "../../include/housestyle.ly"
 
 #(make-parts #t)
+#(define score-version "1.1")
 \include "src.viola.ly"
 
 #(set-global-staff-size 19)

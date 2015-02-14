@@ -4,7 +4,14 @@
 #(use-modules (ice-9 rdelim))
 
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
-%#(display git-hash)
+
+#(define score-version "")
+#(define sp-version
+   (lambda () (if (string=? score-version "")
+                  "1.0"
+                  score-version)))
+
+#(display (string-append "score version: " (sp-version)))
 
 
 noPointAndClick =
@@ -184,7 +191,7 @@ smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
                \with-url #"http://lilypond.org" {
                  #(string-append "engraved by Serj Poltavski using lilypond v" (lilypond-version))
                }
-               { #(string-append "git hash: " git-hash) }
+               { #(string-append "version: " (sp-version)) }
              }
            }
            \null

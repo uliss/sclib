@@ -9,6 +9,8 @@ info-instrument = "Viola d'amore"
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
+
+#(make-parts #t)
 \include "src.violadamore.ly"
 
 %\noPointAndClick
