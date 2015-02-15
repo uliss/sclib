@@ -69,9 +69,12 @@ violaPartTwo = \relative c' {
   \key f \major
   \time 3/4
   \clef treble
+  \clef alto
   \repeat volta 2 {
-    << {a'4 a a a2. bes2 d8 bes a4 g f e2. ~ e4} \\ {f4 f f f2. f2 f4 f c f g,2. ~ g4} >>
-    \clef alto c, f' |
+    << {a'4 a a a2. bes2 d8 bes a4 g f 
+        \clef alto
+        e2. ~ e4} \\ {f4 f f f2. f2 f4 f c f g,2. ~ g4} >>
+    c, f' |
     bes,8 bes c c c c |
     f4 f, r |
     \clef treble
@@ -89,9 +92,9 @@ violaPartTwo = \relative c' {
     e4. f8 e4 |
     \clef alto
     f,8 f, g e' g, d' |
-    << {d4( e2)} \\ {c2.} >> |
+    << {d4( e2)} \\ {c,2.} >> |
     \clef treble
-    g''4 g16( f) f( e) e( f) f( g) |
+    g'''4 g16( f) f( e) e( f) f( g) |
     g4. a8 g4 |
     \clef alto
     \acciaccatura b,8 \tuplet 3/2 4 {a8 g f} <g, e'>4 <g d'> |
@@ -112,6 +115,11 @@ violaPartTwo = \relative c' {
   \acciaccatura bes8 a4 g r |
   a'4 a16( g) g( f) f( g) g( a) |
   a4. bes8 a4 |
+  \clef alto
+  \acciaccatura c,8 \tuplet 3/2 4 {bes a g} f c e c |
+  f4 c f, |
+  c'' c16( bes) bes( a) a( bes) bes( c) |
+  c4. d8 c4 |
   \acciaccatura e8 \tuplet 3/2 4 {d8 c bes} a4 g |
   \clef alto
   f8[ r16 c] f,4 r |
@@ -192,8 +200,8 @@ violaPartThree = \relative c' {
   \clef alto
   c,4 e c g' a b c8. f,16 g4 g, |
   c8 a' g f e d c4 c, f'8 e |
-  << {e4 d d8 c b4 g e'8 d d4 c \clef treble e'} \\ {g,,2 s4 s2. c,2 s4} >>
-  e''4 d8 e f f e4 f g |
+  << {e4 d d8 c b4 g e'8 d d4 c \clef treble c'} \\ {g,2 s4 s2. c,2 s4} >>
+  c''4 b8 c d d c4 d e |
   \clef alto
   f,8 a g f e d |
   c4 c, g''8 f |

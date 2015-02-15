@@ -11,10 +11,10 @@ info-instrument = "Viola"
 \include "../../include/housestyle.ly"
 
 #(make-parts #t)
-#(define score-version "1.1")
+#(define score-version "1.2")
 \include "src.viola.ly"
 
-#(set-global-staff-size 19)
+#(set-global-staff-size 18)
 
 \book {
   \bookpart {
@@ -58,7 +58,7 @@ info-instrument = "Viola"
       \layout {
         \context {
           \Score
-          %\sp-spacing-eights
+          \sp-spacing-quoters
         }
       }
     }
