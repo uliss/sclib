@@ -6,13 +6,8 @@
 
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
 
-% variable score-version should be redefined like this:
-% #(define score-version "1.2")
-#(define score-version "")
 #(define sp-version
-   (lambda () (if (string=? score-version "")
-                  "1.0"
-                  score-version)))
+   (lambda () info-version))
 
 % Default  creative commons copyright
 sp-header-copyright = \markup {

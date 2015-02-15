@@ -8,14 +8,13 @@ info-subtitle = "(C–dur)"
 info-instrument = "Viola"
 info-catalog-number = "001"
 info-project = #(project-url #{ \current-dir #})
+info-version = "1.2"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-
 \make-parts
-score-version = "1.2"
 \include "src.viola.ly"
 
 #(set-global-staff-size 18)
