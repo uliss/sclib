@@ -31,7 +31,6 @@ score-version = "1.2"
       title = \markup { \markup-title \info-title }
       composer = \markup { \markup-composer \info-composer \info-composer-years }
       instrument = \markup {\markup-instrument \info-instrument }
-      tagline = \markup { \markup-tagline }
     }
     \score {
       {
