@@ -1,16 +1,20 @@
 \version "2.18.2"
+\include "../../include/sclib.ly"
 
 info-composer = "Luigi Boccherini"
 info-composer-years = "(1743 – 1805)"
 info-title = "Sonata for viola and cello"
 info-subtitle = "(c–moll)"
 info-instrument = "Score"
+info-catalog-number = "002"
+info-project = #(project-url #{ \current-dir #})
+info-version = "1.0"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-#(make-parts #f)
+\make-score
 \include "src.viola.ly"
 \include "src.cello.ly"
 
