@@ -38,14 +38,16 @@
       }
     }
     \on-the-fly \last-page {
-      \fromproperty #'header:tagline
-      {
-        \sans
-        \abs-fontsize #'6
-        \with-url #(get-info-project)
-        #(string-append "SP" info-catalog-number)
+      \fill-line {
+        \markup-tagline
+        {
+          \sans
+          \abs-fontsize #'6
+          \with-url #(get-info-project)
+          #(string-append "SP" info-catalog-number)
+        }
+        \null
       }
-      \null
     }
   }
   oddFooterMarkup = \markup {

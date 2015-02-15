@@ -28,10 +28,8 @@ info-version = "1.0"
   \bookpart {
     \header {
       title = \markup { \markup-title \info-title }
-      %subsubtitle = "for viola and cello"
       composer = \markup { \markup-composer \info-composer \info-composer-years }
       instrument = \markup {\markup-instrument \info-instrument }
-      tagline = \markup { \markup-tagline }
     }
     \score {
       {

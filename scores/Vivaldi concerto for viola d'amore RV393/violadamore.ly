@@ -1,19 +1,21 @@
 \version "2.18.2"
+\include "../../include/sclib.ly"
 
 info-composer = "Antonio Vivaldi"
 info-composer-years = "(1678 – 1741)"
 info-title = "Concerto per Viola d'amore, Archi e Cembalo"
 info-subtitle = "RV393 (d–moll)"
 info-instrument = "Viola d'amore"
+info-catalog-number = "003"
+info-project = #(project-url #{ \current-dir #})
+info-version = "1.1"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-#(make-parts #t)
+\make-parts
 \include "src.violadamore.ly"
-
-%\noPointAndClick
 
 #(set-global-staff-size 19)
 
@@ -54,7 +56,6 @@ scordatura = \markup {
       subtitle = \markup { \markup-subtitle "per Viola d'amore, Archi e Cembalo" }
       composer = \markup { \markup-composer \info-composer \info-composer-years }
       instrument = \markup {\markup-instrument \info-instrument }
-      tagline = \markup { \markup-tagline }
       opus = "RV393"
     }
     \score {

@@ -319,10 +319,10 @@ vdaPartThree = \relative c' {
     gis' e b
   }
   \break
-  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c b c c b c }
-  a,8 a' \tuplet 3/2 4 {c b c c b c }
-  e, b' \tuplet 3/2 4 { d c d d c d } |
-  e, b' \tuplet 3/2 4 { d c d d c b } |
+  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c( b) c c( b) c }
+  a,8 a' \tuplet 3/2 4 {c( b) c c( b) c }
+  e, b' \tuplet 3/2 4 { d( c) d d( c) d } |
+  e, b' \tuplet 3/2 4 { d( c) d d( c) b } |
   e,4 gis b |
   \tuplet 3/2 4 { d8 c d b a b gis fis gis } |
   e4 r r |
