@@ -1,25 +1,18 @@
 \version "2.18.2"
 
-#(use-modules (ice-9 popen))
-#(use-modules (ice-9 rdelim))
+#(begin ; module import
+   (use-modules (ice-9 popen))
+   (use-modules (ice-9 rdelim)))
 
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
 
+% variable score-version should be redefined like this:
+% #(define score-version "1.2")
 #(define score-version "")
 #(define sp-version
    (lambda () (if (string=? score-version "")
                   "1.0"
                   score-version)))
-
-#(display (string-append "score version: " (sp-version)))
-
-
-noPointAndClick =
-#(define-void-function
-  (parser location)
-  ()
-  (ly:set-option 'point-and-click #f))
-
 
 % Default  creative commons copyright
 sp-header-copyright = \markup {
@@ -280,7 +273,7 @@ tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
   )
 
 
-#(define (make-parts arg)
+#(define (make-parts- arg)
    (if arg (begin
             (set! partbreak sp-linebreak)
             (set! partpagebreak sp-pagebreak)
@@ -296,5 +289,8 @@ tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
        )
    )
 
+make-parts = #(define-scheme-function (parser location)()
+                (make-parts- #t))
 
-
+make-score = #(define-scheme-function (parser location)()
+                (make-parts- #f))
