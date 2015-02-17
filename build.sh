@@ -3,6 +3,8 @@
 LILY="lilypond -dno-point-and-click --pdf "
 CWD=`pwd`
 
+mkdir -p pdf
+
 find scores -name *.ly -print0 | while read -d $'\0' file
 do
 	f=`echo $file | grep -v 'src\,'`
