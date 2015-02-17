@@ -66,5 +66,24 @@ info-version = "1.0"
         }
       }
     }
+    
+    \score {
+      \header {
+        opus = " "
+        %piece = "II. Adagio"
+      }
+      \new Staff
+      {
+        \set Score.skipBars = ##t
+        \tempo "Allegro"
+        \violinI-partIII
+      }
+      \layout {
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
+      }
+    }
   }
 }

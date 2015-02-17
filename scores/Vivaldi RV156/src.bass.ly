@@ -81,7 +81,7 @@ bass-partIII = \relative g, {
   \rsix f
   \rsix bes,
   \rsix es
-  \rsix as,
+  \rsix a,
   \rsix d
   \rsix g
   \rsix d

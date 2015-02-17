@@ -68,7 +68,7 @@ info-version = "1.0"
                   instrumentName = "II."
                 }
                 {
-                  R1 * 77
+                  \violinII-partI
                 }
               >>
             }
@@ -180,6 +180,83 @@ info-version = "1.0"
                 \clef bass
                 \bass-partII
                 \figbass-PartII
+              >>
+            }
+          >>
+        }
+      >>
+      \layout {
+        \context {
+          \Score
+          %\sp-spacing-eights
+        }
+      }
+    }
+
+    \score {
+      \header {
+        opus = " "
+        %piece = \markup \markup-piece "I. Allegro"
+      }
+      <<
+        \new StaffGroup {
+          \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
+          \override Score.SpacingSpanner.strict-note-spacing = ##f
+          <<
+            \new StaffGroup \with {
+              instrumentName = "Violini"
+            }
+            {
+              <<
+                \new Staff \with {
+                  instrumentName = "I."
+                }
+                {
+                  \override Score.BarNumber #'padding = #1.9
+                  \tempo "Allegro"
+                  \violinI-partIII
+                }
+                \new Staff \with {
+                  instrumentName = "II."
+                }
+                {
+                  \violinII-partIII
+                }
+              >>
+            }
+            \new Staff \with {
+              instrumentName = "Viole"
+            }
+            {
+              \clef alto
+              \viola-partIII
+            }
+            \new Staff \with {
+              instrumentName = "Violoncelli"
+            }
+            {
+              <<
+                \clef bass
+                \bass-partIII
+              >>
+            }
+          >>
+        }
+        \new PianoStaff
+        \with {
+          instrumentName = "Cembalo"
+        }
+        {
+          <<
+            \new Staff {
+              \key d \minor
+              R1*3/8 * 100
+            }
+            \new Staff {
+              <<
+                \clef bass
+                \bass-partIII
+                \figbass-PartIII
               >>
             }
           >>

@@ -49,3 +49,7 @@ viola-partII = \relative bes' {
     es8 c d4 d2^\fermata
     \bar "|."
 }
+
+viola-partIII = \relative bes' {
+    R1* 3/8  * 100
+}

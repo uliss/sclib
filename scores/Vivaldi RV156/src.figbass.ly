@@ -53,3 +53,12 @@ figbass-PartII = \new FiguredBass {
     <6 5> <3+>
   }
 }
+
+figbass-PartIII = \new FiguredBass {
+  \figuremode {
+    \set figuredBassAlterationDirection = #RIGHT
+    
+  }
+}
+
+

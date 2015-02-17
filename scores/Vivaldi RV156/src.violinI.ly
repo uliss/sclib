@@ -1,4 +1,5 @@
 \version "2.18.2"
+\include "../../include/editorial.ly"
 
 
 pa = { a16( g) a8 a16( g) a8 }
@@ -157,4 +158,72 @@ violinI-partII = \relative g'' {
   fis4 g ~ g f ~ f e8 d cis4 a' ~ a g ~ g f ~ f e8 bes' ~ bes a c4 |
   b c ~ c bes ~ bes aes ~ aes g ~ g f es g |
   a2 bes4 d g,2 fis4 g ~ g2 fis4 g ~ g fis g bes, a2 g^\fermata \bar "|."
+}
+
+rs = #(define-scheme-function (parser location note)(ly:music?)
+          #{ \repeat unfold 6 { $note } #})
+
+violinI-partIII = \relative d'' {
+  \key d \minor
+  \time 3/8
+  \rs d16 g16 g f es d c 
+  \rs  bes es es d c bes a |
+  g16 \ed-slur a32( bes c[ d e fis]) g16 r |
+  g,16 \ed-slur a32( bes c[ d e fis]) g16 r |
+  bes, \ed-slur c32( d e[ fis g a)] bes16 r |
+  bes, \ed-slur c32( d e[ fis g a)] bes16 r |
+  \rs d,16 g g f es d c bes8 bes'4 ~ bes16 d c bes a g |
+  a8 a4 ~ a16 c bes a g f g8 g4 ~ g16 bes a g f e |
+  fis8 fis4 |
+  g8 d r16 g16 |
+  a8 d, r16 a' |
+  bes8 d, r16 bes' |
+  c4. ~ c8 bes a bes4. ~ bes8 a g |
+  f16 e f g a8 bes e,4 |
+  d16 a a a a a d d c bes a g |
+  \rs f |
+  bes bes a g f e 
+  d16 \ed-slur e32( f g[ a b cis]) d16 r |
+  d,16 \ed-slur e32( f g[ a b cis]) d16 r |
+  f, g32 a bes[ c d e] f16 r |
+  f, g32 a bes[ c d e] f16 r |
+  \rs a,16 d d c bes a g |
+  f8 f'4 ~ |
+  f16 a g f e d |
+  e8 e4 ~ e16 g f e d c |
+  d8 d4 ~ d16 f e d c b |
+  cis8 cis4 |
+  d8 a r16 d16 |
+  e8 a, r16 e' |
+  f8 a, r16 f' |
+  g4. ~ g8 f e f4. ~ f8 es d |
+  es16 d es f g8 |
+  as8 d,4 
+  c16 g g g g g c c bes as g f |
+  \rs es 
+  as as g f es d |
+  c d32 es f[ g a b] c16 r |
+  c, d32 es f[ g a b] c16 r |
+  es, f32 g a[ b c d] es16 r |
+  es, f32 g a[ b c d] es16 r |
+  \rs g,16 c c bes as g f |es8 es'4 ~ es16 g f es d c |
+  d8 d4 ~ d16 f es d c bes |
+  c8 c4 ~ c16es d c bes a |
+  b8 b4 |
+  c8 g r16 c |
+  d8 g, r16 d' |
+  es8 g, r16 g' |
+  f4. ~ f8 es d |
+  es4. ~ es8 d c |
+  d16 bes d f bes8 | d,8 es c bes16 f' f f f f bes bes a g f e |
+  \rs d 
+  g g f es d c |
+  bes8 bes'4 ~ bes16 d c bes a g |
+  a8 a4 ~ a16 c bes a g f |
+  g8 g4 ~ g16 bes a g f es |
+  fis8 fis4 |
+  g16 d d d d d g g f es d c |
+  \rs bes es es d c bes a g g' g g g g |
+  \rs g \rs fis g bes, bes bes bes bes \rs a \rs a g4.^\fermata
+  \bar "|."
 }
