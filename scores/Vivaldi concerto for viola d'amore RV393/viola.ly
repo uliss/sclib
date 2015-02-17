@@ -1,13 +1,19 @@
 \version "2.18.2"
+\include "../../include/sclib.ly"
 
-sp-tp-composer = "Antonio Vivaldi"
-sp-tp-title = "Concerto per Viola d'amore, Archi e Cembalo"
-sp-tp-subtitle = "RV393 (d–moll)"
-sp-tp-instrument = "Viola d'amore"
+info-composer = "Antonio Vivaldi"
+info-title = "Concerto per Viola d'amore, Archi e Cembalo"
+info-subtitle = "RV393 (d–moll)"
+info-instrument = "Viola"
+info-version = "1.0"
+info-catalog-number = "003"
+info-project = #(project-url #{ \current-dir #})
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
+
+\make-parts
 \include "src.basso.ly"
 
 #(set-global-staff-size 19)
@@ -24,14 +30,13 @@ sp-tp-instrument = "Viola d'amore"
     \header {
       title = \markup { \normal-text { \smallCaps "Concerto" "in Re minore" } }
       subtitle = \markup {\normal-text "per Viola d'amore, Archi e Cembalo"}
-      composer = \markup {\sp-composer \sp-tp-composer "(1678 – 1741)" }
-      instrument = \markup {\normal-text \italic \sp-tp-instrument }
-      tagline = \sp-tagline
+      composer = \markup {\markup-composer \info-composer "(1678 – 1741)" }
+      instrument = \markup {\normal-text \italic \info-instrument }
       opus = "RV393"
     }
     \score {
       \header {
-        piece = \markup \sp-style-piece "I. (Allegro)"
+        piece = \markup \markup-piece "I. (Allegro)"
       }
       {
         \set Score.skipBars = ##t
@@ -45,7 +50,7 @@ sp-tp-instrument = "Viola d'amore"
 
     \score {
       \header {
-        piece = \markup \sp-style-piece "II. (Largo)"
+        piece = \markup \markup-piece "II. (Largo)"
         opus = ""
       }
       {
@@ -56,7 +61,7 @@ sp-tp-instrument = "Viola d'amore"
 
     \score {
       \header {
-        piece =\markup \sp-style-piece  "III. (Allegro)"
+        piece =\markup \markup-piece  "III. (Allegro)"
         opus = ""
       }
       {
