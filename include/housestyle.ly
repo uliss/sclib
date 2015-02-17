@@ -10,5 +10,6 @@
     % heavier appearance
     %\override StaffSymbol #'thickness = #1.2
     %\override Beam #'beam-thickness = #0.55
+    \accidentalStyle modern
   }
 }

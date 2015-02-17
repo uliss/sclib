@@ -20,7 +20,7 @@
   % annotate-spacing = ##t
   top-system-spacing  = #'((basic-distance . 10))
   top-markup-spacing = #'((basic-distance . 5))
-  last-bottom-spacing = #'((basic-distance . 10))
+  last-bottom-spacing = #'((basic-distance . 10) (minimum-distance . 8))
   markup-system-spacing = #'((basic-distance . 10))
   markup-markup-spacing = #'((basic-distance . 10))
   ragged-last-bottom = ##f
