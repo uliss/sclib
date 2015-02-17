@@ -4,7 +4,27 @@
    (use-modules (ice-9 popen))
    (use-modules (ice-9 rdelim)))
 
+% constants
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
+#(define git-repo "https://github.com/uliss/sclib")
+
+#(define cc-logo    "../../include/icons/cc.eps")
+#(define cc-nc-logo "../../include/icons/nc.eps")
+#(define cc-sa-logo "../../include/icons/sa.eps")
+
+#(define title-big-color (rgb-color 0.95 0.95 0.95))
+#(define title-main-color (rgb-color 0 0 0))
+#(define title-instrument-color (rgb-color 0.3 0.3 0.3))
+
+% Ensure that the configuration variables are present
+#(cond ((not (defined? 'info-version))
+        (define info-version "0.0alpha")))
+#(cond ((not (defined? 'info-composer-years))
+        (define info-composer-years "")))
+#(cond ((not (defined? 'info-catalog-number))
+        (define info-catalog-number "????")))
+#(cond ((not (defined? 'info-project))
+        (define info-project "")))
 
 #(define sp-version
    (lambda () info-version))
@@ -19,19 +39,13 @@ sp-header-copyright = \markup {
     \pad-around #1 {
       \line {
         \lower #1.5 {
-          \epsfile #X #2 #"../../include/icons/cc.eps"
-          \epsfile #X #2 #"../../include/icons/nc.eps"
-          \epsfile #X #2 #"../../include/icons/sa.eps"
+          \epsfile #X #2 \cc-logo
+          \epsfile #X #2 \cc-nc-logo
+          \epsfile #X #2 \cc-sa-logo
         }
         \column {
-          {
-            "Licensed under a Creative Commons 3.0"
-          }
-          \line {
-            "source files: " \with-url  #"https://github.com/uliss/sclib" {
-              "https://github.com/uliss/sclib"
-            }
-          }
+          { "Licensed under a Creative Commons 3.0" }
+          \line { "source files: " \with-url \git-repo { \git-repo }}
         }
       }
     }
@@ -43,12 +57,12 @@ sp-title-page = \markup {
     \column  {
       \right-column {
         \abs-fontsize #100
-        \with-color #(rgb-color 0.95 0.95 0.95)
+        \with-color #title-big-color
         { \fontsize #1 \info-composer }
         { \italic \fontsize #-3 \info-title }
       }
       \vspace #4
-      \with-color #(rgb-color 0 0 0)
+      \with-color #title-main-color
       \override #'(baseline-skip . 4)
       \left-column {
         {\abs-fontsize #30  \info-composer }
@@ -58,7 +72,7 @@ sp-title-page = \markup {
       }
       \vspace #29
       \fill-line {
-        { \with-color #(rgb-color 0.3 0.3 0.3) \sans \bold \info-instrument }
+        { \with-color #title-instrument-color \sans \bold \info-instrument }
         \null
         \sp-header-copyright
       }
@@ -187,7 +201,7 @@ smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
        }
      #}))
 
-sp-custosNote =
+sp-custos-note =
 #(define-music-function
   (parser location note)
   (ly:music?)
