@@ -96,6 +96,7 @@ info-version = "1.0"
         {
           <<
             \new Staff {
+              \key d \minor
               R1 * 77
             }
             \new Staff {
