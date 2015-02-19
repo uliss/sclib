@@ -76,6 +76,7 @@ info-version = "1.0"
       {
         \set Score.skipBars = ##t
         \tempo "Allegro"
+        \time 3/8
         \violinII-partIII
       }
       \layout {

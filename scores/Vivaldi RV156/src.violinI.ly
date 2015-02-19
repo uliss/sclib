@@ -185,8 +185,8 @@ violinI-partIII = \relative d'' {
   bes bes a g f e 
   d16 \ed-slur e32( f g[ a b cis]) d16 r |
   d,16 \ed-slur e32( f g[ a b cis]) d16 r |
-  f, g32 a bes[ c d e] f16 r |
-  f, g32 a bes[ c d e] f16 r |
+  f, \ed-slur g32( a bes[ c d e]) f16 r |
+  f, \ed-slur g32( a bes[ c d e]) f16 r |
   \rs a,16 d d c bes a g |
   f8 f'4 ~ |
   f16 a g f e d |
