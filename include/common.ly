@@ -1,4 +1,5 @@
 \version "2.18.2"
+\include "barcode.ly"
 
 #(begin ; module import
    (use-modules (ice-9 popen))
@@ -25,6 +26,8 @@
         (define info-catalog-number "????")))
 #(cond ((not (defined? 'info-project))
         (define info-project "")))
+#(cond ((not (defined? 'info-instrument))
+        (define info-instrument "")))
 
 #(define sp-version
    (lambda () info-version))
@@ -70,7 +73,25 @@ sp-title-page = \markup {
         {\abs-fontsize #20 \sans \info-title }
         {\abs-fontsize #16  \italic \info-subtitle }
       }
-      \vspace #29
+      
+      \vspace #22
+      \barcode
+      \barcode-qrcode #0.15 #(string-append 
+                             "composer:"    info-composer "\n" 
+                             "title: "      info-title "\n" 
+                             "instrument: " info-instrument "\n"
+                             "catalog-num:" info-catalog-number "\n"
+                             "version: "    info-version "\n"
+                             "source: "     git-repo "\n"
+                             "git-hash:"    git-hash "\n"
+                             "build-time:"  (strftime "%x at %X" (localtime (current-time))) "\n"
+                             "editor: Serj Poltavski\n" 
+                             "http://poltavski.ru\n\n"
+                             "Send you fixes to serj.poltavski@gmail.com"
+                             )
+      \vspace #7
+      
+      % #29
       \fill-line {
         { \with-color #title-instrument-color \sans \bold \info-instrument }
         \null
@@ -193,7 +214,7 @@ smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
                \with-url #"http://lilypond.org" {
                  #(string-append "engraved by Serj Poltavski using lilypond v" (lilypond-version))
                }
-               { #(string-append "version: " (sp-version)) }
+               { #(string-append "edition version: " (sp-version)) }
              }
            }
            \null

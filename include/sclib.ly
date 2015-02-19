@@ -16,3 +16,6 @@ noPointAndClick = #(define-void-function
                     (parser location)
                     ()
                     (ly:set-option 'point-and-click #f))
+
+#(ly:set-option 'paper-size "a4")
+#(ly:set-option 'relative-includes #t)
