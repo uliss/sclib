@@ -28,6 +28,10 @@
         (define info-project "")))
 #(cond ((not (defined? 'info-instrument))
         (define info-instrument "")))
+#(cond ((not (defined? '-sp-parts))
+        (define -sp-parts #f)))
+#(cond ((not (defined? '-sp-score))
+        (define -sp-score #f)))
 
 #(define sp-version
    (lambda () info-version))
@@ -55,6 +59,16 @@ sp-header-copyright = \markup {
   }
 }
 
+#(define (is-score?) -sp-score)
+#(define (is-parts?) -sp-parts)
+
+#(define-markup-command (score-title-space layout props)
+   ()
+   (if (is-parts?)
+       (interpret-markup layout props #{ \markup {} #})
+       (interpret-markup layout props #{ \markup { \vspace #0.6 } #})
+       ))
+
 sp-title-page = \markup {
   {
     \column  {
@@ -70,7 +84,7 @@ sp-title-page = \markup {
       \left-column {
         {\abs-fontsize #30  \info-composer }
         { \draw-line #'(-60 . 0)  \vspace #1 }
-        {\abs-fontsize #20 \sans \info-title }
+        {\abs-fontsize #20 \sans \info-title \score-title-space }
         {\abs-fontsize #16  \italic \info-subtitle }
       }
 
@@ -309,12 +323,16 @@ tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
             (set! partpagebreak sp-pagebreak)
             (set! scorebreak emus)
             (set! scorepagebreak emus)
+            (set! -sp-parts #t)
+            (set! -sp-score #f)
             )
        (begin
         (set! partbreak emus)
         (set! partpagebreak emus)
         (set! scorebreak sp-linebreak)
         (set! scorepagebreak sp-pagebreak)
+        (set! -sp-parts #f)
+        (set! -sp-score #t)
         )
        )
    )
@@ -344,7 +362,7 @@ quote-with-clef = #(define-scheme-function (parser location instr clef mus)
                      #{
                        \tag-parts \new CueVoice { \set instrumentCueName = $instr }
                        \cueDuringWithClef $instr #UP #clef {
-                          #mus
+                         #mus
                        }
                      #})
 
