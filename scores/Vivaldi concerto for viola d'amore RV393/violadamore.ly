@@ -8,7 +8,7 @@ info-subtitle = "RV393 (d–moll)"
 info-instrument = "Viola d'amore"
 info-catalog-number = "003"
 info-project = #(project-url #{ \current-dir #})
-info-version = "1.1"
+info-version = "1.2"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"

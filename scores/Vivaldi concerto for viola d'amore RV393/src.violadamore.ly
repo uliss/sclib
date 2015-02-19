@@ -106,7 +106,7 @@ vdaPartOne = \relative c' {
   f8 e16 d e4\trill d8^\markup\sp-tutti f'16 e d8 a f a d, d'
   cis e16 d cis8 a e a a, e''
   f d a f |
-  f'16^\markup\sp-solo g a g f e d cis? d e f e d c? bes a |
+  f'16^\markup\sp-solo g a g f e d c d e f e d c? bes a |
   bes c d c bes a g f c'4 r8 <c f> |
   <c e> <c f> <c g'> <c f> << {f\trill[ e]} \\ {c[ c]} >> r <c f> |
   <c e> <c f> <c g'> <c f> << {f\trill[ e]} \\ {c[ c]} >> r g' |
