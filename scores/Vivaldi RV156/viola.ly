@@ -15,6 +15,7 @@ info-version = "1.0"
 \include "../../include/housestyle.ly"
 
 \make-parts
+\include "src.bass.ly"
 \include "src.viola.ly"
 
 \book {
@@ -47,7 +48,7 @@ info-version = "1.0"
       \layout {
         \context {
           \Score
-          \sp-spacing-quoters
+          \sp-spacing-eights
         }
       }
     }
@@ -55,6 +56,7 @@ info-version = "1.0"
     \score {
       \header {
         opus = " "
+        breakbefore = ##t
         %piece = \markup \markup-piece "I. Allegro"
       }
       \new Staff
@@ -71,5 +73,27 @@ info-version = "1.0"
         }
       }
     }
+    
+    \score {
+      \header {
+        opus = " "
+        %piece = \markup \markup-piece "I. Allegro"
+      }
+      \new Staff
+      {
+        \set Score.skipBars = ##t
+        \tempo "Allegro"
+        \time 3/8
+        \clef alto
+        \viola-partIII
+      }
+      \layout {
+        \context {
+          \Score
+          \sp-spacing-quoters
+        }
+      }
+    }
+    
   }
 }

@@ -230,6 +230,7 @@ info-version = "1.0"
             }
             {
               \clef alto
+              \score-only
               \viola-partIII
             }
             \new Staff \with {
