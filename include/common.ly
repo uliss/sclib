@@ -323,52 +323,72 @@ make-parts = #(define-scheme-function (parser location)()
                 (make-parts- #t))
 
 make-score = #(define-scheme-function (parser location)()
-                (make-parts- #f))
+                #{
+                  #(make-parts- #f)
+                #}
+                )
+
+score-only = #(define-scheme-function (parser location music)(ly:music?)
+                #{
+                  \removeWithTag #'parts {
+                    \killCues { #music }
+                  }
+                #}
+                )
+
+tag-quote = #(define-scheme-function (parser location name music)(string? ly:music?)
+               #{ \addQuote #name { #music } #})
+
+tag-score = #(define-scheme-function (parser location music) (ly:music?)
+               #{ \tag #'score { #music } #})
+
+tag-parts = #(define-scheme-function (parser location music) (ly:music?)
+               #{ \tag #'parts { #music } #})
 
 par-natural = #(define-scheme-function (parser location)()
-                #{
-                  ^\markup {
-                    \override #'(baseline-skip . 2)
-                    \center-column {
-                      \tiny ?
-                      \concat {
-                        \tiny (
-                        \pad-x #0.2 { \raise #0.5 \tiny \natural }
-                        \tiny )
-                      }
-                    }
-                  }
-                #}
-                )
+                 #{
+                   ^\markup {
+                     \override #'(baseline-skip . 2)
+                     \center-column {
+                       \tiny ?
+                       \concat {
+                         \tiny (
+                         \pad-x #0.2 { \raise #0.5 \tiny \natural }
+                         \tiny )
+                       }
+                     }
+                   }
+                 #}
+                 )
 
 par-sharp = #(define-scheme-function (parser location)()
-                #{
-                  ^\markup {
-                    \override #'(baseline-skip . 2)
-                    \center-column {
-                      \tiny ?
-                      \concat {
-                        \tiny (
-                        \pad-x #0.2 { \raise #0.5 \tiny \sharp }
-                        \tiny )
-                      }
-                    }
-                  }
-                #}
-                )
+               #{
+                 ^\markup {
+                   \override #'(baseline-skip . 2)
+                   \center-column {
+                     \tiny ?
+                     \concat {
+                       \tiny (
+                       \pad-x #0.2 { \raise #0.5 \tiny \sharp }
+                       \tiny )
+                     }
+                   }
+                 }
+               #}
+               )
 
 par-flat = #(define-scheme-function (parser location)()
-                #{
-                  ^\markup {
-                    \override #'(baseline-skip . 2)
-                    \center-column {
-                      \tiny ?
-                      \concat {
-                        \tiny (
-                        \pad-x #0.2 { \raise #0.5 \tiny \flat }
-                        \tiny )
-                      }
+              #{
+                ^\markup {
+                  \override #'(baseline-skip . 2)
+                  \center-column {
+                    \tiny ?
+                    \concat {
+                      \tiny (
+                      \pad-x #0.2 { \raise #0.5 \tiny \flat }
+                      \tiny )
                     }
                   }
-                #}
-                )
+                }
+              #}
+              )
