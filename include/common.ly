@@ -339,6 +339,15 @@ score-only = #(define-scheme-function (parser location music)(ly:music?)
 tag-quote = #(define-scheme-function (parser location name music)(string? ly:music?)
                #{ \addQuote #name { #music } #})
 
+quote-with-clef = #(define-scheme-function (parser location instr clef mus)
+                     (string? string? ly:music?)
+                     #{
+                       \tag-parts \new CueVoice { \set instrumentCueName = $instr }
+                       \cueDuringWithClef $instr #UP #clef {
+                          #mus
+                       }
+                     #})
+
 tag-score = #(define-scheme-function (parser location music) (ly:music?)
                #{ \tag #'score { #music } #})
 
