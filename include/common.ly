@@ -73,24 +73,24 @@ sp-title-page = \markup {
         {\abs-fontsize #20 \sans \info-title }
         {\abs-fontsize #16  \italic \info-subtitle }
       }
-      
+
       \vspace #22
       \barcode
-      \barcode-qrcode #0.15 #(string-append 
-                             "composer:"    info-composer "\n" 
-                             "title: "      info-title "\n" 
-                             "instrument: " info-instrument "\n"
-                             "catalog-num:" info-catalog-number "\n"
-                             "version: "    info-version "\n"
-                             "source: "     git-repo "\n"
-                             "git-hash:"    git-hash "\n"
-                             "build-time:"  (strftime "%x at %X" (localtime (current-time))) "\n"
-                             "editor: Serj Poltavski\n" 
-                             "http://poltavski.ru\n\n"
-                             "Send you fixes to serj.poltavski@gmail.com"
-                             )
+      \barcode-qrcode #0.15 #(string-append
+                              "composer:"    info-composer "\n"
+                              "title: "      info-title "\n"
+                              "instrument: " info-instrument "\n"
+                              "catalog-num:" info-catalog-number "\n"
+                              "version: "    info-version "\n"
+                              "source: "     git-repo "\n"
+                              "git-hash:"    git-hash "\n"
+                              "build-time:"  (strftime "%x at %X" (localtime (current-time))) "\n"
+                              "editor: Serj Poltavski\n"
+                              "http://poltavski.ru\n\n"
+                              "Send you fixes to serj.poltavski@gmail.com"
+                              )
       \vspace #7
-      
+
       % #29
       \fill-line {
         { \with-color #title-instrument-color \sans \bold \info-instrument }
@@ -324,3 +324,51 @@ make-parts = #(define-scheme-function (parser location)()
 
 make-score = #(define-scheme-function (parser location)()
                 (make-parts- #f))
+
+par-natural = #(define-scheme-function (parser location)()
+                #{
+                  ^\markup {
+                    \override #'(baseline-skip . 2)
+                    \center-column {
+                      \tiny ?
+                      \concat {
+                        \tiny (
+                        \pad-x #0.2 { \raise #0.5 \tiny \natural }
+                        \tiny )
+                      }
+                    }
+                  }
+                #}
+                )
+
+par-sharp = #(define-scheme-function (parser location)()
+                #{
+                  ^\markup {
+                    \override #'(baseline-skip . 2)
+                    \center-column {
+                      \tiny ?
+                      \concat {
+                        \tiny (
+                        \pad-x #0.2 { \raise #0.5 \tiny \sharp }
+                        \tiny )
+                      }
+                    }
+                  }
+                #}
+                )
+
+par-flat = #(define-scheme-function (parser location)()
+                #{
+                  ^\markup {
+                    \override #'(baseline-skip . 2)
+                    \center-column {
+                      \tiny ?
+                      \concat {
+                        \tiny (
+                        \pad-x #0.2 { \raise #0.5 \tiny \flat }
+                        \tiny )
+                      }
+                    }
+                  }
+                #}
+                )
