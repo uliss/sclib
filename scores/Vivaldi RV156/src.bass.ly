@@ -67,10 +67,17 @@ bass-partII = \relative g {
 rsix = #(define-scheme-function (parser location note)(ly:music?)
           #{ \repeat unfold 6 { $note } #})
 
+#(cond ((not (defined? 'violinII-partIII))
+        (define violinII-partIII #{ s1 #} )))
+\tag-quote "Violin II" \violinII-partIII
+
 bass-partIII = \relative g, {
   \time 3/8
   \key d \minor
-  R1*3/8 * 4
+  R1*3/8 * 2
+  \quote-with-clef "Violin II" "treble" {
+    R1*3/8 * 2
+  }
   \rsix g16
   g' g f es d c |
   \rsix bes es es d c bes a |
@@ -127,13 +134,13 @@ bass-partIII = \relative g, {
   \rsix es aes aes g f es d |
   c16 \ed-slur d32( es f[ g a b]) c16 r
   c,16 \ed-slur d32( es f[ g a b]) c16 r
-  \rsix c,16 
+  \rsix c,16
   \rsix f
   \rsix bes,
   \rsix es
   \rsix as,
   \rsix d
-  \rsix g, 
+  \rsix g,
   \rsix c
   \rsix g
   \rsix c
@@ -143,23 +150,23 @@ bass-partIII = \relative g, {
   \rsix f
   bes4 r8 |
   bes es f |
-  bes,4 r8 
+  bes,4 r8
   bes4 r8
   bes4 r8
   bes4 r8
-  \rsix bes16 
+  \rsix bes16
   \rsix c
   \rsix f
-  \rsix bes, 
+  \rsix bes,
   \rsix es
   \rsix a, |
   \rsix d
-  \rsix g, 
+  \rsix g,
   \rsix g
   \rsix g
   \rsix g
   \rsix g
-  \rsix d' 
+  \rsix d'
   \rsix d,
   \rsix g
   \rsix d'

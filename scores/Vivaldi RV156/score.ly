@@ -239,6 +239,7 @@ info-version = "1.0"
             {
               <<
                 \clef bass
+                \score-only
                 \bass-partIII
               >>
             }
@@ -257,6 +258,7 @@ info-version = "1.0"
             \new Staff {
               <<
                 \clef bass
+                \score-only
                 \bass-partIII
                 \figbass-PartIII
               >>

@@ -15,6 +15,7 @@ info-version = "1.0"
 \include "../../include/housestyle.ly"
 
 \make-parts
+\include "src.violinII.ly"
 \include "src.bass.ly"
 
 \paper {

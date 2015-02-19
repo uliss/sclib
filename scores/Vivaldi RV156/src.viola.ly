@@ -55,21 +55,18 @@ rs = #(define-scheme-function (parser location note)(ly:music?)
 
 #(cond ((not (defined? 'bass-partIII))
         (define bass-partIII #{ s1 #} )))
-\tag-quote "bassi" \bass-partIII
+\tag-quote "Celli" \bass-partIII
 
 viola-partIII = \relative d' {
   \key d \minor
-
-
   R1* 3/8  * 4
 
-  \tag-parts {
-    \new CueVoice { \set instrumentCueName = "Celli" }
-  }
-  \cueDuringWithClef #"bassi" #UP #"bass" {
-    \tag-parts \override MultiMeasureRest.staff-position = #-6
+  \tag-parts \override MultiMeasureRest.staff-position = #-6
+  \quote-with-clef "Celli" "bass" {
     R1 * 3/8 * 2
   }
+  \revert MultiMeasureRest.staff-position
+  
   \rs d16 g g f es d c \rs bes es es d c bes a |
   g8 g'4 ~ g16 bes a g f es |
   c' es d c bes a f a g f es d |
