@@ -61,7 +61,7 @@ bass-partII = \relative g {
   gis, a b gis a b cis a |
   bes a bes g a g a f |
   g f g c f g a f |
-  g[ g,] c es f d g g, |
+  g[ g,] c es f[ d] g g, |
   e' c f f, d' bes es es, |
   c' as' d, bes es g f es |
   fis, g a fis g g' bes g |
