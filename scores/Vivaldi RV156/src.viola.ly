@@ -89,20 +89,22 @@ viola-partIII = \relative d' {
   \rs e
   a,4 a'8 |
   e a4 
+  \mark\default
   \rs { f4 r8 }
   \rs a,16 
   d d c bes a g |
   \rs f16 bes bes a g f e |
   d8 d'4 ~ d16 f e d c bes |
   g' bes a g f e c e d c bes a |
-  f' a g f e s bes d c bes a g |
+  f' a g f e d bes d c bes a g |
   e' g f e d cis |
   a8 a r16 a' a8 cis, r16 a' a8 f r16 a |
   \rs cis,16 
   \rs cis
-  a a a a a' a |
+  a a a a a'[ a] |
   \rs b |
   g4 g8 f d g |
+  \mark\default
   \rs { es4 r8 }
   
   \rs g16 c c bes as g f |
@@ -119,6 +121,7 @@ viola-partIII = \relative d' {
   \rs a
   \rs f
   f8 g f 
+  \mark\default
   d4 r8
   d4 r8
   d4 r8

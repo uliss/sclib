@@ -107,6 +107,7 @@ bass-partIII = \relative g, {
   \rsix cis,
   d4 d8 |
   d a' a, |
+  \mark\default
   d4 r8 |
   d4 r8 |
   d4 r8 |
@@ -133,6 +134,7 @@ bass-partIII = \relative g, {
   \rsix g, |
   c4 c'8 |
   f, g g, |
+  \mark\default
   c4 r8
   c4 r8
   c4 r8
@@ -156,8 +158,9 @@ bass-partIII = \relative g, {
   \rsix g
   \rsix c
   \rsix f
-  bes4 r8 |
+  bes,4 r8 |
   bes es f |
+  \mark\default
   bes,4 r8
   bes4 r8
   bes4 r8

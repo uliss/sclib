@@ -134,6 +134,7 @@ violinII-partIII = \relative d'' {
   c8 c4 ~ c16 es d c bes a
   bes8 bes r16 d fis8 a, r16 fis' g8 bes, r16 g' |
   a4. ~ a8 g fis g4. ~ g8 f e d16 cis d e f8 g cis,4 |
+  \mark\default
   d4 r8 |
   R1 * 3/8
   \rs a16 d d c bes a g \rs f  bes bes a g f e |
@@ -146,9 +147,10 @@ violinII-partIII = \relative d'' {
   a8 a4 ~ a16 c bes a g f |
   g8 g4 ~ g16 bes a g f e |
   f8 f r16 a cis8 e, r16 cis' d8 f, r16 d' |
-  es4. ~ es8 d cis |
+  e4. ~ e8 d cis |
   d4. ~ d8 c b |
   c16 b c d es8 f b,4 |
+  \mark\default
   c4 r8 |
   R1 * 3/8 |
   g16 g g g g g c c bes as g f |
@@ -167,6 +169,7 @@ violinII-partIII = \relative d'' {
   c4. ~ c8 bes a |
   bes16 f bes d f8 |
   bes, c a |
+  \mark\default
   bes4 r8 |
   R1 * 3/8 |
   \rs f'16 bes bes a g f es |
