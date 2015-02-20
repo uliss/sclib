@@ -165,6 +165,17 @@ smarkup-fine = \markup {\normalsize \fontsize #1 \smallCaps "Fine"}
 smarkup-dc-fine = \markup {\italic "Da Capo al Fine"}
 smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
 
+fine = {
+  \once \override Score.RehearsalMark.direction = #DOWN
+  \mark \markup {\normalsize \fontsize #1 \smallCaps "Fine"}
+}
+
+dc-al-fine = {
+  \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
+  \once \override Score.RehearsalMark.direction = #DOWN
+  \mark \markup {\normalsize \italic "D.C. Al Fine "}
+}
+
 #(define-markup-command (markup-composer layout props composer years)
    (markup? markup?)
    (interpret-markup layout props
@@ -355,23 +366,25 @@ score-only = #(define-scheme-function (parser location music)(ly:music?)
                 )
 
 tag-quote = #(define-scheme-function (parser location name music)(string? ly:music?)
-               #{ \addQuote #name { #music } #})
+               #{
+                 \addQuote #name { #music }
+               #})
 
 
-quote-mus = #(define-scheme-function (parser location instr mus)
-                     (string? ly:music?)
+quote-mus = #(define-scheme-function (parser location quote-name instr mus)
+               (string? string? ly:music?)
+               #{
+                 \tag-parts \new CueVoice { \set instrumentCueName = \markup { \italic $instr }}
+                 \cueDuring #quote-name #UP {
+                   #mus
+                 }
+               #})
+
+quote-with-clef = #(define-scheme-function (parser location quote-name instr clef mus)
+                     (string? string? string? ly:music?)
                      #{
-                       \tag-parts \new CueVoice { \set instrumentCueName = $instr }
-                       \cueDuring $instr #UP {
-                         #mus
-                       }
-                     #})
-
-quote-with-clef = #(define-scheme-function (parser location instr clef mus)
-                     (string? string? ly:music?)
-                     #{
-                       \tag-parts \new CueVoice { \set instrumentCueName = $instr }
-                       \cueDuringWithClef $instr #UP #clef {
+                       \tag-parts \new CueVoice { \set instrumentCueName = \markup { \italic $instr }}
+                       \cueDuringWithClef #quote-name #UP #clef {
                          #mus
                        }
                      #})
