@@ -40,19 +40,20 @@ info-version = "1.1"
       \header {
         piece = \markup \markup-piece "I. (Allegro)"
       }
-      << 
-      \new Staff \with {
-        instrumentName = "Viola d'amore"
-      }
-      {
-        \vdaPartOne
-      }
-      \new Staff \with {
-        instrumentName = "Basso"
-      }
-      {
-        \celloPartOne
-      }
+      <<
+        \new Staff \with {
+          instrumentName = "Viola d'amore"
+        }
+        {
+          \vdaPartOne
+        }
+        \new Staff \with {
+          instrumentName = "Basso"
+        }
+        {
+          \score-only
+          \celloPartOne
+        }
       >>
       \layout {
         \context {
@@ -70,8 +71,24 @@ info-version = "1.1"
         breakbefore = ##t
       }
       {
+        <<
+          \new Staff \with {
+            instrumentName = "Viola d'amore"
+          }
+          {
+            \vdaPartTwo
+          }
+          \new Staff \with {
+            instrumentName = "Bass"
+          }
+          {
+            \score-only
+            \celloPartTwo
+          }
+        >>
+      }
+      \layout {
         \override Staff.TimeSignature.style = #'single-digit
-        \vdaPartTwo
       }
     }
 
@@ -81,15 +98,30 @@ info-version = "1.1"
         opus = ""
       }
       {
-        \set Score.skipBars = ##t
-        \override Staff.TimeSignature.style = #'single-digit
-        \vdaPartThree
+        %\override Staff.TimeSignature.style = #'single-digit
+        <<
+          \new Staff \with {
+            instrumentName = "Viola d'amore"
+          }
+          {
+            \vdaPartThree
+          }
+          \new Staff \with {
+            instrumentName = "Bass"
+          }
+          {
+            \score-only
+            \celloPartThree
+          }
+
+        >>
       }
       \layout {
         %system-count = 11
         \context {
           \Staff
-          \consists #Measure_counter_engraver
+          \remove #Measure_counter_engraver
+          \override Staff.TimeSignature.style = #'single-digit
         }
         \context {
           \Score

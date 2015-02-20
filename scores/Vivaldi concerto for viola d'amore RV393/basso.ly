@@ -15,6 +15,7 @@ info-version = "1.1"
 \include "../../include/housestyle.ly"
 
 \make-parts
+\include "src.violadamore.ly"
 \include "src.basso.ly"
 
 #(set-global-staff-size 19)

@@ -228,7 +228,7 @@ vdaPartThree = \relative c' {
   a'16 a g f e f e d cis d cis b |
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
-  <d f a d>8_\smarkup-fine d'^\markup\sp-solo  \tuplet 3/2 4 { f( e) d f ( e) d } |
+  <d f a d>8 d'^\markup\sp-solo  \fine \tuplet 3/2 4 { f( e) d f ( e) d } |
   d d  \tuplet 3/2 4 { f( e) d f ( e) d } |
   e e \tuplet 3/2 4 { g( f) e g( f) e } |
   e e \tuplet 3/2 4 { g( f) e g( f) e } |
@@ -394,7 +394,8 @@ vdaPartThree = \relative c' {
   <e, g d'> d' d d
   <e, g d'> d' d d
   <e, g cis> cis' cis cis
-  <e, g cis>_\smarkup-dc-fine cis' cis cis
   <e, g cis> cis' cis cis
+  <e, g cis> cis' cis cis
+  \dc-al-fine
   \bar "|."
 }

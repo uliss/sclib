@@ -10,18 +10,31 @@ celloPartOneExp = {
   d a' f d a d a d a a' a, a' d, d a' a, |
 }
 
+#(cond ((not (defined? 'vdaPartOne))
+        (define vdaPartOne #{ s1 #} )))
+\tag-quote "vda1" \vdaPartOne
+
 celloPartOne = \relative c {
   \clef bass
   \key d \minor
   \time 4/4
   \celloPartOneExp
   d4 r r2 |
-  R1 * 7 |
-  r2 d8 d' d,16 d' cis d d,4 r8 d
+  R1 * 6 |
+  \quote-with-clef "vda1" "Viola d'amore" "treble" {
+    \tag-parts \once \override MultiMeasureRest #'staff-position = #-6
+    R1
+    r2
+  }
+  d8 d' d,16 d' cis d d,4 r8 d
   a a' a,16 a' g a a,4 r8  a'
   d,8 d' d,16 d' cis d d,4 r f r d r c r |
-  R1 * 9 |
-  r2  f,8 f' f,16 f' e f |
+  R1 * 8 |
+  \quote-with-clef "vda1" "Viola d'amore" "treble" {
+    R1
+    r2
+  }
+  f,8 f' f,16 f' e f |
   f,4 r8 f' c c' c,16 c' bes c |
   c,4 r8 c8 f, f' f,16 f' e f |
   f4 r8 c  c c' c,16 c' bes c |
@@ -40,7 +53,11 @@ celloPartOne = \relative c {
   e,4 r8 e' a, a' c, a |
   e4 e e e e e e e |
   a8 a e' e, a4 r |
-  R1 * 22 |
+  R1 * 21 |
+  \quote-with-clef "vda1" "Viola d'amore" "treble" {
+    R1
+  }
+
   \celloPartOneExp
   d4^\fermata r r2
   \bar "|."
@@ -161,6 +178,9 @@ dbl = #(define-music-function (parser location m) (ly:music?)
          #}
          )
 
+#(cond ((not (defined? 'vdaPartTree))
+        (define vdaPartTree #{ s1 #} )))
+\tag-quote "vda3" { \vdaPartThree }
 
 celloPartThree = \relative c {
   \time 3/4
@@ -183,7 +203,8 @@ celloPartThree = \relative c {
   a16 a g f e f e d cis d cis b |
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
-  d4^\fermata_\smarkup-fine \bar "||" \noBreak  r r 
+  d4^\fermata \fine \bar "||" \noBreak  r r
+  d r r
   \partbreak
   a r r |
   a r r |
@@ -197,50 +218,55 @@ celloPartThree = \relative c {
   \octaves f
   r f' c' c, c' c, |
   f, f f' f, f' f, |
-   \octaves f
-    \octaves c'
-     \octaves c
-      \octaves f,
-       \octaves c'
-        \octaves c
-        f,16
-        \clef tenor
-        f'' e d c d c bes a bes a g f f' e d c d c bes a bes a g |
-        f8 bes c4 \clef bass c, 
-        
-    f4 r r |
-    R2.*18 |
-    \octaves a, |
-    \octaves a |
-    \octaves e |
-    \octaves e  |
-    e'4 r r e r r |
-     \tuplet 3/2 4 {e8 d e gis fis gis b a  b } |
-    d4 r r
-     \tuplet 3/2 4 {e,8 d e gis fis gis b a  b } |
-     e16 e d c b c b a gis a gis fis |
-     e8 b' gis e b' e, |
-     r16 e' d c b c b a gis a gis fis |
-     e8 a c a e' e, |
-     a,4 r r |
-     r8 a' d, a' d, a' |
-     R2. |
-     r8 g c, g' c, g' |
-     R2. 
-     r8 f bes, f' bes, f' |
-     R2. |
-     r8 a a, r r4 |
-     r8 a' a, r r4 |
-     r8 a' a, r r4 |
-     r8 a' a, r r4 |
-     \startMeasureCount
-     \repeat "unfold" 21 {a2.~}
-     a2.~_\smarkup-dc-fine
-     a2.
-     \stopMeasureCount
-     
-     \bar "|."
-        
+  \octaves f
+  \octaves c'
+  \octaves c
+  \octaves f,
+  \octaves c'
+  \octaves c
+  f,16
+  \clef tenor
+  f'' e d c d c bes a bes a g f f' e d c d c bes a bes a g |
+  f8 bes c4 \clef bass c,
+
+  f4 r r |
+  R2.*16
+  \quote-with-clef "vda3" "Viola d'amore" "treble" {
+    R2. * 2
+  }
+   |
+  \octaves a, |
+  \octaves a |
+  \octaves e |
+  \octaves e  |
+  e'4 r r e r r |
+  \tuplet 3/2 4 {e8 d e gis fis gis b a  b } |
+  d4 r r
+  \tuplet 3/2 4 {e,8 d e gis fis gis b a  b } |
+  e16 e d c b c b a gis a gis fis |
+  e8 b' gis e b' e, |
+  r16 e' d c b c b a gis a gis fis |
+  e8 a c a e' e, |
+  a,4 r r |
+  r8 a' d, a' d, a' |
+  R2. |
+  r8 g c, g' c, g' |
+  R2.
+  r8 f bes, f' bes, f' |
+  R2. |
+  r8 a a, r r4 |
+  r8 a' a, r r4 |
+  r8 a' a, r r4 |
+  r8 a' a, r r4 |
+  \startMeasureCount
+  \repeat "unfold" 21 {a2.~}
+  a2.~
+  a2.
+  \dc-al-fine
+  \stopMeasureCount
+
+  \bar "|."
+
 
 
 }
