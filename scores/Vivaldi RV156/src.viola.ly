@@ -51,7 +51,7 @@ viola-partII = \relative bes' {
   d8 c d b e4. a8 |
   f4 d e c |
   d bes c8 bes c a d b' g[ c] as4 bes g as f g |
-  es g8 es c4 c' |
+  es f8 d bes4 bes' |
   c2 bes ~ bes4 g8 es a,4 d8 g |
   e4. cis'8 a fis d bes es c d4 d2 |
   es8 c d4 d2^\fermata
