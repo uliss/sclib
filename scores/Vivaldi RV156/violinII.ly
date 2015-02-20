@@ -15,6 +15,7 @@ info-version = "1.0"
 \include "../../include/housestyle.ly"
 
 \make-parts
+\include "src.violinI.ly"
 \include "src.violinII.ly"
 
 \book {
@@ -70,6 +71,7 @@ info-version = "1.0"
     \score {
       \header {
         opus = " "
+        breakbefore = ##t
         %piece = "II. Adagio"
       }
       \new Staff

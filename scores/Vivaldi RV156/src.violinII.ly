@@ -1,10 +1,17 @@
 \version "2.18.2"
 \include "../../include/editorial.ly"
 
+#(cond ((not (defined? 'violinI-partI))
+        (define violinI-partI #{ s1 #} )))
+\tag-quote "Violin I" { \violinI-partI }
+
 violinII-partI = \relative c' {
   \key d \minor
-  R1 * 3 |
-  r2 r8 d' g d c' bes4 a8~ a d,8 f d bes' a4 g8 ~ g c,8 ees c fis a4 d,8 ~
+  R1 * 2 |
+  \quote-mus "Violin I" {
+    R1 r2 r8
+  }
+  d' g d c' bes4 a8~ a d,8 f d bes' a4 g8 ~ g c,8 ees c fis a4 d,8 ~
   d c4 bes16 a d4 r
   es16( d) es8
   es16( d) es8

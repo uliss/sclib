@@ -68,6 +68,7 @@ info-version = "1.0"
                   instrumentName = "II."
                 }
                 {
+                  \score-only
                   \violinII-partI
                 }
               >>
