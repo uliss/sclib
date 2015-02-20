@@ -77,7 +77,8 @@ violinI-partI = \relative c'' {
   e16( d) e8 ees16( d) es8 d bes' bes16( a) bes8 |
   \pa
   \pgfis
-  fis16 g a g fis d e fis g a bes a g f e d |
+  fis16 g a g fis d e fis g a bes a g 
+  fis-\par-natural  e d |
   cis( e a) a d,( f a) a
   cis,( e a) a d,( f a) a |
   cis,( e a) a d,( f a) a cis,8 d d cis |

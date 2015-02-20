@@ -47,7 +47,7 @@ violinII-partI = \relative c' {
   f'16 g f e d c bes a g a bes c d e f g |
   a8 f g e a f g e |
   f f,16 e f g a bes c( bes) c8 c16( bes) c8 |
-  c4 r bes16( a) bes8 bes16( a) bes8 a4 r
+  c4 r bes16( a) bes8 bes16( a) bes8 bes4 r
   g'8 c,16 bes c d e f g e f g c, e f g a8 c, f c bes' a4 g8 ~ g c, e c |
   a' g4 f8 ~ f bes, d bes |
   e g4 c,8 ~ c bes4 a16 g |
@@ -87,13 +87,13 @@ violinII-partI = \relative c' {
   d8 g,16 fis g a bes c
   d16( c) d8
   d16( c) d8
-  r4 r
+  d4 r
   c16( bes) c8
   c16( bes) c8
   c4 r
   a'8 d,16 c d e fis g a fis g a d, fis g a bes4 r |
   R1
-  r8 g8 gis16( fis) g8 fis16( e) fis8 f16( e) f8 |
+  r8 g8 g16( fis) g8 fis16( e) fis8 f16( e) f8 |
   e16( d) e8 es16( d) es8 d8 fis a16 fis g a |
   bes8 bes, a a g2^\fermata
   \bar "|."

@@ -13,7 +13,7 @@ viola-partI = \relative c'' {
   \vtheme
   \vtheme
   g g g es c f f d bes es es c a a' a fis fis fis d d |
-  bes bes' a d, g a bes d, d d e c a d d d e f f f e f a8 a a a |
+  bes bes' a d, g a bes d, d d e c a d d d e f e f e f a8 a a a |
   a4 \vthemed
   d \vthemed
   d d d g g c, c f f bes, bes e e a, f f' e a d, e |
