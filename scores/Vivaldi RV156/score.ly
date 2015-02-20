@@ -34,6 +34,10 @@ info-version = "1.0"
     \pageBreak
   }
 
+  \markup {
+    \vspace #40
+  }
+
   % main part
   \bookpart {
     \header {
