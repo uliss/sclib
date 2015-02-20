@@ -52,14 +52,19 @@ info-version = "1.0"
       \layout {
         \context {
           \Score
-          \sp-spacing-eights
+          \sp-spacing-quoters
         }
       }
+    }
+    
+    \paper {
+        markup-system-spacing.minimum-distance = #0
+        score-markup-spacing.minimum-distance = #2
     }
 
     \score {
       \header {
-        breakbefore = ##t
+        %breakbefore = ##t
         %piece = \markup \markup-piece "II."
         opus = " "
       }
@@ -83,6 +88,7 @@ info-version = "1.0"
       \header {
         %piece = \markup \markup-piece "III."
         opus = " "
+        breakbefore = ##t
       }
       \new Staff
       {

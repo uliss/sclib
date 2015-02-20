@@ -134,6 +134,7 @@ bass-partIII = \relative g, {
   \rsix g, |
   c4 c'8 |
   f, g g, |
+  \partbreak
   \mark\default
   c4 r8
   c4 r8
