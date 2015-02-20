@@ -82,6 +82,7 @@ violinI-partI = \relative c'' {
   cis( e a) a d,( f a) a
   cis,( e a) a d,( f a) a |
   cis,( e a) a d,( f a) a cis,8 d d cis |
+  \mark\default
   d a d a g' f4 e8 ~ e a, c a f' e4 d8 ~ d g, bes g cis e4 a,8 ~ |
   a g4 f16 e a8 d,16( cis) d e f g |
   \pa a4 r |
@@ -98,6 +99,7 @@ violinI-partI = \relative c'' {
   \pe f16 g f e d c bes a |
   d e d c bes a g f e f g a bes c d e |
   f8 a, bes g f' a, bes g |
+  \mark\default
   a c f c bes' a4 g8 ~ |
   g c, e c a' g4 f8 ~ |
   f bes, d bes e g4 c,8 ~|
@@ -119,6 +121,7 @@ violinI-partI = \relative c'' {
   a,16( c f) f
   bes,( d f) f
   a, bes c d es f g a bes8 d, c a' |
+  \mark\default
   bes f, bes f es' d4 c8 ~ |
   c f, a f d' c4 bes8 ~ |
   bes es, g es a c4 f,8 ~ |
@@ -132,6 +135,7 @@ violinI-partI = \relative c'' {
   d8 bes16 a bes c d es f8 f4 es16 d |
   es8 c16 b c d es f g8 g4 f16 es |
   as8 as4 g16 f es8 c g b |
+  \mark\default
   c g c g f' es4 d8 ~ |
   d g, bes g es' d4 c8 ~ |
   c f, as f b d4 g,8 ~ |
@@ -142,6 +146,7 @@ violinI-partI = \relative c'' {
   es8 g4 es8 ~ es d4 c8 |
   bes8 g16 fis g a bes c \pdnat |
   d8 g,16 fis g a bes c \pdnat |
+  \mark\default
   d8 d g d c' bes4 a8 ~ |
   a d, f d bes' a4 g8 ~ |
   g c, es c fis a4 d,8~ d c4 bes16 a bes8 g' g16( fis) g8 |

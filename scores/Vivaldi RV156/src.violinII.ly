@@ -29,6 +29,7 @@ violinII-partI = \relative c' {
   a,( cis e) e
   a,( d f) f
   e8 f e4 |
+  \mark\default
   f8 d,16( cis) d e f g a( g) a8 a16( g) a8 |
   a4 r g16( f) g8 g16( f) g8 |
   g4 r e'8 a,16 g a b cis d |
@@ -46,6 +47,7 @@ violinII-partI = \relative c' {
   e8 a,16 g a b cis a a4 r |
   f'16 g f e d c bes a g a bes c d e f g |
   a8 f g e a f g e |
+  \mark\default
   f f,16 e f g a bes c( bes) c8 c16( bes) c8 |
   c4 r bes16( a) bes8 bes16( a) bes8 bes4 r
   g'8 c,16 bes c d e f g e f g c, e f g a8 c, f c bes' a4 g8 ~ g c, e c |
@@ -62,6 +64,7 @@ violinII-partI = \relative c' {
   f,( a c) c
   f,( bes d) d
   f, g a bes c d es f d8 bes a c |
+  \mark\default
   d bes16 a bes c d es f( es) f8 f16( es) f8 |
   f4 r es16( d) es8 es16( d) es8 |
   es4 r c8 f,16 e f g a bes c a bes c f, a bes c d8 f, bes f |
@@ -72,6 +75,7 @@ violinII-partI = \relative c' {
   d'8 d4 c16 b |
   c4 r es8 es4 d16 c |
   c8 f4 es16 d c8 es d c |
+  \mark\default
   c c16 b c d es f g( f) g8 g16( f) g8 |
   g4 r f16( es) f8 f16( es) f8 |
   f4 r d8 g,16 f g a b c d b c d g, b c d es8 g, c g |
@@ -84,6 +88,7 @@ violinII-partI = \relative c' {
   d16( c) d8
   d16( c) d8
   d8 g,16 fis g a bes c |
+  \mark\default
   d8 g,16 fis g a bes c
   d16( c) d8
   d16( c) d8

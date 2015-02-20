@@ -14,6 +14,7 @@ viola-partI = \relative c'' {
   \vtheme
   g g g es c f f d bes es es c a a' a fis fis fis d d |
   bes bes' a d, g a bes d, d d e c a d d d e f e f e f a8 a a a |
+  \mark\default
   a4 \vthemed
   d \vthemed
   d d d g g c, c f f bes, bes e e a, f f' e a d, e |
@@ -21,15 +22,22 @@ viola-partI = \relative c'' {
   a a, c c
   c8 c d c
   c8 c d c
+  \mark\default
   c4 a' g g g g f f f f g g g g
   f a g g g g f f f f g g g g
   f f f d bes e e c a d d g g c, c d c d c d |
-  c a f f' f d c c c c bes bes bes bes c c c c bes d c c c c
+  c a f f' 
+  \mark\default
+  f d c c c c bes bes bes bes c c c c bes d c c c c
   bes bes bes bes c c c c bes r g' g |
-  g r g g as d, g g g es d d |
+  g r g g as d, g g 
+  \mark\default
+  g es d d |
   d d c c c c d d d d c es
   d d d d c c c c d d d d c c a' a |
-  g bes, bes bes bes bes bes bes bes bes' a a |
+  g bes, bes bes bes bes bes bes 
+  \mark\default
+  bes bes' a a |
   a a g g g g a a a a d, bes' a d, g a bes d, d d
   e c a d d8 d d d bes2^\fermata
   \bar "|."

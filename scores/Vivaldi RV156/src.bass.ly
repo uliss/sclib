@@ -5,6 +5,7 @@
 btheme-a = { g4 g fis fis f f e! e es es d d fis fis }
 
 btheme-d = {
+  \mark\default
   d4 d cis cis c c b b bes bes a a cis cis
 }
 
@@ -29,15 +30,22 @@ bass-partI = \relative g {
   d d' a fis g g a a, a' a, a' a, |
   a' a, d d, d' d, e' c |
   f,8 f' bes, c
-  f,8 f' bes, c f,4 f'
+  f,8 f' bes, c 
+  \mark\default
+  f,4 f'
   \btheme-f
   \btheme-f
   bes, bes e e a, a d d g g es es f f, f' f, f' f, |
-  f' f, bes f' bes, bes' a a a a g g g g f f a, a bes bes' |
+  f' f, bes f' 
+  \mark\default
+  bes, bes' a a a a g g g g f f a, a bes bes' |
   a a a a g g g g f f a, a bes d b g |
   c c' c, c' f, b, c g' |
+  \mark\default
   c, c b b bes bes a a as as g g b b c c b b bes bes a a as as g g b b c c fis fis |
-  g g, g' g, g' g, g' g, g' g
+  g g, g' g, g' g, g' g, 
+  \mark\default
+  g' g
   \btheme-g
   d' b c fis, g g, d' b' c c, d d, |
   g8 g d' d, g2^\fermata
