@@ -1,14 +1,9 @@
 \version "2.18.2"
 \include "../../include/sclib.ly"
+\include "info.ly"
 
-info-composer = "Antonio Vivaldi"
-info-composer-years = "(1678 – 1741)"
-info-title = "Concerto per Viola d'amore, Archi e Cembalo"
-info-subtitle = "RV393 (d–moll)"
 info-instrument = "Viola d'amore"
-info-catalog-number = "003"
 info-project = #(project-url #{ \current-dir #})
-info-version = "1.2"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"

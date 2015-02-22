@@ -2,9 +2,6 @@
 \include "../../include/sclib.ly"
 \include "info.ly"
 
-info-composer = "Antonio Vivaldi"
-info-title = "Concerto per Viola d'amore, Archi e Cembalo"
-info-subtitle = "RV393 (d–moll)"
 info-instrument = "Viola"
 info-project = #(project-url #{ \current-dir #})
 
