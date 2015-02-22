@@ -63,14 +63,14 @@ rs = #(define-scheme-function (parser location note)(ly:music?)
 
 #(cond ((not (defined? 'bass-partIII))
         (define bass-partIII #{ s1 #} )))
-\tag-quote "Celli" \bass-partIII
+\tag-quote "vc" \bass-partIII
 
 viola-partIII = \relative d' {
   \key d \minor
   R1* 3/8  * 4
 
   \tag-parts \override MultiMeasureRest.staff-position = #-6
-  \quote-with-clef "Celli" "bass" {
+  \quote-with-clef "vc" "Celli" "bass" {
     R1 * 3/8 * 2
   }
   \revert MultiMeasureRest.staff-position

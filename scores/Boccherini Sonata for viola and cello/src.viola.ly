@@ -325,7 +325,7 @@ violaPartThree = \relative c' {
     d'8 f ( as b d ) f | % 14
     f8 d ( b as ) f d | % 15
     es8. as16 \grace { as8 } {} g8. f16 \grace { f8 } {} es8. d16 | % 16
-    c4 c,_\smarkup-fine r
+    c4 c, \fine r
   }
   \partbreak
   \scorebreak
@@ -417,7 +417,7 @@ violaPartThree = \relative c' {
       \acciaccatura { d8 } c8 bes as8
     }
     g4 f | % 48
-    es4_\smarkup-dc-fine es,2
+    es4 es,2 \dc-al-fine
   }
 }
 

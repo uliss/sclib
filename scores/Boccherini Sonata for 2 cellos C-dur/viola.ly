@@ -1,14 +1,9 @@
 \version "2.18.2"
 \include "../../include/sclib.ly"
+\include "info.ly"
 
-info-composer = "Luigi Boccherini"
-info-composer-years = "(1743 – 1805)"
-info-title = "Sonata for two cellos"
-info-subtitle = "(C–dur)"
 info-instrument = "Viola"
-info-catalog-number = "001"
 info-project = #(project-url #{ \current-dir #})
-info-version = "1.2"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
@@ -54,7 +49,7 @@ info-version = "1.2"
       }
       \header {
         piece = \markup \markup-piece "II. Largo"
-        %breakbefore = ##t
+        breakbefore = ##t
       }
       \layout {
         \context {

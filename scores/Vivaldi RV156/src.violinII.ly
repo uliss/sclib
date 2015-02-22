@@ -3,12 +3,12 @@
 
 #(cond ((not (defined? 'violinI-partI))
         (define violinI-partI #{ s1 #} )))
-\tag-quote "Violin I" { \violinI-partI }
+\tag-quote "v1" { \violinI-partI }
 
 violinII-partI = \relative c' {
   \key d \minor
   R1 * 2 |
-  \quote-mus "Violin I" {
+  \quote-mus "v1" "Violin I" {
     R1 r2 r8
   }
   d' g d c' bes4 a8~ a d,8 f d bes' a4 g8 ~ g c,8 ees c fis a4 d,8 ~

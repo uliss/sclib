@@ -77,13 +77,13 @@ rsix = #(define-scheme-function (parser location note)(ly:music?)
 
 #(cond ((not (defined? 'violinII-partIII))
         (define violinII-partIII #{ s1 #} )))
-\tag-quote "Violin II" \violinII-partIII
+\tag-quote "v2" \violinII-partIII
 
 bass-partIII = \relative g, {
   \time 3/8
   \key d \minor
   R1*3/8 * 2
-  \quote-with-clef "Violin II" "treble" {
+  \quote-with-clef "v2" "Violin II" "treble" {
     R1*3/8 * 2
   }
   \rsix g16

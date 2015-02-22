@@ -168,7 +168,7 @@ celloPartThree = \relative c {
     c8. f16 g4 g, | % 16
     c4 
     \once \override TextScript.X-offset = #2 
-    c,^\fermata_\smarkup-fine  r
+    c,^\fermata  \fine r 
   }
   \partbreak
   | % 17
@@ -209,6 +209,6 @@ celloPartThree = \relative c {
     c8 ( bes ) bes ( as ) as ( g ) | % 46
     g8 ( f ) f es f g | % 47
     as4 bes bes, | % 48
-    es4_\smarkup-dc-fine es,2
+    es4 es,2 \dc-al-fine
   }
 }
