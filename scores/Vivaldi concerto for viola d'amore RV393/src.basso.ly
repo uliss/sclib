@@ -78,6 +78,7 @@ celloPartTwo = \relative c {
     f4 c'2 |
     f,2.
   }
+  \partsNoPageBreak
   \repeat volta 2 {
     f'8. c16 f4 f, |
     c' e c f d2 |

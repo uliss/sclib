@@ -26,7 +26,7 @@ info-project = #(project-url #{ \current-dir #})
     \pageBreak
   }
 
- % main part
+  % main part
   \bookpart {
     \header {
       title = \markup { \markup-title {  \smallCaps "Concerto" "in Re minore" }}
@@ -44,7 +44,10 @@ info-project = #(project-url #{ \current-dir #})
         \celloPartOne
       }
       \layout {
-        system-count = 13
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
       }
     }
 
@@ -71,7 +74,10 @@ info-project = #(project-url #{ \current-dir #})
         \celloPartThree
       }
       \layout {
-        system-count = 11
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
         \context {
           \Staff
           \consists #Measure_counter_engraver

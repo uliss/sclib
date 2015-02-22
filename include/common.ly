@@ -410,6 +410,8 @@ tag-score = #(define-scheme-function (parser location music) (ly:music?)
 tag-parts = #(define-scheme-function (parser location music) (ly:music?)
                #{ \tag #'parts { #music } #})
 
+partsNoPageBreak = \tag-parts \noPageBreak
+
 par-natural-pr = \markup {
   \center-align
   \override #'(baseline-skip . 2)
