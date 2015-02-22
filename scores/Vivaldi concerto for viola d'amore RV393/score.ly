@@ -1,23 +1,25 @@
 \version "2.18.2"
 \include "../../include/sclib.ly"
+\include "info.ly"
 
 info-composer = "Antonio Vivaldi"
 info-composer-years = "(1678 – 1741)"
 info-title = "Concerto per Viola d'amore, Archi e Cembalo"
 info-subtitle = "RV393 (d–moll)"
 info-instrument = "Score"
-info-catalog-number = "003"
 info-project = #(project-url #{ \current-dir #})
-info-version = "1.1"
 
 \include "../../include/common.ly"
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-
 \make-score
 \include "src.violadamore.ly"
+\include "src.violinI.ly"
+\include "src.viola.ly"
 \include "src.basso.ly"
+
+
 
 #(set-global-staff-size 16)
 
@@ -45,14 +47,64 @@ info-version = "1.1"
           instrumentName = "Viola d'amore"
         }
         {
+          \score-only
           \vdaPartOne
         }
-        \new Staff \with {
-          instrumentName = "Basso"
+        \new StaffGroup {
+          <<
+            \new StaffGroup \with {
+              instrumentName = "Violini"
+            }{
+              <<
+                \new Staff \with {
+                  instrumentName = "I."
+                }
+                {
+                  \key d \minor
+                  \violinI-partI
+                }
+                \new Staff \with {
+                  instrumentName = "II."
+                }
+                {
+                  \key d \minor
+                  R1 * 89
+                }
+              >>
+            }
+            \new Staff \with {
+              instrumentName = "Viole"
+            }
+            {
+              \key d \minor
+              \clef alto
+              \score-only
+              \violaPartOne
+            }
+            \new Staff \with {
+              instrumentName = "Basso"
+            }
+            {
+              \score-only
+              \celloPartOne
+            }
+          >>
+        }
+        \new PianoStaff \with {
+          instrumentName = "Cembalo"
         }
         {
-          \score-only
-          \celloPartOne
+          <<
+            \new Staff {
+              \key d \minor
+              \time 4/4
+              R1 * 89
+            }
+            \new Staff {
+              \score-only
+              \celloPartOne
+            }
+          >>
         }
       >>
       \layout {
@@ -85,6 +137,22 @@ info-version = "1.1"
             \score-only
             \celloPartTwo
           }
+          \new PianoStaff \with {
+            instrumentName = "Cembalo"
+          }
+          {
+            <<
+              \new Staff {
+                \key d \minor
+                \time 4/4
+                R1*3/4 * 21
+              }
+              \new Staff {
+                \score-only
+                \celloPartTwo
+              }
+            >>
+          }
         >>
       }
       \layout {
@@ -104,16 +172,64 @@ info-version = "1.1"
             instrumentName = "Viola d'amore"
           }
           {
+            \time 3/4
             \vdaPartThree
           }
-          \new Staff \with {
-            instrumentName = "Bass"
+          \new StaffGroup {
+            <<
+              \new StaffGroup \with {
+                instrumentName = "Violini"
+              }{
+                <<
+                  \new Staff \with {
+                    instrumentName = "I."
+                  }
+                  {
+                    \key d \minor
+                    R1 * 3/4 * 114
+                  }
+                  \new Staff \with {
+                    instrumentName = "II."
+                  }
+                  {
+                    \key d \minor
+                    R1 * 3/4 * 114
+                  }
+                >>
+              }
+              \new Staff \with {
+                instrumentName = "Viole"
+              }
+              {
+                \key d \minor
+                \clef alto
+                \score-only
+                \violaPartThree
+              }
+              \new Staff \with {
+                instrumentName = "Basso"
+              }
+              {
+                \score-only
+                \celloPartThree
+              }
+            >>
+          }
+          \new PianoStaff \with {
+            instrumentName = "Cembalo"
           }
           {
-            \score-only
-            \celloPartThree
+            <<
+              \new Staff {
+                \key d \minor
+                R1 * 3/4 * 114
+              }
+              \new Staff {
+                \score-only
+                \celloPartThree
+              }
+            >>
           }
-
         >>
       }
       \layout {

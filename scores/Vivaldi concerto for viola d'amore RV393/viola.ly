@@ -1,12 +1,11 @@
 \version "2.18.2"
 \include "../../include/sclib.ly"
+\include "info.ly"
 
 info-composer = "Antonio Vivaldi"
 info-title = "Concerto per Viola d'amore, Archi e Cembalo"
 info-subtitle = "RV393 (d–moll)"
 info-instrument = "Viola"
-info-version = "1.0"
-info-catalog-number = "003"
 info-project = #(project-url #{ \current-dir #})
 
 \include "../../include/common.ly"
@@ -14,7 +13,8 @@ info-project = #(project-url #{ \current-dir #})
 \include "../../include/housestyle.ly"
 
 \make-parts
-\include "src.basso.ly"
+\include "src.violadamore.ly"
+\include "src.viola.ly"
 
 #(set-global-staff-size 19)
 
@@ -25,7 +25,7 @@ info-project = #(project-url #{ \current-dir #})
     \pageBreak
   }
 
- % main part
+  % main part
   \bookpart {
     \header {
       title = \markup { \normal-text { \smallCaps "Concerto" "in Re minore" } }
@@ -40,10 +40,15 @@ info-project = #(project-url #{ \current-dir #})
       }
       {
         \set Score.skipBars = ##t
-        \celloPartOne
+        \key d \minor
+        \clef alto
+        \violaPartOne
       }
       \layout {
-        system-count = 13
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
       }
     }
 
@@ -54,9 +59,19 @@ info-project = #(project-url #{ \current-dir #})
         opus = ""
       }
       {
+        \set Score.skipBars = ##t
         \override Staff.TimeSignature.style = #'single-digit
-        \celloPartTwo
+        \time 3/4
+        \clef alto
+        \key d \minor
+        \violaPartTwo
       }
+      \layout {
+        ragged-last = ##f
+        indent = #40
+        line-width = #140
+      }
+      
     }
 
     \score {
@@ -67,13 +82,18 @@ info-project = #(project-url #{ \current-dir #})
       {
         \set Score.skipBars = ##t
         \override Staff.TimeSignature.style = #'single-digit
-        \celloPartThree
+        \clef alto
+        \key d \minor
+        \violaPartThree
       }
       \layout {
-        system-count = 11
         \context {
           \Staff
           \consists #Measure_counter_engraver
+        }
+        \context {
+          \Score
+          \sp-spacing-eights
         }
       }
     }

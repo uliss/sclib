@@ -3,10 +3,9 @@
 \include "info.ly"
 
 info-composer = "Antonio Vivaldi"
-info-composer-years = "(1678 – 1741)"
 info-title = "Concerto per Viola d'amore, Archi e Cembalo"
 info-subtitle = "RV393 (d–moll)"
-info-instrument = "Basso"
+info-instrument = "Violin I"
 info-project = #(project-url #{ \current-dir #})
 
 \include "../../include/common.ly"
@@ -15,7 +14,7 @@ info-project = #(project-url #{ \current-dir #})
 
 \make-parts
 \include "src.violadamore.ly"
-\include "src.basso.ly"
+\include "src.violinI.ly"
 
 #(set-global-staff-size 19)
 
@@ -26,13 +25,13 @@ info-project = #(project-url #{ \current-dir #})
     \pageBreak
   }
 
- % main part
+  % main part
   \bookpart {
     \header {
-      title = \markup { \markup-title {  \smallCaps "Concerto" "in Re minore" }}
-      subtitle = \markup { \markup-subtitle "per Viola d'amore, Archi e Cembalo" }
-      composer = \markup { \markup-composer \info-composer \info-composer-years }
-      instrument = \markup {\markup-instrument \info-instrument }
+      title = \markup { \normal-text { \smallCaps "Concerto" "in Re minore" } }
+      subtitle = \markup {\normal-text "per Viola d'amore, Archi e Cembalo"}
+      composer = \markup {\markup-composer \info-composer "(1678 – 1741)" }
+      instrument = \markup {\normal-text \italic \info-instrument }
       opus = "RV393"
     }
     \score {
@@ -41,10 +40,14 @@ info-project = #(project-url #{ \current-dir #})
       }
       {
         \set Score.skipBars = ##t
-        \celloPartOne
+        \key d \minor
+        \violinI-partI
       }
       \layout {
-        system-count = 13
+        \context {
+          \Score
+          \sp-spacing-eights
+        }
       }
     }
 
@@ -55,26 +58,39 @@ info-project = #(project-url #{ \current-dir #})
         opus = ""
       }
       {
+        \set Score.skipBars = ##t
         \override Staff.TimeSignature.style = #'single-digit
-        \celloPartTwo
+        \time 3/4
+        \key d \minor
+        \violinI-partII
       }
+      \layout {
+        ragged-last = ##f
+        indent = #40
+        line-width = #140
+      }
+      
     }
 
     \score {
       \header {
-        piece =\markup \markup-piece "III. (Allegro)"
+        piece =\markup \markup-piece  "III. (Allegro)"
         opus = ""
       }
       {
         \set Score.skipBars = ##t
         \override Staff.TimeSignature.style = #'single-digit
-        \celloPartThree
+        \key d \minor
+        \violinI-partIII
       }
       \layout {
-        system-count = 11
         \context {
           \Staff
           \consists #Measure_counter_engraver
+        }
+        \context {
+          \Score
+          \sp-spacing-eights
         }
       }
     }
