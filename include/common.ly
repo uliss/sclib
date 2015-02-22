@@ -161,7 +161,9 @@ sp-spacing-quoters = \override SpacingSpanner.common-shortest-duration = #(ly:ma
 sp-spacing-eights = \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
 sp-spacing-sixteens = \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
 
+% deprecated, use \fine
 smarkup-fine = \markup {\normalsize \fontsize #1 \smallCaps "Fine"}
+% deprecated, use \dc-al-fine
 smarkup-dc-fine = \markup {\italic "Da Capo al Fine"}
 smarkup-trio = \markup {\normalsize \fontsize #1 \smallCaps {"Trio"} }
 
@@ -261,17 +263,30 @@ sp-custos-note =
 
 #(define-markup-command (sp-tutti layout props) ()
    "Style of piece in header"
-   (interpret-markup layout props
+   (if (is-parts?) (interpret-markup layout props
      #{
        \markup \italic "Tutti"
-     #}))
+     #})))
 
 #(define-markup-command (sp-solo layout props) ()
    "Style of piece in header"
-   (interpret-markup layout props
+   (if (is-parts?) (interpret-markup layout props
      #{
        \markup \italic "Solo"
-     #}))
+     #})))
+
+tutti = #(define-scheme-function (parser location) ()
+                #{	
+                    ^\markup \sp-tutti
+                #}
+                )
+
+solo= #(define-scheme-function (parser location) ()
+                #{	
+                    ^\markup \sp-solo
+                #}
+                )
+
 
 tuplet-number-show = { \undo \omit TupletNumber }
 
@@ -460,3 +475,9 @@ par-flat = #(define-scheme-function (parser location)()
                 }
               #}
               )
+
+% rehearsal marks
+rm-left = \once \override Score.RehearsalMark.self-alignment-X = #-1
+rm-center = \once \override Score.RehearsalMark.self-alignment-X = #0
+rm-right = \once \override Score.RehearsalMark.self-alignment-X = #1
+

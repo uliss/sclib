@@ -46,7 +46,7 @@ info-project = #(project-url #{ \current-dir #})
       \layout {
         \context {
           \Score
-          \sp-spacing-eights
+          \sp-spacing-quoters
         }
       }
     }

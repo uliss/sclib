@@ -94,19 +94,19 @@ vdaPartOne = \relative c' {
   \key d \minor
   \time 4/4
   \clef treble
-  d'8^\markup\sp-tutti
+  d'8-\tutti
   \exposition-a
-  d8^\markup\sp-solo \theme-one cis' |
+  d8-\solo \theme-one cis' |
   d16 e f g a f e d cis e cis e a,8 <a f'> |
   <a e'> <a f'> <a g'> <a f'> << {f'\trill[ e]} \\ { a,[ a]} >> r <a, f'> |
   <a e'> <a f'> <a g'> <a f'> <a f'> <a e'> r e'' |
   f16 e f d g f g e f e f d g f g e |
   f8 e16 d e4\trill d r8 e, |
   f16 e f d g f g e f e f d g f g e |
-  f8 e16 d e4\trill d8^\markup\sp-tutti f'16 e d8 a f a d, d'
+  f8 e16 d e4\trill d8-\tutti f'16 e d8 a f a d, d'
   cis e16 d cis8 a e a a, e''
   f d a f |
-  f'16^\markup\sp-solo g a g f e d c d e f e d c? bes a |
+  f'16-\solo g a g f e d c d e f e d c? bes a |
   bes c d c bes a g f c'4 r8 <c f> |
   <c e> <c f> <c g'> <c f> << {f\trill[ e]} \\ {c[ c]} >> r <c f> |
   <c e> <c f> <c g'> <c f> << {f\trill[ e]} \\ {c[ c]} >> r g' |
@@ -116,7 +116,7 @@ vdaPartOne = \relative c' {
   a( f e f) bes( g f g) bes,8 g'16( f e d c  bes) |a8 f' g, e' f, d' e, c' |
   d, bes' c, a' <g bes> g'16( f e d c bes) |
   <f a>8 f' g16( f) g( e) f8 a f c |
-  a f' g16( f) g( e) f8^\markup\sp-tutti a16 g f8 c |
+  a f' g16( f) g( e) f8-\tutti a16 g f8 c |
   a c f, f' e g16 f e8 c |
   g c c, e' f a16 g f8 c a c f, f' e c r a' |
   \repeat unfold 2 { \fig g c \figA f c f \figA e c e \figA f c f  }
@@ -124,7 +124,7 @@ vdaPartOne = \relative c' {
   g16( e) f8 g16( e) f8 bes,4. a16 g |
   a8 f' g e f4 r8 a |
   g16( e) f8 g16( e) f8 bes,4. a16 g |
-  a8 f' g e <f, c' f>^\markup\sp-solo a'16 g f c f c |
+  a8 f' g e <f, c' f>-\solo a'16 g f c f c |
   <f, c' f>8 a'16 g f c f c bes e e g g e e bes |
   bes e e g g e e bes
   <f bes>8 <f a> r a |
@@ -145,12 +145,12 @@ vdaPartOne = \relative c' {
   \set subdivideBeams = ##f
 
   e16( gis b c) d( c b a) d,( gis b c) d( c b a) |
-  a' e c a b8.\trill a16 a8^\markup\sp-tutti c16 b a8 e' |
+  a' e c a b8.\trill a16 a8-\tutti c16 b a8 e' |
   c e a, a' gis b16 a  gis8 e |
   gis, b e, d' c a r e' |
   \fig d e \fig c e \fig b e \fig c e |
   \fig d e \fig c e b16 d d gis gis d d c |
-  c8 a' b, gis' a^\markup\sp-solo g16 f e d c b |
+  c8 a' b, gis' a-\solo g16 f e d c b |
   a c e c a c e a, b e gis e b e gis e |
   a, c e c a c e a, b e gis e b e gis e |
   a, c e c a c e a, b8 e, r4 |
@@ -178,7 +178,7 @@ vdaPartOne = \relative c' {
   cis16 d cis b a8 a b b16 a b8 cis |
   d8 c?16 bes? a8 e' f16( a f d) e( g e cis) |
   \appoggiatura cis8 d4. e8 f16( a f d) e( g e cis) |
-  \appoggiatura cis8 d8^\markup\sp-tutti \exposition-a
+  \appoggiatura cis8 d8-\tutti \exposition-a
   d4\fermata r r2 \bar "|."
 
 }
@@ -206,9 +206,8 @@ vdaPartTwo = \relative c' {
 }
 
 partthree-a = {
-  \repeat unfold 2 {
-    d8 d' \tuplet 3/2 4 {f8( e) f f( e) f }
-  }
+  d8-\tutti d' \tuplet 3/2 4 {f8( e) f f( e) f }
+  d,8 d' \tuplet 3/2 4 {f8( e) f f( e) f }
   a,, e'' \tuplet 3/2 4 {g( f) g g( f) g }
   a,, e'' \tuplet 3/2 4 {g( f) g g( f) e } |
   f8 a4 f d8 |
@@ -242,7 +241,8 @@ vdapartthree-b = {
 }
 
 vdapartthree-c = {
-  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c( b) c c( b) c }
+  \tuplet-number-show
+  a'8-\tutti a, \tuplet 3/2 4 {c( b) c c( b) c }
   a,8 a' \tuplet 3/2 4 {c( b) c c( b) c }
   e, b' \tuplet 3/2 4 { d( c) d d( c) d } |
   e, b' \tuplet 3/2 4 { d( c) d d( c) b } |
@@ -265,7 +265,7 @@ vdaPartThree = \relative c' {
   \partthree-a
 
 
-  <d f a d>8 d'^\markup\sp-solo  \fine \tuplet 3/2 4 { f( e) d f ( e) d } |
+  <d f a d>8 d'-\solo  \fine \tuplet 3/2 4 { f( e) d f ( e) d } |
   d d  \tuplet 3/2 4 { f( e) d f ( e) d } |
   e e \tuplet 3/2 4 { g( f) e g( f) e } |
   e e \tuplet 3/2 4 { g( f) e g( f) e } |
@@ -290,11 +290,11 @@ vdaPartThree = \relative c' {
   }
   << {g4.\trill} \\ {c,4.} >> f8 |
 
-  f^\markup\sp-tutti \vdapartthree-b
+  f-\tutti \vdapartthree-b
 
   \break
   \tuplet 3/2 4 {
-    f'8^\markup\sp-solo c a f' c a f' c a |
+    f'8-\solo c a f' c a f' c a |
     \tuplet-hide
     g' e c
     g' e c
@@ -355,7 +355,7 @@ vdaPartThree = \relative c' {
 
   \vdapartthree-c
 
-  a'16^\markup\sp-solo g f e
+  a'16-\solo g f e
   a g f e
   a g f e
   f8 a, d, a' d, a' |
