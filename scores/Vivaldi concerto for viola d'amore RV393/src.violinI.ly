@@ -3,7 +3,7 @@
 \tag-quote "vda1" { \vdaPartOne }
 
 accomp-a = {
-  d,8 f  cis d e f d a cis e cis a b cis a |
+  d,8 f  cis d e f d a cis e cis a b cis a 
   d e f g a, b cis d |
   a d cis d a' a, cis d |
   a d a d a a cis a |
@@ -93,6 +93,46 @@ violinI-partII = \relative c' {
   \bar "|."
 }
 
-violinI-partIII = \relative c' {
+% repeat nine times
+rn = #(define-scheme-function (parser location note)
+               (ly:music?)
+               #{
+                 \repeat unfold 3 { \tuplet 3/2 4 { \repeat unfold 3 { #note } } }
+               #}) 
 
+\tag-quote "vda3" { \vdaPartThree } 
+
+violinI-partIII = \relative c' {
+  \partthree-a
+  d4 r r |
+  R1 * 3/4 * 17
+  
+  \quote-mus "vda3" "Viola d'amore" {
+   R1 * 3/4 * 2 
+  }
+  
+  r8 \relative f'' \vdapartthree-b
+  \rn a''8
+  \rn g
+  \rn a
+  \rn g
+  \rn a
+  \rn a
+  \rn g
+  \rn g
+  \rn f
+  \rn f
+  \rn e
+  \rn e
+  \rn a
+  \rn a
+  \rn a
+  \rn gis
+  \rn a
+  \rn a
+  \rn gis
+  \relative a'
+  \vdapartthree-c
+  a,4 r r |
+  R1 * 3/4 * 33 \dc-al-fine \bar "|."   
 }

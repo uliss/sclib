@@ -205,10 +205,7 @@ vdaPartTwo = \relative c' {
   }
 }
 
-vdaPartThree = \relative c' {
-  \key d \minor
-  \time 3/4
-  \clef treble
+partthree-a = {
   \repeat unfold 2 {
     d8 d' \tuplet 3/2 4 {f8( e) f f( e) f }
   }
@@ -228,6 +225,46 @@ vdaPartThree = \relative c' {
   a'16 a g f e f e d cis d cis b |
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
+}
+
+vdapartthree-b = {
+  f8 \tuplet 3/2 4 {a8( g) a a( g) a } |
+  f, c'\tuplet 3/2 4 {a'8( g) a a( g) a } |
+  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
+  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
+  \tuplet 3/2 4 {
+    \tuplet-hide
+    a g a f e f a g a g f g e d e g f g bes a bes g f g e d e
+    \tuplet-number-show
+  } |
+  f16 f e d c d c bes a bes a g f f' e d c d c bes a bes a g |
+  f8 bes c4 c, |
+}
+
+vdapartthree-c = {
+  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c( b) c c( b) c }
+  a,8 a' \tuplet 3/2 4 {c( b) c c( b) c }
+  e, b' \tuplet 3/2 4 { d( c) d d( c) d } |
+  e, b' \tuplet 3/2 4 { d( c) d d( c) b } |
+  e,4 gis b |
+  \tuplet 3/2 4 { d8 c d b a b gis fis gis } |
+  e4 r r |
+  \tuplet 3/2 4 { d'8 c d b a b gis fis gis } |
+  e4 r r |
+  r16 e' d c b c b a gis a gis fis |
+  e8 b' gis e b' e, |
+  r16 e' d c b c b a gis a gis fis |
+  e8 a c a e' e, |
+}
+
+vdaPartThree = \relative c' {
+  \key d \minor
+  \time 3/4
+  \clef treble
+
+  \partthree-a
+
+
   <d f a d>8 d'^\markup\sp-solo  \fine \tuplet 3/2 4 { f( e) d f ( e) d } |
   d d  \tuplet 3/2 4 { f( e) d f ( e) d } |
   e e \tuplet 3/2 4 { g( f) e g( f) e } |
@@ -252,26 +289,22 @@ vdaPartThree = \relative c' {
     f c a'
   }
   << {g4.\trill} \\ {c,4.} >> f8 |
-  f^\markup\sp-tutti f \tuplet 3/2 4 {a8( g) a a( g) a } |
-  f, c'\tuplet 3/2 4 {a'8( g) a a( g) a } |
-  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
-  c,, g'' \tuplet 3/2 4 { bes( a) bes bes( a ) bes } |
-  \tuplet 3/2 4 {a g a f e f a g a g f g e d e g f g bes a bes g f g e d e } |
-  f16 f e d c d c bes a bes a g f f' e d c d c bes a bes a g |
-  f8 bes c4 c, |
+
+  f^\markup\sp-tutti \vdapartthree-b
+
   \break
   \tuplet 3/2 4 {
     f'8^\markup\sp-solo c a f' c a f' c a |
     \tuplet-hide
-    g' e c 
-    g' e c 
-    g' e c 
+    g' e c
+    g' e c
+    g' e c
     a' f c
     a' f c
     a' f c
-    g' e c 
-    g' e c 
-    g' e c 
+    g' e c
+    g' e c
+    g' e c
     a' e cis
     a' e cis
     a' e cis
@@ -319,26 +352,16 @@ vdaPartThree = \relative c' {
     gis' e b
   }
   \break
-  a'8^\markup\sp-tutti a, \tuplet 3/2 4 {c( b) c c( b) c }
-  a,8 a' \tuplet 3/2 4 {c( b) c c( b) c }
-  e, b' \tuplet 3/2 4 { d( c) d d( c) d } |
-  e, b' \tuplet 3/2 4 { d( c) d d( c) b } |
-  e,4 gis b |
-  \tuplet 3/2 4 { d8 c d b a b gis fis gis } |
-  e4 r r |
-  \tuplet 3/2 4 { d'8 c d b a b gis fis gis } |
-  e4 r r |
-  r16 e' d c b c b a gis a gis fis |
-  e8 b' gis e b' e, |
-  r16 e' d c b c b a gis a gis fis |
-  e8 a c a e' e, |
-  a'16^\markup\sp-solo g f e 
+
+  \vdapartthree-c
+
+  a'16^\markup\sp-solo g f e
   a g f e
   a g f e
   f8 a, d, a' d, a' |
-  g'16 f e d 
-  g16 f e d 
-  g16 f e d 
+  g'16 f e d
+  g16 f e d
+  g16 f e d
   e8 g, c, g' c, g' |
   f'16 e d c
   f16 e d c
@@ -359,7 +382,7 @@ vdaPartThree = \relative c' {
   f8 f g16( f g a) g bes a g |
   d8 a' bes16( a bes c) bes d c bes |
   f8 f g16( f g a) g bes a g |
-  d8 f' a16( g) f( e) d( c) bes( a) g8 e' 
+  d8 f' a16( g) f( e) d( c) bes( a) g8 e'
   g16( f) e( d) c( bes) a( g) |
   f8 d' f16( e) d( c) bes( a) g( f) |
   e8 cis' e16( d) cis( b) a( g) f( e) |

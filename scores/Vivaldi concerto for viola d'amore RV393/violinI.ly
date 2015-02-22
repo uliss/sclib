@@ -81,6 +81,7 @@ info-project = #(project-url #{ \current-dir #})
         \set Score.skipBars = ##t
         \override Staff.TimeSignature.style = #'single-digit
         \key d \minor
+        \time 3/4
         \violinI-partIII
       }
       \layout {
@@ -90,7 +91,7 @@ info-project = #(project-url #{ \current-dir #})
         }
         \context {
           \Score
-          \sp-spacing-eights
+          \sp-spacing-quoters
         }
       }
     }

@@ -61,6 +61,7 @@ info-project = #(project-url #{ \current-dir #})
                 }
                 {
                   \key d \minor
+                  \score-only
                   \violinI-partI
                 }
                 \new Staff \with {
@@ -186,7 +187,8 @@ info-project = #(project-url #{ \current-dir #})
                   }
                   {
                     \key d \minor
-                    R1 * 3/4 * 114
+                    \score-only
+                    \violinI-partIII
                   }
                   \new Staff \with {
                     instrumentName = "II."
