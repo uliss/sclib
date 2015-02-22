@@ -5,14 +5,15 @@ CWD=`pwd`
 
 mkdir -p pdf
 
-find scores -name *.ly -print0 | while read -d $'\0' file
+find scores -name *.ly -not -name info.ly -print0 | while read -d $'\0' file
 do
 	f=`echo $file | grep -v 'src\,'`
 	if [ -n "$f" ] 
 	then
-		composer=`cat "$file" | sed -n 's/^info-composer[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
+		info_file="`dirname "$file"`/info.ly"
+		composer=`cat "$info_file" | sed -n 's/^info-composer[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
 		if [ -z "$composer" ]; then continue; fi
-		title=`cat "$file" | sed -n 's/^info-title[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
+		title=`cat "$info_file" | sed -n 's/^info-title[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
 		
 		in_file=`basename "$file"`
 		dir=`dirname "$file"`
