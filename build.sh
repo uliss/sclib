@@ -5,7 +5,7 @@ CWD=`pwd`
 
 mkdir -p pdf
 
-find scores -name *.ly -not -name info.ly -print0 | while read -d $'\0' file
+find scores -name *.ly -not -name info.ly -not -name src*.ly -print0 | while read -d $'\0' file
 do
 	f=`echo $file | grep -v 'src\,'`
 	if [ -n "$f" ] 
