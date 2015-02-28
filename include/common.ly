@@ -26,6 +26,8 @@
         (define info-catalog-number "????")))
 #(cond ((not (defined? 'info-project))
         (define info-project "")))
+#(cond ((not (defined? 'info-subtitle))
+        (define info-subtitle "")))
 #(cond ((not (defined? 'info-instrument))
         (define info-instrument "")))
 #(cond ((not (defined? '-sp-parts))
