@@ -9,9 +9,12 @@
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
 #(define git-repo "https://github.com/uliss/sclib")
 
-#(define cc-logo    "../../include/icons/cc.eps")
-#(define cc-nc-logo "../../include/icons/nc.eps")
-#(define cc-sa-logo "../../include/icons/sa.eps")
+#(cond ((not (defined? 'cc-logo))
+        (define cc-logo    "../../include/icons/cc.eps")))
+#(cond ((not (defined? 'cc-nc-logo))
+        (define cc-nc-logo "../../include/icons/nc.eps")))
+#(cond ((not (defined? 'cc-sa-logo))
+        (define cc-sa-logo "../../include/icons/sa.eps")))
 
 #(define title-big-color (rgb-color 0.95 0.95 0.95))
 #(define title-main-color (rgb-color 0 0 0))
@@ -266,28 +269,28 @@ sp-custos-note =
 #(define-markup-command (sp-tutti layout props) ()
    "Style of piece in header"
    (if (is-parts?) (interpret-markup layout props
-     #{
-       \markup \italic "Tutti"
-     #})))
+                     #{
+                       \markup \italic "Tutti"
+                     #})))
 
 #(define-markup-command (sp-solo layout props) ()
    "Style of piece in header"
    (if (is-parts?) (interpret-markup layout props
-     #{
-       \markup \italic "Solo"
-     #})))
+                     #{
+                       \markup \italic "Solo"
+                     #})))
 
 tutti = #(define-scheme-function (parser location) ()
-                #{	
-                    ^\markup \sp-tutti
-                #}
-                )
+           #{
+             ^\markup \sp-tutti
+           #}
+           )
 
 solo= #(define-scheme-function (parser location) ()
-                #{	
-                    ^\markup \sp-solo
-                #}
-                )
+         #{
+           ^\markup \sp-solo
+         #}
+         )
 
 
 tuplet-number-show = { \undo \omit TupletNumber }
