@@ -1,9 +1,20 @@
 \version "2.18.2"
 
-%#(cond ((not (defined? 'lutePartOne))
-%       (define lutePartOne #{ s2 #} )))
+#(cond ((not (defined? 'lutePartOne))
+       (define lutePartOne #{ s2 #} )))
+
+#(cond ((not (defined? 'lutePartThree))
+       (define lutePartThree #{ s8 #} )))
+
+#(cond ((not (defined? 'violini-part-i))
+       (define violini-part-i #{ s8 #} )))
+
+#(cond ((not (defined? 'violini-part-iii))
+       (define violini-part-iii #{ s8 #} )))
 
 \tag-quote "lute1" { \lutePartOne }
+
+\tag-quote "lute3" { \lutePartThree }
 
 \tag-quote "vln1" { \violini-part-i }
 
@@ -30,10 +41,10 @@ vdaPartOne = \relative c {
   \set tupletSpannerDuration = #(ly:make-moment 1 8)
 
 
-  \partial 8 r8 | R2*27 |
+  \partial 8 r8 | R2*25 |
 
   \quote-mus "vln1" "Violini I" {
-    R2 * 2
+    R2 * 4
   }
 
 
@@ -168,10 +179,10 @@ vdaPartOne = \relative c {
   % 93
   a4 r |
   % 94
-  R2*10 |
+  R2*8 |
 
   \quote-mus "vln1" "Violini I" {
-    R2 * 2
+    R2 * 4
   }
 
   % 106
@@ -220,6 +231,7 @@ vdaPartOne = \relative c {
   f16 a d,8 e16 g cis,8 |
   % 128
   d4 r |
+  \partpagebreak
   % 129
   %R2*3 |
   \quote-mus "lute1" "Liuto" {
@@ -306,7 +318,7 @@ vdaPartTwo = \relative c'' {
     <<{bes8^\trill a} \\ {f8 f}>> r16 a'( f  d) cis16. d32 a16. g'32 f4\startTrillSpan |
     e16\stopTrillSpan cis a g' e4\startTrillSpan d\stopTrillSpan
   }
-  
+
   \repeat "volta" 2 {
     r16 a' a16. g32 |
     % 190
@@ -371,17 +383,16 @@ vdaPartThree = \relative c'' {
   % 230
   f bes a f g e |
   % 231
-  f8 
+  f8
   r r |
   % 232 |
-  
-  R4.*5
+
+  R4.*7
   \partpagebreak
-  R4.*5
-  
+
 
   \quote-mus "vln1-3" "Violini I" {
-    R4. * 3
+    R4. * 6
   }
 
   % 245
@@ -393,7 +404,9 @@ vdaPartThree = \relative c'' {
   % 248
   f,4 r8 |
   % 249
-  R4.*2 |
+  \quote-mus "lute3" "Liuto" {
+    R4.*2 |
+  }
   % 251
   a16 c32 bes a16 ees'32 d c16 bes32 a |
   % 252
@@ -419,9 +432,9 @@ vdaPartThree = \relative c'' {
   % 262
   g4 r8 |
   % 263
-  R4.*14 |
+  R4.*11 |
   \quote-mus "vln1-3" "Violini I" {
-    R4. * 3
+    R4. * 6
   }
   % 280
   d32( cis d  e) d( cis d  e) f( e f  g) |
@@ -513,6 +526,6 @@ vdaPartThree = \relative c'' {
     R4.^\fermataMarkup
   }
   % 329
-   \bar "|."
+  \bar "|."
 
 }

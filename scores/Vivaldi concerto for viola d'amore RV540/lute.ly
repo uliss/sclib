@@ -2,7 +2,7 @@
 \include "../../include/sclib.ly"
 \include "info.ly"
 
-info-instrument = "Viola d'amore"
+info-instrument = "Liuto"
 info-project = #(project-url #{ \current-dir #})
 
 \include "../../include/common.ly"
@@ -11,38 +11,10 @@ info-project = #(project-url #{ \current-dir #})
 
 \make-parts
 \include "src.violinI.ly"
+\include "src.violadamore.ly"
 \include "src.lute.ly"
 
-\include "src.violadamore.ly"
-
-\paper {
-  ragged-last-bottom = ##f
-}
-
 #(set-global-staff-size 19)
-
-scordatura = \markup {
-  \raise #5
-  \score {
-    \new Staff \with {
-      \remove "Time_signature_engraver"
-      \remove "Key_engraver"
-      fontSize = #-4
-      \override StaffSymbol.staff-space = #(magstep -4)
-    } {
-      \override Staff.Clef #'space-alist #'first-note = #'(extra-space . 3)
-      \clef alto
-      \cadenzaOn
-      <d a d' f' a' d''>1
-    }
-    \layout {
-      ragged-right = ##t
-      indent = 1\cm
-      line-width = 2\cm
-    }
-  }
-  \hspace #.5
-}
 
 \book {
   % title page
@@ -64,13 +36,11 @@ scordatura = \markup {
       \header {
         piece = \markup \markup-piece "I. (Allegro)"
       }
-      \new Staff \with {
-        instrumentName = \scordatura
-      }
+      \new Staff
       {
         \set Score.skipBars = ##t
         \time 2/4
-        \vdaPartOne
+        \lutePartOne
         \bar "|."
       }
       \layout {
@@ -92,7 +62,7 @@ scordatura = \markup {
         opus = ""
       }
       {
-        \vdaPartTwo
+        \lutePartTwo
       }
       \layout {
         \context {
@@ -109,7 +79,8 @@ scordatura = \markup {
       }
       {
         \set Score.skipBars = ##t
-        \vdaPartThree
+        \time 3/8
+        \lutePartThree
       }
       \layout {
         \context {
