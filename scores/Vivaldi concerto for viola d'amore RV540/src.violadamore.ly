@@ -1,16 +1,16 @@
 \version "2.18.2"
 
 #(cond ((not (defined? 'lutePartOne))
-       (define lutePartOne #{ s2 #} )))
+        (define lutePartOne #{ s2 #} )))
 
 #(cond ((not (defined? 'lutePartThree))
-       (define lutePartThree #{ s8 #} )))
+        (define lutePartThree #{ s8 #} )))
 
 #(cond ((not (defined? 'violini-part-i))
-       (define violini-part-i #{ s8 #} )))
+        (define violini-part-i #{ s8 #} )))
 
 #(cond ((not (defined? 'violini-part-iii))
-       (define violini-part-iii #{ s8 #} )))
+        (define violini-part-iii #{ s8 #} )))
 
 \tag-quote "lute1" { \lutePartOne }
 
@@ -43,7 +43,8 @@ vdaPartOne = \relative c {
 
   \partial 8 r8 | R2*25 |
 
-  \quote-mus "vln1" "Violini I" {
+  \quote-mus "vln1" "Violini I"
+  {
     R2 * 4
   }
 
@@ -121,7 +122,7 @@ vdaPartOne = \relative c {
   % 74
   e16 g c, g' bes, d c bes |
   % 75
-  <a f >8f'16 g a8 f |
+  <a f >8f'16 g \acciaccatura{f[ g]} a8 f |
   % 76
   e16 g c, g' bes, d c bes |
   % 77
@@ -172,7 +173,11 @@ vdaPartOne = \relative c {
 
   } a8 r |
   % 91
-  \times 2/3 {r16 c, d e fis gis} a8 r |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 c, d
+    e fis gis
+  } a8 r |
   \nodiv
   % 92
   r16 a c, a' d, a' e gis |
@@ -201,23 +206,38 @@ vdaPartOne = \relative c {
   a,4 r | R2 |
   %114
   \subdiv
-  \times 2/3 {r16 a' bes c bes a d a bes c bes a} |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 a' bes c bes a d a bes c bes a
+  } |
   % 115
   <bes g >8<bes g ><bes g ><bes g >|
   % 116
-  \times 2/3 {r16 g a bes a g c g a bes a g} |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 g a bes a g c g a bes a g
+  } |
   % 117
   <a f >8<a f ><a f ><a f >|
   % 118
-  \times 2/3 {r16 f g a g f bes f g a g f} |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 f g a g f bes f g a g f
+  } |
   % 119
   <g e >8<g e ><g e ><g e >|
   % 120
-  \times 2/3 {r16 e f g f e a e f g f e} |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 e f g f e a e f g f e
+  } |
   % 121
   f4 r |
   % 122
-  \times 2/3 {r16 d e f e d a' d, e f e d} |
+  \times 2/3 {
+    \once \tuplet-bracket-show
+    r16 d e f e d a' d, e f e d
+  } |
   \nodiv
   % 123
   a'8 a16 c, bes8 g'16 bes, |
@@ -322,7 +342,7 @@ vdaPartTwo = \relative c'' {
   \repeat "volta" 2 {
     r16 a' a16. g32 |
     % 190
-    fis16. fis32 g16. a32 d,16. ees32 c16. d32 bes16 a g8 r16 g' g16. f?32 |
+    fis16. fis32 g16. a32 d,16. ees32 c16. d32 bes16 a g8 r16 g' g16. f32 |
     % 191
     e16. e32 f16. g32 c,16. d32 bes16. c32 a16 g f8 r8 c' |
     % 192
