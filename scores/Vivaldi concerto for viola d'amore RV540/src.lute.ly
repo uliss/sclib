@@ -21,13 +21,13 @@
 \tag-quote "vln1-3" { \violini-part-iii }
 
 subdiv = {
-  \set Score.subdivideBeams = ##t
-  \set baseMoment = #(ly:make-moment 1/8)
-  \set beatStructure = #'(2 2 2 2)
+  \set Staff.subdivideBeams = ##t
+  \set Staff.baseMoment = #(ly:make-moment 1/8)
+  \set Staff.beatStructure = #'(2 2 2 2)
 }
 
 nodiv = {
-  \set Score.subdivideBeams = ##f
+  \set Staff.subdivideBeams = ##f
 }
 
 
@@ -78,6 +78,7 @@ lutePartOne = \relative c {
   % 50
   R2 |
   % 51
+  \subdiv
   \times 2/3 {a16 bes c d d e f f g a a bes} |
   \nodiv
   % 52

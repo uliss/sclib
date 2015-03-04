@@ -89,6 +89,7 @@ vdaPartOne = \relative c {
   % 48
   R2 |
   %49
+  \subdiv
   \times 2/3 {d16 bes c d d e f f g a a bes} |
   % 50
   \nodiv
