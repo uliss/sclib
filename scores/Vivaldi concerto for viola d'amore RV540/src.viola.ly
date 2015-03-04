@@ -20,7 +20,7 @@ viola-part-i = \relative c'' {
     )))
   \set Score.skipBars = ##t
 
-  \partial 8 r8^"con Sordina" |
+  \partial 8 r8^\markup {\whiteout "con Sordina"} |
   r8 a g f |
   % 2
   r8 cis d f |

@@ -9,7 +9,7 @@ violinii-part-i = \relative c''' {
       ((1 . 16) . (4 4))
     )))
 
-  \partial 8 a8^"con Sordina" |
+  \partial 8 a8^\markup{\whiteout "con Sordina"} |
   d,8 a d16. e32 f16. g32 |
   % 2
   a8 a, a' bes |
