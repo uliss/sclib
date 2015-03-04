@@ -1,6 +1,6 @@
-\version "2.18.2"
+\version "2.18.0"
 
-violini-part-i = \relative c''' {
+violinii-part-i = \relative c''' {
   \key f \major
   \time 2/4 
   \set Timing.beamExceptions = #'(
@@ -9,7 +9,6 @@ violini-part-i = \relative c''' {
       ((1 . 16) . (4 4))
     )))
 
-  \tuplet-bracket-hide
   \partial 8 a8^"con Sordina" |
   d,8 a d16. e32 f16. g32 |
   % 2
@@ -29,15 +28,15 @@ violini-part-i = \relative c''' {
   % 9
   g8 c, r8 bes' |
   % 10
-  g8.(^\trill f32  g) g8.(^\trill f32  g) |
+  e,8.(^\trill d32  e) e8.(^\trill d32  e) |
   % 11
-  a8 a a a |
+  f8 f f f |
   % 12
-  c32(  bes) c(  bes) a16 r c32(  bes) c(  bes) a16 r |
+  a32(  g) a(  g) f16 r a32(  g) a(  g) f16 r |
   % 13
-  c32(  bes) c(  bes) a16 r c32(  bes) c(  bes) a16 r |
+  a32(  g) a(  g) f16 r a32(  g) a(  g) f16 r |
   % 14
-  r16 d, c bes a g f e |
+  r16 d c bes a g f e |
   % 15
   f8 a, bes c |
   % 16
@@ -61,13 +60,14 @@ violini-part-i = \relative c''' {
   % 25
   d g, f gis, |
   % 26
-  a g'' \times 2/3 {f16( g  a)} cis,8 |
+  \tuplet-bracket-hide
+  a g'' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 27
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 28
-  d g' \times 2/3 {f16( g  a)} cis,8 |
+  d g' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 29
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 30
   d4 r8 d8\p |
   % 31
@@ -139,13 +139,13 @@ violini-part-i = \relative c''' {
   % 64
   bes f'' d bes, |
   % 65
-  a bes'' \times 2/3 {a16( bes  c)} e,8 |
+  a bes'' \tuplet 3/2 {a16( bes  c)} e,8 |
   % 66
-  f bes \times 2/3 {a16( bes  c)} e,,8 |
+  f bes \tuplet 3/2 {a16( bes  c)} e,,8 |
   % 67
-  f bes' \times 2/3 {a16( bes  c)} e,8 |
+  f bes' \tuplet 3/2 {a16( bes  c)} e,8 |
   % 68
-  f bes \times 2/3 {a16( bes  c)} e,,8 |
+  f bes \tuplet 3/2 {a16( bes  c)} e,,8 |
   % 69
   f\p f f f |
   % 70
@@ -213,13 +213,13 @@ violini-part-i = \relative c''' {
   % 101
   d g, f gis, |
   % 102
-  a g'' \times 2/3 {f16( g  a)} cis,8 |
+  a g'' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 103
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 104
-  d g' \times 2/3 {f16( g  a)} cis,8 |
+  d g' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 105
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 106
   d4 r4 |
   % 107
@@ -325,15 +325,15 @@ violini-part-i = \relative c''' {
   % 161
   g8 c, r8 bes' |
   % 162
-  g8.(^\trill f32  g) g8.(^\trill f32  g) |
+  e,8.(^\trill d32  e) e8.(^\trill d32  e) |
   % 163
-  a8 a a a |
+  f8 f f f |
   % 164
-  c32(  bes) c(  bes) a16 r c32(  bes) c(  bes) a16 r |
+  a32(  g) a(  g) f16 r a32(  g) a(  g) f16 r |
   % 165
-  c32(  bes) c(  bes) a16 r c32(  bes) c(  bes) a16 r |
+  a32(  g) a(  g) f16 r a32(  g) a(  g) f16 r |
   % 166
-  r16 d, c bes a g f e |
+  r16 d c bes a g f e |
   % 167
   f8 a, bes c |
   % 168
@@ -357,77 +357,41 @@ violini-part-i = \relative c''' {
   % 177
   d g, f gis, |
   % 178
-  a g'' \times 2/3 {f16( g  a)} cis,8 |
+  a g'' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 179
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 180
-  d g' \times 2/3 {f16( g  a)} cis,8 |
+  d g' \tuplet 3/2 {f16( g  a)} cis,8 |
   % 181
-  d g \times 2/3 {f16( g  a)} cis,,8 |
+  d g \tuplet 3/2 {f16( g  a)} cis,,8 |
   % 182
   d4^\fermata r \bar "|."
 }
 
-
-violini-part-ii = \relative c' {
+violinii-part-iii = \relative c'' {
   \key f \major
-  \time 4/4
-  \repeat "volta" 2 {
-  \partial 8 r8 |
-  r8 f f f r8 c c c |
-  % 184
-  r8 c c c r8 f f f |
-  % 185
-  r8 e e e r8 d d d |
-  % 186
-  r8 c c c r8 a a a |
-  % 187
-  r8 d d d r8 d d d |
-  % 188
-  r8 d d d r8 a' d d, |
-  % 189
-  r8 a' a a, d4
-  }
-  \repeat "volta" 2 {
-  r4 |
-  r8 d8 d d r8 g g g |
-  % 198
-  r8 c, c c r8 f f f |
-  % 199
-  r8 f f f r8 c c c |
-  % 200
-  r8 f f f r8 c c c |
-  % 201
-  r8 c c c r8 c c c |
-  % 202
-  r8 f c' c, f2^\fermata
-  }
-}
-
-violini-part-iii = \relative c'' {
-  \key d \minor
   \time 3/8
   \set Score.skipBars = ##t
 
-  d8 d,16 g' f e |
+  d8 d,16 e' d cis |
   % 197
-  d8 d,16 g' f e |
+  d8 d,16 e' d cis |
   % 198
-  d e f g a d, |
+  d cis d e f8 |
   % 199
-  cis8 a16 g' f e |
+  e8 cis16 e d cis |
   % 200
-  f8 d16 a' g f |
+  d8 a16 f' e d |
   % 201
-  <f a,>8^\trill <e a,> r |
+  d8^\trill cis r |
   % 202
-  a a,,16 a'' g f |
+  f a,,16 f'' e d |
   % 203
-  g8 a,,16 g'' f e |
+  e8 a,,16 e'' d cis |
   % 204
-  f8 a,,16 a'' g f |
+  d8 a,16 f'' e d |
   % 205
-  e cis a e cis8 |
+  cis a e cis a8 |
   % 206
   a''16 a, a8(  bes) |
   % 207
@@ -479,9 +443,9 @@ violini-part-iii = \relative c'' {
   % 230
   f8 r16 f bes, c |
   % 231
-  f'8 f,16 bes' a g |
+  f'8 f,16 g' f e |
   % 232
-  f8 f,16 bes' a g |
+  f8 f,16 g' f e |
   % 233
   f g a bes c f, |
   % 234
@@ -551,19 +515,19 @@ violini-part-iii = \relative c'' {
   % 266
   g' g,16 g' a bes |
   % 267
-  cis,8 a,16 g'' f e |
+  e,8 a,,16 e'' d cis |
   % 268
-  f8 d,16 a'' g f |
+  f8 d,16 f' e d |
   % 269
-  <<{ f8[^\trill e]} \\ { a,[ a]}>> r8 |
+  d8^\trill cis r8 |
   % 270
-  a' a,,16 a'' g f |
+  f a,,16 f'' e d |
   % 271
-  g8 a,,16 g'' f e |
+  e8 a,,16 e'' d cis |
   % 272
-  f8 a,,16 a'' g f |
+  d8 a,16 f'' e d |
   % 273
-  e cis a e cis8 |
+  cis a e cis a8 |
   % 274
   d'16 f, g bes a cis |
   % 275
@@ -578,7 +542,7 @@ violini-part-iii = \relative c'' {
   d f e a a, cis |
   % 280
   d4 r8 |
-  % 281
+  % 281 
   R4.*14 |
   % 295
   a,8 a r16 a |
@@ -637,6 +601,7 @@ violini-part-iii = \relative c'' {
   % 328
   d f e a a, cis |
   % 329
-  d4.^\fermata \bar "|." 
+  f4.^\fermata \bar "|."
 }
+
 

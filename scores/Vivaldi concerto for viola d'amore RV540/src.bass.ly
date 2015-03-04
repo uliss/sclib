@@ -21,7 +21,7 @@ IBasso = \relative c {
 
   \set Score.skipBars = ##t
 
-  \partial 8 r8 |
+  \partial 8 r8^"con Sordina" |
 
   r8 f e d |
   % 2
