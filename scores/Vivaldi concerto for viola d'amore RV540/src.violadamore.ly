@@ -1,5 +1,8 @@
 \version "2.18.2"
 
+% based on mutopia edition
+% http://www.mutopiaproject.org/cgibin/piece-info.cgi?id=310
+
 #(cond ((not (defined? 'lutePartOne))
         (define lutePartOne #{ s2 #} )))
 

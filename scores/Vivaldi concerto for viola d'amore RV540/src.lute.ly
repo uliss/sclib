@@ -65,8 +65,9 @@ lutePartOne = \relative c {
   a4 r |
   % 46
   R2 |
+  \subdiv
   \times 2/3 {
-    \subdiv
+    
     \tuplet-bracket-hide
     f'16 a g f g a a, a' g f g a |
     % 48
@@ -145,6 +146,7 @@ lutePartOne = \relative c {
   % 114
   a,4 r |
   % 115
+  \subdiv
   \times 2/3 {r16 d e f e d g d e f e d} |
   % 116
   <e c >8<e c ><e c ><e c >|
@@ -164,6 +166,7 @@ lutePartOne = \relative c {
   R2*2 |
   %125
   \times 2/3 {r16 d, e f e d a' d, e f e d} |
+  \nodiv
   % 126
   a'4 r |
   % 127
@@ -199,9 +202,11 @@ lutePartOne = \relative c {
   % 143
   <f a, d, f >8g16 a g8 f |
   % 144
+  \subdiv
   r4 \times 2/3 {a16 f g a g f} |
   % 145
   a,8 r \times 2/3 {g'16 e f g f e} |
+  \nodiv
   % 146
   a,16 a' bes a a a bes a |
   % 147
@@ -209,11 +214,13 @@ lutePartOne = \relative c {
   % 148
   a f e d a8 cis |
   % 149
+  \subdiv
   \times 2/3 {
     d16 d e f e d d e f f e d |
     % 150
     d e f f e d d e f f e d
   } |
+  \nodiv
   % 151
   d16 f e d a8 cis |
   % 152
