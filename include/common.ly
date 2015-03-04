@@ -246,7 +246,7 @@ dc-al-fine = {
                \with-url #"http://lilypond.org" {
                  #(string-append "engraved by Serj Poltavski using lilypond v" (lilypond-version))
                }
-               { #(string-append "edition version: " (sp-version)) }
+               { #(string-append "revision: " (sp-version)) }
              }
            }
            \null
