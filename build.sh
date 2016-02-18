@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LILY="lilypond -dno-point-and-click --pdf "
+LILY="/Applications/LilyPond.app/Contents/Resources/bin/lilypond -dno-point-and-click --pdf "
 CWD=`pwd`
 
 mkdir -p pdf
