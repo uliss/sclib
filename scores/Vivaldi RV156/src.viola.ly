@@ -8,7 +8,6 @@ vthemed = { f e e e e d d d d e e e e }
 viola-partI = \relative c'' {
   \key d \minor
   \time 4/4
-  \clef alto
 
   \vtheme
   \vtheme
