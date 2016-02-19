@@ -12,6 +12,7 @@ info-project = #(project-url #{ \current-dir #})
 \make-score
 \include "src.violadamore.ly"
 \include "src.violinI.ly"
+\include "src.violinII.ily"
 \include "src.viola.ly"
 \include "src.basso.ly"
 
@@ -65,7 +66,8 @@ info-project = #(project-url #{ \current-dir #})
                 }
                 {
                   \key d \minor
-                  R1 * 89
+                  \score-only
+                  \violinII-partI
                 }
               >>
             }
@@ -191,7 +193,8 @@ info-project = #(project-url #{ \current-dir #})
                   }
                   {
                     \key d \minor
-                    R1 * 3/4 * 114
+                    \score-only
+                    \violinII-partIII
                   }
                 >>
               }

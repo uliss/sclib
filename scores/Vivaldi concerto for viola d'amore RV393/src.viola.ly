@@ -104,7 +104,7 @@ violaPartThree = \relative d' {
   a'16 a g f e f e d cis d cis b |
   a8 e' cis a e' a, |
   d16 d' c bes a bes a g f g f e |
-  d4^\fermata \fine r r |
+  d4^\fermata \fine \bar "||" \noBreak r r |
   R1 * 3/4 * 17
   \quote-with-clef "vda3" "Viola d'amore" "treble" {
     R1 * 6/4
@@ -137,15 +137,15 @@ violaPartThree = \relative d' {
   \rn a,
   \rn e'
   \rn e
-  a,4 r r 
-  a r r 
-  e' r r 
-  e r r 
-  gis, r r 
-  gis r r 
-  gis r r 
-  gis' r r 
-  gis, r r 
+  a,4 r r
+  a r r
+  e' r r
+  e r r
+  gis, r r
+  gis r r
+  gis r r
+  gis' r r
+  gis, r r
   r16 e'' d c b c b a gis a gis fis |
   e8 b' gis e b' e, |
   r16 e' d c b c b a gis a gis fis |e8 a c a e' e, |
@@ -153,24 +153,24 @@ violaPartThree = \relative d' {
   R1 * 3/4 * 33
   \dc-al-fine
   \bar "|."
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

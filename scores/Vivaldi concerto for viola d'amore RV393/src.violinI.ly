@@ -56,7 +56,7 @@ violinI-partI = \relative d'' {
   cis e16 d cis8 a e a a, e''
   f d a f  |
   \rm-left
-  R1-\solo 
+  R1-\solo
   r2
 
   \accomp-b
@@ -104,7 +104,7 @@ rn = #(define-scheme-function (parser location note)
 
 violinI-partIII = \relative c' {
   \partthree-a
-  d4 r r |
+  d4-\fermata \fine \bar "||" \noBreak r r |
   R1 * 3/4 * 17
 
   \quote-mus "vda3" "Viola d'amore" {
@@ -113,7 +113,7 @@ violinI-partIII = \relative c' {
 
   r8 \relative f'' \vdapartthree-b
   \rn a''8
-  \rn g 
+  \rn g
   \tuplet-hide
   \rn a
   \rn g
