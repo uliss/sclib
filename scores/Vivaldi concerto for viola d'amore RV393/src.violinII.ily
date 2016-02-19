@@ -74,7 +74,7 @@ violinII-partI = \relative d'' {
   }
   bes16 c, bes'8 \fig a c g4 r8 c |
   bes16( g) a8 bes16( g) a8 g,4. f16 e |
-  f8 a bes g f4 r8 a' |
+  f8 a bes g f4 r8 c'' |
   bes16( g) a8 bes16( g) a8 g,4. f16 e |
   f8 a bes g f4 r4-\solo |
 
@@ -92,6 +92,8 @@ violinII-partI = \relative d'' {
   a8 a' b, gis' a4 r |
 
   \accomp-c
+
+  \tag-parts {\break}
 
   d,8-\tutti  a''16  g f4 r r8 f |
   e g16 f e 4 r r8 e |
