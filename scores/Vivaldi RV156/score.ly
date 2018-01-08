@@ -77,6 +77,7 @@ info-project = #(project-url #{ \current-dir #})
             }
             {
               \tempo "Allegro"
+              \clef alto
               \viola-partI
             }
             \new Staff \with {

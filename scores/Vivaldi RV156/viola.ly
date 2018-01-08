@@ -39,6 +39,7 @@ info-version = "1.0"
       {
         \set Score.skipBars = ##t
         \tempo "Allegro"
+        \clef alto
         \viola-partI
       }
       \layout {
