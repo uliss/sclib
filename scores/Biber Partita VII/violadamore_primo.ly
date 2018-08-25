@@ -10,8 +10,6 @@ info-project = #(project-url #{ \current-dir #})
 \include "../../include/paper.ly"
 \include "../../include/housestyle.ly"
 
-strill = \markup { \smaller \bold \italic tr }
-
 \include "src.violadamore_primo.ily"
 
 #(set-global-staff-size 20)

@@ -14,7 +14,7 @@ info-project = #(project-url #{ \current-dir #})
 \include "src.violadamore_primo.ily"
 \include "src.violadamore_secondo.ily"
 
-#(set-global-staff-size 18)
+#(set-global-staff-size 20)
 
 \book {
     % title page

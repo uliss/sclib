@@ -1,10 +1,6 @@
 \version "2.18.2"
 
-%\include "src.violinI.ily"
-%\include "src.violinII.ily"
-%
-%\tag-quote "v1.3" { \violinI-partIII }
-%\tag-quote "v2.3" { \violinII-partIII }
+strill = \markup { \smaller \bold \italic tr }
 
 vdaPrimoPartA = \relative c' {
     \clef alto
