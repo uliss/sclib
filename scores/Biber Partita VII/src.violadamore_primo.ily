@@ -59,7 +59,7 @@ vdaPrimoPartA = \relative c' {
         {
             es8 es es es es
             \tempo Adagio
-            f4. g8\trill( fis4) g2.
+            f4. g8-\strill( fis4) g2.
         }
         \\ { c,8 c c c c c2 c4 g'2.}
     >>
@@ -79,7 +79,7 @@ vdaPrimoPartA = \relative c' {
     \tempo Adagio
     r8
     <<
-        { g16 f  es4.\trill d8 d2. }
+        { g16 f  es4.-\strill d8 d2. }
         \\ {
             es16 d c4. bes8 bes2.
         }
@@ -91,7 +91,7 @@ vdaPrimoPartA = \relative c' {
     as) des( c) bes( as) c( bes) c( c) bes( as) g( |
     f8) es
     <<
-        { bes'4 as8.\trill( g16) g2.}
+        { bes'4 as8.-\strill( g16) g2.}
         \\ {<d f>4 s es2. }
     >>
     c'8 des es des c bes |
@@ -109,7 +109,7 @@ vdaPrimoPartA = \relative c' {
     es'2 f32( es des es f8)
     <<
         {
-            bes,4.\trill~ bes16 as |
+            bes,4.-\strill~ bes16 as |
             as4. as8 g f c'4. bes8 as g
             s4 bes4. as8 g4.
         }
@@ -124,8 +124,8 @@ vdaPrimoPartA = \relative c' {
         }
     >>
     g'8 f es d4. es8 des c |
-    b2\trill c4 |
-    d16( es f8) es4.\trill d8 |
+    b2^\strill c4 |
+    d16( es f8) es4.^\strill d8 |
     \tempo Presto
     d 4 r r |
     r8
@@ -146,7 +146,7 @@ vdaPrimoPartA = \relative c' {
     >>
     r r  | r8
     <<
-        { d8 es g f es d es d4.\trill ~ d16 c <g c>4}
+        { d8 es g f es d es d4.-\strill ~ d16 c <g c>4}
         \\ { b8 c es d c b c g2 c,4 }
     >>
     r4 r
@@ -165,7 +165,7 @@ vdaPrimoPartB = \relative c' {
         <<
             {
                 g4 ~ g16 es f g es4 ~ es16 g f es
-                f4~ f16 f es\trill d es4
+                f4~ f16 f es-\strill d es4
             } \\ {
                 es4 ~ es16 c d es c4 ~ c16 es d c
                 d4 ~ d16 d c b c4
@@ -175,20 +175,20 @@ vdaPrimoPartB = \relative c' {
         r16
 
         << { es f g es16 \stemDown es'[ d c] } \\ { c,16 d es c8 s8 } >>
-        << { b'8.\trill[ c16] <g c> \stemDown es'[ f g]  } \\ {g,4 es8 s } >>
+        << { b'8.-\strill[ c16] <g c> \stemDown es'[ f g]  } \\ {g,4 es8 s } >>
         es'4~ |
         es16 c d es c4 ~ c16 as bes c
 
         <<
             {
-                <es, a>8.\trill bes'16 bes4 ~  bes16 bes as g
+                <es, a>8.-\strill bes'16 <f bes>4 ~  bes16 bes as g
             } \\
             {
                 c,4 d s
             }
         >>
         as'4 ~ as16 as g f |
-        g bes as c f,8.\trill es16 es4
+        g bes as c f,8.^\strill es16 es4
         r16
         << { d es f |  es4 } \\ {b16 c d c4 } >>
         r16 f g as g
@@ -200,14 +200,14 @@ vdaPrimoPartB = \relative c' {
     \repeat volta 2 {
         r16 d'
         d4 ~  d16 g d f es g c, es d f b, d c es d c
-        << {b8.\trill c16 <es, g c>4 ~ c'16 f c es} \\ {g,4 c, s16 } >>
+        << {b8.-\strill c16 <es, g c>4 ~ c'16 f c es} \\ {g,4 c, s16 } >>
         d' f bes, d c es a, c bes d c bes
-        << {a8.\trill bes16 <f bes>8} \\ {f4 d8} >>
-        es'32 d c bes a8.\trill g16  g2 |
+        << {a8.-\strill bes16 <f bes>8} \\ {f4 d8} >>
+        es'32 d c bes a8.-\strill g16  g2 |
         r4 r16 c g bes as c f, es
-        << { <f bes>8 as16\trill( g)}  \\ { d8 s}  >>  |
+        << { <f bes>8 as16-\strill( g)}  \\ { d8 s}  >>  |
         << g4 \\ es >>  r16 es' bes des c8 f ~ f16 g d f |
-        es g c, es d4. c8 b8.\trill c16 |
+        es g c, es d4. c8 b8.^\strill c16 |
         << {<g c>4. c8 c4.} \\ {es,4. g8 g4.} >>
     }
 }
@@ -227,11 +227,11 @@ vdaPrimoPartC = \relative c' {
         es'8 d f |
         es4. g8 b, d |
         g, g' f es d c |
-        b4.\trill c8 d4 |
+        b4.^\strill c8 d4 |
         es4. c8 bes as |
         g4. bes8 as c |
         f, bes as g as g |
-        f2\trill es4
+        f2^\strill es4
     }
     \repeat volta 2 {
         <<
@@ -246,17 +246,17 @@ vdaPrimoPartC = \relative c' {
         >>
         r8
         <<
-            { as' as g f4 ~ f8 es d4 es d4.\trill c8 <g c>4 } \\
+            { as' as g f4 ~ f8 es d4 es d4.-\strill c8 <g c>4 } \\
             { f'8 f es d4 ~ d8 c b4 c g2 c,4}
         >>
         r8
         <<
             { g'' g f es4 } \\
-            { es8_"pian." e d c4}
+            { es8_"pian." es d c4}
         >>
         r8
         <<
-            { as' as g f4 ~ f8 es d4 es d4.\trill c8 <g c>4 } \\
+            { as' as g f4 ~ f8 es d4 es d4.-\strill c8 <g c>4 } \\
             { f'8 f es d4 ~ d8 c b4 c g2 c,4 }
         >>
     }
@@ -277,15 +277,16 @@ vdaPrimoPartD = \relative c''' {
         r8 g f8. d16 es8. c16 bes8. a16 |
         as8. c16 f8. as,16 g8. es'16 d8. c16 |
         b8. g16 a8. b16 c8. es16 d8. es16 |
-        f8. es16 d8. d16 es8. g16 bes8. as16 |g8. g'16 f8. d16 es8. c16 bes8.\trill a16 |
+        f8. es16 d8. d16 es8. g16 bes8. as16 |g8. g'16 f8. d16 es8. c16 bes8.^\strill a16 |
         g8. bes16 a8. fis'16 g4 r |
         R1
-        r8 d, c8. a16 bes8. a16 f8. d16  es8. g16 c8. es,16 d8. bes'16 c,8. a'16 |
+        r8 d, c8. a16 bes8. g16 f8. d16  es8. g16 c8. es,16 d8. bes'16 c,8. a'16 |
         bes8. d'16 c8. a16 bes8. bes16 c8. c16 |
-        d8. d16 e8. fis16 g8. a,16 a8.\trill g16 |
+        d8. d16 e8. fis16 g8. a,16 a8.^\strill g16 |
         g1
     }
 
+    \break
     \repeat volta 2 {
         R1 * 3
         g8. g16 a8. b16 c8. c16 d8. es16 |
@@ -298,18 +299,18 @@ vdaPrimoPartD = \relative c''' {
         g4 r r2 |
         R1 |
         r8 g f8. d16 es8. c16 bes8. g16 |
-        as8. c16 f8. as,16 g8. es'16 d8. c16 b8. g16 f8. a16 es8. c'16 d,8. b'16 |
+        as8. c16 f8. as,16 g8. es'16 d8. c16 b8. g16 f8. d16 es8. c'16 d,8. b'16 |
         c,4 r4 r2 |
         r2 c'8. c16 d8. e16 |
         f8. f16 g8. as16 bes8. as16 g8. g16 as8. c16 bes8. g16 as8. f'16
-        << { d8.\trill c16 } \\ g4 >>
+        << { d8.-\strill c16 } \\ g4 >>
         <c, es g c>1\fermata
     }
 }
 
 vdaEa = {
-    es8. es16 f f es es des8 c des c ~ c bes16\trill as g8 as16 bes
-    << { bes8.\trill as16 <es as>4 } \\ { es4 c } >>
+    es8. es16 f f es es des8 c des c ~ c bes16^\strill as g8 as16 bes
+    << { bes8.-\strill as16 <es as>4 } \\ { es4 c } >>
 }
 
 vdaPrimoPartE = \relative c'' {
@@ -320,29 +321,29 @@ vdaPrimoPartE = \relative c'' {
     \relative c'' { \vdaEa }
     \repeat volta 2 {
         bes8. bes16 c c bes bes as8 g as g |
-        c f, g16( bes) as( c) f,4.\trill
+        c f, g16( bes) as( c) f,4.^\strill
         << { g8 f[ g] f } \\ { es d[ es] d } >>
         r r4 r8
         <<
-            { g f ges f8.\trill es16 es8 g16( bes) } \\
-            { es,8 d es d4\trill es8 s8 } \\
+            { g f ges f8.-\strill es16 es8 g16( bes) } \\
+            { es,8 d es d4-\strill es8 s8 } \\
         >>
-        as16( c) f,(\trill es) |
+        as16( c) f,(^\strill es) |
         d8 << { g_"pian." f g f } \\ { es d es d } >>
         r8 r4 |
-        r8 << { g f4\trill es2 } \\ { es8 d8.\trill es16 es2 } >>
+        r8 << { g f4-\strill es2 } \\ { es8 d8.-\strill es16 es2 } >>
     }
     \repeat volta 2 {
         as8._"fort." as16  as8 as
-        << { <es a>8.\trill a16 } \\ c,4 >> bes'8 bes
-        f'8.es16 es des ges c, c8.\trill bes16 bes4 |
+        << { <es a>8.-\strill a16 } \\ c,4 >> bes'8 bes
+        f'8.es16 es des ges c, c8.^\strill bes16 bes4 |
 
         es4 as, f'16( es) des( c) f( es) des( c) |
         bes( as) des( c)
-        << { bes8.\trill as16 as2 } \\ { es4 es2 } >>
+        << { bes8.-\strill as16 as2 } \\ { es4 es2 } >>
         es'4_"pian." as, f'16( es) des( c) f( es) des( c) |
         bes( as) des( c)
-        << { bes8.\trill as16 as2 } \\ { es4 es2 } >>
+        << { bes8.-\strill as16 as2 } \\ { es4 es2 } >>
     }
 }
 
@@ -351,24 +352,24 @@ vdaPrimoPartF = \relative c'' {
     \clef alto
     \key c \dorian
     \repeat volta 2 {
-        as16 c es c as es' des4\trill c8
+        as16 c es c as es' des4^\strill c8
         f16 es des c bes as g as bes8 es, |
-        as16 c es c as es' des4\trill c8
+        as16 c es c as es' des4^\strill c8
         f16 es des c bes as es'4. |
     }
     \repeat volta 2 {
         bes16 g c bes as g f4 f8
-        g es f d4.\trill
+        g es f d4.^\strill
         bes'16 g c bes as g as bes c d es es,
-        f g f8.\trill es16 es4.
+        f g f8.^\strill es16 es4.
     }
     \repeat volta 2 {
-        as,16 c es c as es' des4\trill c8
-        as16_"pian." c es c as es' des4\trill c8
-        as'16_"fort." c es c as es' des4\trill c8
+        as,16 c es c as es' des4^\strill c8
+        as16_"pian." c es c as es' des4^\strill c8
+        as'16_"fort." c es c as es' des4^\strill c8
         f16 bes,
         <<
-            { bes8.\trill as16  <es as>4. } \\
+            { bes8.-\strill as16  <es as>4. } \\
             { es4 c }
         >>
     }
@@ -376,11 +377,11 @@ vdaPrimoPartF = \relative c'' {
 
 vdaGthemeA = {
     << <es g>2 \\ c >>
-    g'4 c2 bes4 as8 g f4.\trill es8 << es2. \\ es >> |
+    g'4 c2 bes4 as8 g f4.^\strill es8 << es2. \\ es >> |
 }
 
 vdaGthemeB = {
-    es2 es4 as2 g4  f8 as << { d,4.\trill c8 <g c>2. } \\ { g2 c,2. } >>
+    es2 es4 as2 g4  f8 as << { d,4.-\strill c8 <g c>2. } \\ { g2 c,2. } >>
 }
 
 vdaGtheme = {
@@ -402,11 +403,11 @@ vdaPrimoPartG = \relative c' {
     }
     \repeat volta 2 {
         r8 c' d es f g c, as' bes c bes4 |
-        es,4 es4.\trill d8 |
+        es,4 es4.^\strill d8 |
         es g as bes g4 |
         r8 c d es f g bes,4 as'  g |
         f8 es <<
-            { d4.\trill c8  c2. } \\
+            { d4.-\strill c8  c2. } \\
             { g2 <c, es g>2. }
         >>
         \break
@@ -418,7 +419,7 @@ vdaPrimoPartG = \relative c' {
         g bes es, g as bes |
         c es as, c bes es, |
         f es d f bes, es |
-        d c b4.\trill c8 |
+        d c b4.^\strill c8 |
         << c2. \\ c >>
         \break
     }
@@ -433,8 +434,9 @@ vdaPrimoPartG = \relative c' {
         g bes, c d es g, as bes es, as g f
         \vdaGthemeB
     }
+    \break
     \repeat volta 2 {
-        g''2 g4 c2 bes4 as8 g << { f4.\trill es8 es2. } \\ { d2 es2. } >>
+        g''2 g4 c2 bes4 as8 g << { f4.-\strill es8 es2. } \\ { d2 es2. } >>
         \vdaGthemeB
         \break
     }
@@ -444,11 +446,11 @@ vdaPrimoPartG = \relative c' {
         c'4 d8 es4 c8 g'4 g8 |
         as4 bes8 c4 as8 es'4 bes8 |
         as bes c bes as g
-        f4\trill bes8 |
+        f4^\strill bes8 |
         << g4. \\ es >> r r
         as4 bes8 c4 as8 es'4 e8 |
         f c bes as bes c g4 g'8 |
         f4 f8 f g es
-        << { d4 c8 <g c>2. } \\ {g4. es2.} >>
+        << { d4^\strill c8 <g c>2. } \\ {g4. es2.} >>
     }
 }
