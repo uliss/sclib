@@ -18,6 +18,32 @@ info-project = #(project-url #{ \current-dir #})
 %\include "src.viola.ily"
 \include "src.basso.ily"
 
+vdaPrimoPartA = s4
+vdaPrimoPartB = s4
+vdaPrimoPartC = s4
+vdaPrimoPartD = s4
+vdaPrimoPartE = s4
+vdaPrimoPartF = s4
+%vdaPrimoPartG = s4
+vdaSecondoPartA = s4
+vdaSecondoPartB = s4
+vdaSecondoPartC = s4
+vdaSecondoPartD = s4
+vdaSecondoPartE = s4
+vdaSecondoPartF = s4
+%vdaSecondoPartG = s4
+bassPartA = s4
+bassPartB = s4
+bassPartC = s4
+bassPartD = s4
+bassPartE = s4
+bassPartF = s4
+%bassPartG = s4
+figuredBassPartA = s4
+figuresBassPartB = s4
+figuresBassPartC = s4
+figuresBassPartD = s4
+%figuresBassPartE = s4
 
 
 #(set-global-staff-size 16)
@@ -69,11 +95,11 @@ info-project = #(project-url #{ \current-dir #})
                 }
                 {
                     \score-only
-                    
+
                     \clef bass
                     <<
-                    \bassPartA
-                    \figuredBassA
+                        \bassPartA
+                        \figuredBassA
                     >>
                 }
             >>
@@ -85,29 +111,29 @@ info-project = #(project-url #{ \current-dir #})
                 %\override Staff.TimeSignature.style = #'single-digit
             }
         }
-        
-                \score {
+
+        \score {
             \header {
                 piece = \markup \markup-piece "Allamande"
             }
             <<
                 \new StaffGroup \with {
-                   % instrumentName = "Viola d'amore"
+                    % instrumentName = "Viola d'amore"
                 }{
                     <<
                         \new Staff \with {
-                           % instrumentName = "I."
+                            % instrumentName = "I."
                         }
                         {
-                            \time 3/4
+                            \time 4/4
                             \score-only
                             \vdaPrimoPartB
                         }
                         \new Staff \with {
-                           % instrumentName = "II."
+                            % instrumentName = "II."
                         }
                         {
-                            \time 3/4
+                            \time 4/4
                             \score-only
                             \vdaSecondoPartB
                         }
@@ -117,9 +143,11 @@ info-project = #(project-url #{ \current-dir #})
                     instrumentName = "Basso"
                 }
                 {
-                    \score-only
-                    a
-                   
+                    \clef bass
+                    <<
+                        \bassPartB
+                        \figuresBassPartB
+                    >>
                 }
             >>
             \layout {
@@ -127,7 +155,226 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
-                %\override Staff.TimeSignature.style = #'single-digit
+            }
+        }
+
+        \score {
+            \header {
+                piece = \markup \markup-piece "Sarabande"
+            }
+            <<
+                \new StaffGroup \with {
+                    % instrumentName = "Viola d'amore"
+                }{
+                    <<
+                        \new Staff \with {
+                            % instrumentName = "I."
+                        }
+                        {
+                            \time 3/4
+                            \vdaPrimoPartC
+                        }
+                        \new Staff \with {
+                            % instrumentName = "II."
+                        }
+                        {
+                            \time 3/4
+                            \vdaSecondoPartC
+                        }
+                    >>
+                }
+                \new Staff \with {
+                    instrumentName = "Basso"
+                }
+                {
+                    \clef bass
+                    <<
+                        \bassPartC
+                        \figuresBassPartC
+                    >>
+                }
+            >>
+            \layout {
+                \context {
+                    \Score
+                    \sp-spacing-eights
+                }
+            }
+        }
+
+        \score {
+            \header {
+                piece = \markup \markup-piece "Gigue"
+            }
+            <<
+                \new StaffGroup \with {
+                    % instrumentName = "Viola d'amore"
+                }{
+                    <<
+                        \new Staff \with {
+                            % instrumentName = "I."
+                        }
+                        {
+                            \time 4/4
+                            \vdaPrimoPartD
+                        }
+                        \new Staff \with {
+                            % instrumentName = "II."
+                        }
+                        {
+                            \time 4/4
+                            \vdaSecondoPartD
+                        }
+                    >>
+                }
+                \new Staff \with {
+                    instrumentName = "Basso"
+                }
+                {
+                    \clef bass
+                    <<
+                        \bassPartD
+                        \figuresBassPartD
+                    >>
+                }
+            >>
+            \layout {
+                \context {
+                    \Score
+                    \sp-spacing-eights
+                }
+            }
+        }
+
+        \score {
+            \header {
+                piece = \markup \markup-piece "Aria"
+            }
+            <<
+                \new StaffGroup \with {
+                    % instrumentName = "Viola d'amore"
+                }{
+                    <<
+                        \new Staff \with {
+                            % instrumentName = "I."
+                        }
+                        {
+                            \time 4/4
+                            \vdaPrimoPartE
+                        }
+                        \new Staff \with {
+                            % instrumentName = "II."
+                        }
+                        {
+                            \time 4/4
+                            \vdaSecondoPartE
+                        }
+                    >>
+                }
+                \new Staff \with {
+                    instrumentName = "Basso"
+                }
+                {
+                    \clef bass
+                    <<
+                        \bassPartE
+                        \figuresBassPartE
+                    >>
+                }
+            >>
+            \layout {
+                \context {
+                    \Score
+                    \sp-spacing-eights
+                }
+            }
+        }
+
+        \score {
+            \header {
+                piece = \markup \markup-piece "Trezza"
+            }
+            <<
+                \new StaffGroup \with {
+                    % instrumentName = "Viola d'amore"
+                }{
+                    <<
+                        \new Staff \with {
+                            % instrumentName = "I."
+                        }
+                        {
+                            \time 6/8
+                            \vdaPrimoPartF
+                        }
+                        \new Staff \with {
+                            % instrumentName = "II."
+                        }
+                        {
+                            \time 6/8
+                            \vdaSecondoPartF
+                        }
+                    >>
+                }
+                \new Staff \with {
+                    instrumentName = "Basso"
+                }
+                {
+                    \clef bass
+                    <<
+                        \bassPartF
+                        %\figuresBassPartF
+                    >>
+                }
+            >>
+            \layout {
+                \context {
+                    \Score
+                    \sp-spacing-eights
+                }
+            }
+        }
+
+        \score {
+            \header {
+                piece = \markup \markup-piece "Arietta Variata"
+            }
+            <<
+                \new StaffGroup \with {
+                    % instrumentName = "Viola d'amore"
+                }{
+                    <<
+                        \new Staff \with {
+                            % instrumentName = "I."
+                        }
+                        {
+                            \time 3/4
+                            \vdaPrimoPartG
+                        }
+                        \new Staff \with {
+                            % instrumentName = "II."
+                        }
+                        {
+                            \time 3/4
+                            \vdaSecondoPartG
+                        }
+                    >>
+                }
+                \new Staff \with {
+                    instrumentName = "Basso"
+                }
+                {
+                    \clef bass
+                    <<
+                        \bassPartG
+                        %\figuresBassPartF
+                    >>
+                }
+            >>
+            \layout {
+                \context {
+                    \Score
+                    \sp-spacing-eights
+                }
             }
         }
     }

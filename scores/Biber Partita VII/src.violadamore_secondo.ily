@@ -3,6 +3,7 @@
 vdaSecondoPartA  = \relative c' {
     \key c \dorian
     \clef alto
+    \tempo Grave
     R2.
     <<
         {
@@ -14,6 +15,7 @@ vdaSecondoPartA  = \relative c' {
         }
     >>
     es'8 d c bes as g f[ es] d c f16 g es d |
+    \tempo Presto
     c4 r r |
     r16 g' a b c d es f g es f g |
     c,4 r r |
@@ -38,12 +40,14 @@ vdaSecondoPartA  = \relative c' {
         { es'8 es es es es es2. }
         \\ { c8 c c c c c2.}
     >>
+    \tempo Adagio
     r8 c' c c c4^\strill ~ |
     c8 b
     << {<d, g b>2}\\{g,2}>>
     R2.\fermataMarkup |
     r4 r8 bes' as g f es r8 bes' as g f es
     r es' d c bes as g c bes as g f es as g c |
+    \tempo Presto
     bes4 r r
     r16 es d c bes as g c bes as g f |
     es c' bes as g c bes as g c bes as |
@@ -51,6 +55,7 @@ vdaSecondoPartA  = \relative c' {
     es8. es'16 d c bes as g c bes as |
     g es' d c bes as g c bes as  g f |
     es4 r16 bes' c d es g, as bes |
+    \tempo Adagio
     es,8 c'
     << { c4.-\strill d8 d2. } \\ {a4.-\strill bes8 bes2.} >>
     R2.
@@ -64,6 +69,7 @@ vdaSecondoPartA  = \relative c' {
     as16. c32 des16. des32 es16. as,32 bes16. bes32 c16. c32 des16. des32
     es16. es32 f16. f32 es16. es32 des16. des32 c16. c32 bes16. bes32
     as16. es'32 des16. c32 bes4 |
+    \tempo Adagio
     bes16. bes32 bes16. bes32
     <<
         {c4. bes8 as g f4}
@@ -91,6 +97,7 @@ vdaSecondoPartA  = \relative c' {
     b a g g' f es |
     d4.( f8) es4 |
     d2 c8(^\strill b) |
+    \tempo Presto
     b8
     <<
         { d,8 es g f es d4}
@@ -212,6 +219,7 @@ vdaSecondoPartC = \relative c' {
 vdaSecondoPartD = \relative c' {
     \clef alto
     \key c \dorian
+    \tempo Presto
     \repeat volta 2 {
         R1 * 2
         r8 g'' f8. d16 es8. c16 bes8. g16 |
