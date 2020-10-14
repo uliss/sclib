@@ -243,7 +243,7 @@ vdaPartOne = \relative a' {
   \times 2/3  {
     c16  b  a )
   }
-  
+
   \set subdivideBeams = ##f
   | % 29
   a'16  e  c  a  b8.
@@ -306,10 +306,19 @@ vdaPartOne = \relative a' {
   g16 (  a  b  a )  g
   a16  g  f  e8. \trill  d16
   c8  c' | % 48
-  b8  c  d  c  c \trill
-  b8 r  c | % 49
-  b8  c  d  c  c \trill
-  b8 r  g' | \barNumberCheck #50
+  <<
+    {
+      b8  c  d  c  c \trill b8 b\rest  c | % 49
+      b8  c  d  c  c \trill
+      b8 b\rest
+    } \\
+    {
+      g2 g8 g s g
+      g2 g8  g s
+    }
+  >>
+
+  g' | \barNumberCheck #50
   a,8  f'  g,  e'  f,
   d'8  e,  c' | % 51
   <g b>4 r8  c  d16 (  b )
@@ -343,18 +352,24 @@ vdaPartOne = \relative a' {
   e16 )  f (  g )  a8.
   g16  f8  bes, | % 62
   a8  f'  g  e  f4 r8
-  f8 -\p | % 63
+  f8  | % 63
   bes8  a16 (  g )  f (
   e16 )  f (  g )  a8.
   g16  f8  bes, | % 64
   a8  f'  g  e  f4 r8
-  a,8 | % 65
-  bes8  c16  d  c8  bes
-  bes4 \trill  a8  e' | % 66
-  f8  g16  a  g8  f  f4
-  \trill  e8  g | % 67
-  a8  bes16  c  bes8  a
-  a8  g r  c, | % 68
+  <<
+    {
+      a,8 | % 65
+      bes8  c16  d  c8  bes
+      bes4 \trill  a8  e' | % 66
+      f8  g16  a  g8  f  f4
+      \trill  e8  g | % 67
+      a8  bes16  c  bes8  a
+    }
+    \\
+    { f,8 f f f f f4 f8 c' c c c c  c4 c8 s f s s f }
+  >>
+  <f a>8 <e g> r  c | % 68
   c16  bes  a  g  f
   e16  d  c  <bes d>8  <bes d>
   <bes d>8  d' | % 69
@@ -364,10 +379,10 @@ vdaPartOne = \relative a' {
   e16  d  c  bes  a
   g16  f  e  <d f>8  <d f>
   <d f>8  f' | % 71
-  \time 2/4 \omit Staff.TimeSignature | % 71
+  \time 2/4
   f16  e  d  c  bes
   a16  g  f | % 72
-  \time 4/4 \omit Staff.TimeSignature | % 72
+  \time 4/4
   e4 r8  f'  g16 (  c, )
   a'16 (  c, )  bes' (  c,
   )  a'16 (  c, ) | % 73
@@ -376,7 +391,14 @@ vdaPartOne = \relative a' {
   )  g'16 (  c, )  a' (  c,
   )  bes'16 (  c, )  g' (  c,
   ) | % 74
-  a'8  g16  f  g4 \trill  <f,
+  <<
+    {
+      a'8  g16  f  g4 \trill  % 77
+    }
+    \\
+    { c,4 c }
+  >>
+  <f,
   c' f>4 r8  f' | % 75
   g16 (  c, )  a' (  c, )
   bes'16 (  c, )  a' (  c,
@@ -385,7 +407,14 @@ vdaPartOne = \relative a' {
   ) | % 76
   g'16 (  c, )  a' (  c, )
   bes'16 (  c, )  g' (  c,
-  )  a'8  g16  f  g4 \trill | % 77
+  )
+  <<
+    {
+      a'8  g16  f  g4 \trill | % 77
+    }
+    \\
+    { c,4 c }
+  >>
   <f, c' f>8-\tutti  f'  f  f
   f16 (  g  a )  g
   f8  c | % 78
@@ -1015,7 +1044,7 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   e16(  c)  e
+    e16(  c)  e
   }
   | % 234
 
@@ -1024,7 +1053,7 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   f16(  c)  f
+    f16(  c)  f
   }
 
   \times 2/3  {
@@ -1041,7 +1070,7 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   fis16(  d)  fis
+    fis16(  d)  fis
   }
   | % 236
 
@@ -1067,7 +1096,7 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   a16(  d,)  a'
+    a16(  d,)  a'
   }
   | % 238
 
@@ -1089,7 +1118,7 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   g16(  bes,)  g'
+    g16(  bes,)  g'
   }
 
   \times 2/3  {
@@ -1115,11 +1144,11 @@ vdaPartThree = \relative a' {
   }
 
   \times 2/3  {
-   fis16(  a,)  fis'
+    fis16(  a,)  fis'
   }
 
   \times 2/3  {
-   fis16(  a,)  fis'
+    fis16(  a,)  fis'
   }
   \set Staff.beatStructure = #'(3)
   | % 242
@@ -1200,16 +1229,25 @@ vdaPartThree = \relative a' {
   \times 2/3  {
     f16 (  e  d )
   }
-  e8. \trill  d16 | % 299
+  << 
+    { e8.[ \trill  d16] }
+    \\
+    { a4  }
+  >>
   d4.
   a'8  g16  f  e  d
   | % 301
-  cis16  b  a8  g' | % 302
+  cis16[  b  a8]
+  \times 2/3 { g'16 f e } | % 302
 
   \times 2/3  {
     f16 (  e  d )
   }
-  e8. \trill  d16 | % 303
+ << 
+    { e8.[ \trill  d16] }
+    \\
+    { a4  }
+  >>
   d16-\tutti  a'  a  a  a
   a16 | % 304
   bes8  g  e | % 305
