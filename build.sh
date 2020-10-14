@@ -14,6 +14,8 @@ do
 		composer=`cat "$info_file" | sed -n 's/^info-composer[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
 		if [ -z "$composer" ]; then continue; fi
 		title=`cat "$info_file" | sed -n 's/^info-title[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
+		opus=`cat "$info_file" | sed -n 's/^info-subtitle[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
+                title="${title}${opus}"
 		
 		in_file=`basename "$file"`
 		dir=`dirname "$file"`
