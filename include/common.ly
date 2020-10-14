@@ -106,7 +106,7 @@ sp-title-page = \markup {
                                     "build-time:"  (strftime "%x at %X" (localtime (current-time))) "\n"
                                     "editor: Serj Poltavski\n"
                                     "http://poltavski.ru\n\n"
-                                    "Send you fixes to serj.poltavski@gmail.com"
+                                    "Send you fixes to serge.poltavski@gmail.com"
                                     )
             \vspace #7
 
