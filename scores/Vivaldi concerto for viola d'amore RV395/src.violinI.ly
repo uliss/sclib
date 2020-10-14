@@ -33,7 +33,7 @@ violinI-partI = \relative d'' {
   d16 )  cis (  d )  a8
   a8  a  a'  | % 11
   f8  e16  d  e8  cis
-  d4 r8  a'  | % 12
+  d4 r8  g  | % 12
   f8  g16 (  f )  e (
   d16 )  cis (  d )  a8
   a8  a  g' | % 13

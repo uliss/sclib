@@ -122,7 +122,7 @@ vdaPartOne = \relative a' {
   d16 )  cis (  d )  a8
   a8  a  a'  | % 11
   f8  e16  d  e8  cis
-  d4 r8  a'  | % 12
+  d4 r8  g  | % 12
   f8  g16 (  f )  e (
   d16 )  cis (  d )  a8
   a8  a  g' | % 13
@@ -215,8 +215,10 @@ vdaPartOne = \relative a' {
   \times 2/3  {
     c16  b  a )
   }
+  \set subdivideBeams = ##f
   a'16  e  c  a  b8.
   \trill  a16 | % 28
+  \set subdivideBeams = ##t
 
   \override TupletBracket.bracket-visibility = ##t
   a4 \times 2/3 {
@@ -290,7 +292,7 @@ vdaPartOne = \relative a' {
   (  b16  a )  f'  e
   d16  c  b | % 43
   a16 (  b  a )  a'
-  b16  c  b  a  a4
+  b16  c  b  a  a4\trill
   gis4 | % 44
   e16 (  f  g )  f
   e16  f  e  d
@@ -447,7 +449,7 @@ vdaPartOne = \relative a' {
   \tag-parts { \break }
   f8  g16 (  f )  e (
   d16 )  cis (  d )  a8
-  a8  a  <cis a'>-\solo | % 88
+  a8  a  <cis! a'>-\solo | % 88
   <cis a'>8  <cis g'>  <cis g'>
   <d f>8  <d f>  e16 (  f )
   g16 (  f )  g (  e ) | % 89
@@ -844,7 +846,7 @@ vdaPartThree = \relative a' {
   bes8  a  g' | % 152
   f16  e  d8  cis | % 153
   d4 r8 | % 154
-  d16 (  e  f4 ) | % 155
+  d16 (-\solo  e  f4 ) | % 155
   e8  d  a' | % 156
   g16  f  e8  d | % 157
   cis8  b  a | % 158
@@ -852,7 +854,7 @@ vdaPartThree = \relative a' {
   e8  d  a' |
   g16  f  e8  d | % 161
   a4 r8 | % 162
-  a'16-\solo  d,  f  d
+  a'16  d,  f  d
   a'16  d, | % 163
   f16  d  a'  d,
   f16  d | % 164

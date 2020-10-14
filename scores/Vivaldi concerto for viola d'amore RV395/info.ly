@@ -4,7 +4,7 @@ info-composer = "Antonio Vivaldi"
 info-composer-years = "(1678 – 1741)"
 info-title = "Concerto per Viola d'amore, Archi e Cembalo"
 info-subtitle = "RV395 (d–moll)"
-info-version = "0.0"
+info-version = "0.1"
 info-catalog-number = "006"
 
 %{
