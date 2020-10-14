@@ -30,7 +30,10 @@ zip: all
 	7z a $(NAME_PREFIX).zip *.pdf
 
 zip-src:
-		7z a $(NAME_PREFIX)-src.zip *.ly
+	7z a $(NAME_PREFIX)-src.zip *.ly
+
+zip-all:
+	7z a $(NAME_PREFIX)-all.zip *.ly *.pdf
 
 $(NAME_AMORE).pdf: violadamore.ly $(DEPS)
 	$(LY) $(OPTIONS) --output $(NAME_AMORE) $<
