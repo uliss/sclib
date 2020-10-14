@@ -12,7 +12,7 @@ info-project = #(project-url #{ \current-dir #})
 \make-score
 \include "src.violadamore.ly"
 \include "src.violinI.ly"
-\include "src.violinII.ily"
+\include "src.violinII.ly"
 \include "src.viola.ly"
 \include "src.basso.ly"
 

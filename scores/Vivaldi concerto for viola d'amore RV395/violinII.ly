@@ -11,7 +11,7 @@ info-project = #(project-url #{ \current-dir #})
 
 \make-parts
 \include "src.violadamore.ly"
-\include "src.violinII.ily"
+\include "src.violinII.ly"
 
 #(set-global-staff-size 19)
 
