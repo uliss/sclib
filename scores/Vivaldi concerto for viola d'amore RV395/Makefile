@@ -1,5 +1,9 @@
 LY := lilypond
 OPTIONS = --pdf
+SRC_FILES := $(wildcard src.*.ly)
+MUSIC_FILES := $(wildcard *.ly)
+PDF_FILES
+
 DEPS := src.violadamore.ly info.ly
 NAME_PREFIX := Vivaldi\ concerto\ for\ viola_damore\ RV395
 NAME_AMORE := $(NAME_PREFIX)_vda

@@ -1,7 +1,7 @@
-\version "2.18.2"
+\version "2.20.0"
 
 
-amoreScordatura = #(define-scheme-function (parser location accord)
+amoreScordatura = #(define-scheme-function (accord)
    (ly:music?)
      #{
        \markup {
@@ -13,7 +13,7 @@ amoreScordatura = #(define-scheme-function (parser location accord)
             fontSize = #-4
             \override StaffSymbol.staff-space = #(magstep -4)
           } {
-            \override Staff.Clef #'space-alist #'first-note = #'(extra-space . 3)
+            \override Staff.Clef #'space-alist = #'((first-note minimum-space . 3.0))
             \clef treble
             \cadenzaOn
             #accord

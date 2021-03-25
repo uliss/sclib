@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.20.0"
 
 \include "src.violinI.ily"
 \include "src.violinII.ily"
@@ -53,6 +53,7 @@ vdaPartOne = \relative c' {
   b' e, fis e b e fis e b e fis e |
   b'8 e, a,, e'' b, dis' |
   e,, r r4 r |
+  \tag-parts \break
   R2. * 7 |
   \repeat unfold 2 {
     e''16( b a b)
@@ -190,6 +191,8 @@ vdaPartOne = \relative c' {
       s4 e,2
     }
   >>
+  
+   \tag-parts \break
 
   <a, c e a>8 a'' a c, c <a, c e a>
   <a c e a>8 a'' a c, c <a, c e a>
@@ -234,8 +237,10 @@ vdaPartThree = \relative c'' {
   \clef treble
 
   \quote-mus "v1.3" "Violini I" {
+    \tag-parts \override MultiMeasureRest #'staff-position = #-8
+    R2 * 6 |
     \tag-parts \override MultiMeasureRest #'staff-position = #-6
-    R2 * 24 |
+    R2 * 18 |
     \revert MultiMeasureRest #'staff-position
     %R2 * 3
     %R2 * 14
@@ -267,7 +272,14 @@ vdaPartThree = \relative c'' {
   f16( e) d( c) b( a)
   g8 c \appoggiatura e d c16 b |
   c4 r |
-  R2 * 13 |
+   \tag-parts \break
+  \quote-mus "v1.3" "Violini I" {
+    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    R2 * 13 |
+    \revert MultiMeasureRest #'staff-position
+    %R2 * 3
+    %R2 * 14
+  }
   c'8[ g f e] |
   r g,[ f e] |
   r c' b16 a g f |
@@ -287,7 +299,7 @@ vdaPartThree = \relative c'' {
   a'4 ~ \tuplet 3/2 8 {
     \set subdivideBeams = ##t
     \set baseMoment = #(ly:make-moment 1/8)
-    \set beatStructure = #'(2 2)
+    \set beatStructure = 2,2
     \tuplet-number-only
     a16( b a g a fis)
     g( b a g fis e)
@@ -296,7 +308,13 @@ vdaPartThree = \relative c'' {
 
   \set subdivideBeams = ##f
   e4 r
-  R2 * 16 |
+  \quote-mus "v1.3" "Violini I" {
+    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    R2 * 16 |
+    \revert MultiMeasureRest #'staff-position
+    %R2 * 3
+    %R2 * 14
+  }
   e16 b b g g e e e, |
   e e' e g g b b e |
   fis dis dis b b fis fis b, |
@@ -313,7 +331,14 @@ vdaPartThree = \relative c'' {
   a cis cis e e a a g |
   f f' a d, cis e a cis, |
   d4 r |
-  R2 * 11 |
+  \quote-mus "v1.3" "Violini I" {
+    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    R2 * 11 |
+    \revert MultiMeasureRest #'staff-position
+    %R2 * 3
+    %R2 * 14
+  }
+  
   \repeat unfold 2 {
     f16 d a d
     f16 d a d
@@ -359,8 +384,10 @@ vdaPartThree = \relative c'' {
   a4 r
 
   \quote-mus "v1.3" "Violini I" {
+    \tag-parts \override MultiMeasureRest #'staff-position = #-8
+    R2 * 5
     \tag-parts \override MultiMeasureRest #'staff-position = #-6
-    R2 * 23 |
+    R2 * 18
     \revert MultiMeasureRest #'staff-position
     %R2 * 3
     %R2 * 14
