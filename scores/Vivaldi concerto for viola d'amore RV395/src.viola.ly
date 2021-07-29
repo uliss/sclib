@@ -5,7 +5,6 @@
 \tag-quote "vda1" \vdaPartOne
 
 violaPartOne = \relative a' {
-  \clef "alto"
   \key f \major \time 4/4 \partial 8  f8-\tutti  | % 1
   f8  g  a  g  f4 r8
   f8  | % 2
@@ -124,7 +123,6 @@ violaPartOne = \relative a' {
 
 violaPartTwo = \relative d' {
   \key d \minor
-  \clef alto
   \time 4/4  | % 107
   d8\p   d  d  d  a
   a8  a  a | % 108

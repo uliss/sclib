@@ -37,6 +37,7 @@ info-project = #(project-url #{ \current-dir #})
       }
       {
         \set Score.skipBars = ##t
+        \clef alto
         \violaPartOne
       }
       \layout {
@@ -56,6 +57,7 @@ info-project = #(project-url #{ \current-dir #})
       {
         \set Score.skipBars = ##t
         %\override Staff.TimeSignature.style = #'single-digit
+        \clef alto
         \violaPartTwo
       }
       \layout {
