@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 vdaSecondoPartA  = \relative c' {
     \key c \dorian
@@ -44,7 +44,7 @@ vdaSecondoPartA  = \relative c' {
     r8 c' c c c4^\strill ~ |
     c8 b
     << {<d, g b>2}\\{g,2}>>
-    R2.\fermataMarkup |
+    R2.\fermata |
     r4 r8 bes' as g f es r8 bes' as g f es
     r es' d c bes as g c bes as g f es as g c |
     \tempo Presto
@@ -118,7 +118,7 @@ vdaSecondoPartA  = \relative c' {
     r r |
     g'8 c,
     << {c4.-\strill b8 c4} \\ {g2 c4} >> r r |
-    R2.\fermataMarkup \bar "|."
+    R2.\fermata \bar "|."
 
 }
 
@@ -388,7 +388,23 @@ vdaSecondoPartG = \relative c' {
         << es4 \\ es >> f8 g4 es8 bes'4 bes8 |
         c4 des8 es4 c8 bes4 c8 |
         as4 bes8 c4 as8 es'4 es8 |
-        d4 c8 b g c b4^\strill c8 |
-        << <es, g c>2. \\ c >>
+        d4 c8 b-.( g-.) c b4^\strill c8 |
+        << {<es, g c>2. s4.} \\ {c2. s4.} >>
+    }
+    \repeat volta 2 {
+        R8*9
+        as'4 es'8 c-.( bes-.) as bes(-. g-.) f |
+        es(-. as-.) g f(-. g-.) as g4^\strill f8 |
+        es4 bes'8 g(-. f-.) es g(-. bes-.) des, |
+        c-.( c'-.) bes as-.( bes-.) c es,4 es8 |
+        f4 g8 as(-. g-.) f g(-. f-.) es |
+        d(-. es-.) c  << {  c4.^\strill~ c4 b8 c2. s4. } \\ { g4. s4. c2. s4.} >>
+    }
+    \time 3/4
+    \break
+    \repeat volta 2 {
+        g'2 g4 c2 bes4 as8 g << { f4.-\strill es8 es2. } \\ { d2 es2. } >>
+        \vdaGthemeB
+        \break
     }
 }
