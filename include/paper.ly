@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 #(define (get-info-project) info-project)
 #(define (not-last-page layout props arg)
@@ -25,7 +25,7 @@
   markup-markup-spacing = #'((basic-distance . 10))
   ragged-last-bottom = ##f
   evenFooterMarkup = \markup {
-    \on-the-fly \not-first-page \on-the-fly \not-last-page {
+    \unless \on-first-page \unless \on-last-page  {
       \fill-line {
         \null
         {
@@ -37,7 +37,7 @@
         \null
       }
     }
-    \on-the-fly \last-page {
+    \if \on-last-page {
       \fill-line {
         \markup-tagline
         {
@@ -51,7 +51,7 @@
     }
   }
   oddFooterMarkup = \markup {
-    \on-the-fly \not-first-page \on-the-fly \not-last-page {
+    \unless \on-first-page \unless \on-last-page {
       \fill-line {
         \null
         {
@@ -63,7 +63,7 @@
         \null
       }
     }
-    \on-the-fly \last-page {
+    \if \on-last-page {
       \fill-line {
         \markup-tagline
         {
@@ -77,3 +77,12 @@
     }
   }
 }
+
+%{
+convert-ly (GNU LilyPond) 2.24.2  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12, 2.23.13, 2.23.14, 2.24.0
+%}
