@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 \include "../../include/sclib.ly"
 \include "info.ily"
 
@@ -69,7 +69,7 @@ info-project = #(project-url #{ \current-dir #})
             }
             <<
                 \new StaffGroup \with {
-                    instrumentName = "Viola d'amore"
+                    instrumentName = "Viola d'amore "
                 }{
                     <<
                         \new Staff \with {
@@ -87,6 +87,7 @@ info-project = #(project-url #{ \current-dir #})
                             \time 3/4
                             \score-only
                             \vdaSecondoPartA
+                            \pageBreak
                         }
                     >>
                 }
@@ -108,8 +109,13 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                %system-count = 15
                 %\override Staff.TimeSignature.style = #'single-digit
             }
+        }
+        \paper {
+              %page-breaking = #ly:page-turn-breaking
+              %blank-page-penalty = 1
         }
 
         \score {
@@ -128,6 +134,7 @@ info-project = #(project-url #{ \current-dir #})
                             \time 4/4
                             \score-only
                             \vdaPrimoPartB
+                            \pageTurn
                         }
                         \new Staff \with {
                             % instrumentName = "II."
@@ -140,7 +147,7 @@ info-project = #(project-url #{ \current-dir #})
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -171,6 +178,7 @@ info-project = #(project-url #{ \current-dir #})
                             % instrumentName = "I."
                         }
                         {
+                
                             \time 3/4
                             \vdaPrimoPartC
                         }
@@ -184,7 +192,7 @@ info-project = #(project-url #{ \current-dir #})
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -224,11 +232,12 @@ info-project = #(project-url #{ \current-dir #})
                         {
                             \time 4/4
                             \vdaSecondoPartD
+                            \pageTurn
                         }
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -243,6 +252,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                %system-count = 7
             }
         }
 
@@ -261,6 +271,7 @@ info-project = #(project-url #{ \current-dir #})
                         {
                             \time 4/4
                             \vdaPrimoPartE
+                            \pageBreak
                         }
                         \new Staff \with {
                             % instrumentName = "II."
@@ -272,7 +283,7 @@ info-project = #(project-url #{ \current-dir #})
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -287,6 +298,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 5
             }
         }
 
@@ -316,7 +328,7 @@ info-project = #(project-url #{ \current-dir #})
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -360,7 +372,7 @@ info-project = #(project-url #{ \current-dir #})
                     >>
                 }
                 \new Staff \with {
-                    instrumentName = "Basso"
+                    % instrumentName = "Basso"
                 }
                 {
                     \clef bass
@@ -375,7 +387,17 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 19
+                
             }
+        }
+        \paper {
+              %page-breaking = #ly:page-turn-breaking
+              top-margin = 7
+              left-margin = 12
+              right-margin = 12
+              bottom-margin = 7
+              %blank-page-penalty = 100
         }
     }
 }
