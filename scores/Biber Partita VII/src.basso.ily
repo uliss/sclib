@@ -195,4 +195,6 @@ bassPartG = \relative c {
     }
     \repeat volta 2 { \bassTheme }
     \repeat volta 2 { \bassTheme }
+    \bassTheme
+    \bassTheme
 }
