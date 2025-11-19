@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 \include "../../include/sclib.ly"
 \include "../../include/amore.ily"
 \include "info.ily"
@@ -66,6 +66,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 5
             }
         }
 
@@ -99,6 +100,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 8
             }
         }
 
@@ -116,7 +118,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
-                % system-count = 5
+                system-count = 4
             }
         }
 
