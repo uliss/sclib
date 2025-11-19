@@ -5,4 +5,9 @@ info-composer-years = "(1678 – 1741)"
 info-title = "Concerto per Archi e Cembalo"
 info-subtitle = "RV156 (g–moll)"
 info-catalog-number = "004"
-info-version = "1.2"
+info-version = "1.3"
+info-opus = "RV156"
+
+% #(define violinI-partI '())
+%#(define violinII-partIII '())
+%#(define  bass-partIII '()) 
