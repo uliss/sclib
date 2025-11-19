@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 strill = \markup { \smaller \bold \italic tr }
 
@@ -60,7 +60,7 @@ vdaPrimoPartA = \relative c' {
         \\ { c,8 c c c c c2 c4 g'2.}
     >>
 
-    R2.^\fermataMarkup
+    R2.^\fermata
     r8 bes as g f es
     r8 bes' as g f es
     r es' d c bes as g c bes as g f es as g c bes as |
@@ -146,7 +146,7 @@ vdaPrimoPartA = \relative c' {
         \\ { b8 c es d c b c g2 c,4 }
     >>
     r4 r
-    R2.\fermataMarkup \bar "|."
+    R2.\fermata \bar "|."
 }
 
 vdaPrimoPartB = \relative c' {
@@ -236,7 +236,7 @@ vdaPrimoPartC = \relative c' {
                 <bes c>4 c d4 ~ d8 g g f es4
             } \\
             {
-                b4. b8 c bes as4. as8 d c bes4 es8 d c bes f4 a  bes4 ~
+                b4. b8 c bes a4. a8 d c bes4 es8 d c bes f4 a  bes4 ~
                 bes8 es es d c4
             }
         >>
@@ -270,7 +270,7 @@ vdaPrimoPartD = \relative c''' {
         f8. es16 d8. d16 es8. g16 f8. es16 |
         d8. b16 c8. d16 c4 r |
         R1
-        r8 g f8. d16 es8. c16 bes8. a16 |
+        r8 g f8. d16 es8. c16 bes8. g16 |
         as8. c16 f8. as,16 g8. es'16 d8. c16 |
         b8. g16 a8. b16 c8. es16 d8. es16 |
         f8. es16 d8. d16 es8. g16 bes8. as16 |g8. g'16 f8. d16 es8. c16 bes8.^\strill a16 |
@@ -278,7 +278,7 @@ vdaPrimoPartD = \relative c''' {
         R1
         r8 d, c8. a16 bes8. g16 f8. d16  es8. g16 c8. es,16 d8. bes'16 c,8. a'16 |
         bes8. d'16 c8. a16 bes8. bes16 c8. c16 |
-        d8. d16 e8. fis16 g8. a,16 a8.^\strill g16 |
+        d8. d16 e8. fis16 g8. a,!16 a8.^\strill g16 |
         g1
     }
 
@@ -436,17 +436,59 @@ vdaPrimoPartG = \relative c' {
         \vdaGthemeB
         \break
     }
+    \pageTurn
     \repeat volta 2 {
         \time 9/8
         \tempo Presto
         c'4 d8 es4 c8 g'4 g8 |
         as4 bes8 c4 as8 es'4 bes8 |
-        as bes c bes as g
+        as-.( bes-.) c bes-.( as-.) g
         f4^\strill bes8 |
         << g4. \\ es >> r r
         as4 bes8 c4 as8 es'4 e8 |
-        f c bes as bes c g4 g'8 |
-        f4 f8 f g es
-        << { d4^\strill c8 <g c>2. } \\ {g4. es2.} >>
+        f-.( c-.) bes as-.( bes-.) c g4 g'8 |
+        f4 f8 f-.( g-.) es
+        << { d4^\strill c8 <g c>2. s4. } \\ {g4. es2. s4.} >>
     }
+    \break
+    \repeat volta 2 {
+        c'4 g'8 es-.( d-.) c d-.( g-.) bes, |
+        c4 bes8 aes4  c8 es,4 des8 |
+        c-.( f-.) es d-.( es-.) f es4^\strill d8 |
+        << { es4. } \\ { es4. } >> r r |
+        as4 es'8 c-.( bes-.) as bes(-. es-.) g, |
+        as4 bes8 c(-. bes-.) as bes(-. as-.) g |
+        f(-. g-.) es << { d4.~ d4  r16 c } \\ { g4. s } >> |
+        << {<g c>2. s4.} \\ {c,2. s4.} >>  
+    }
+    
+    \time 3/4
+    \break
+    \repeat volta 2 {
+       R4*9
+       g''2 g4 c2 bes4 as bes c8 es, d c b4.^\strill c8 | << c2. \\ c >>
+    }
+    
+    \break
+    r16 c'32 d es f es d es16 c d es d bes c d |
+    c as32 bes c des c bes c16 as bes c bes g as bes |
+    as32 bes c bes as g f es d16 bes' c d bes d es f |
+    es es,32 f g as g f g16 g32 as bes c bes as bes16 g as bes |
+    c as32 bes c des c bes c16 as bes c bes g as bes |
+    as8 as32 bes as g as16 bes c d es32 f g f es d c bes |
+    as16 c g' es << {d4.^\strill ~ d16 c} \\ { g2} >> |
+    c16 es32 f g as g f es16 c32 d es f es d es8 r |
+    r16 es32 f g as g f e16 c d e g,4 |
+    r16 c32 d es f es d es16 c d es es,4 |
+    R4*3 |
+    r16 g32 as bes c bes as bes8 r r4 |
+    r16 c32 d es f es d es8 es e[ e] |
+    \clef treble f32 c d e f g f e f16 g as bes c c c c |
+    c c c c, << {c4.^\strill b8} \\ g2 >> |
+    << c2. \\ c >>
+        \clef alto
+    << <es, g>2 \\ c_"pian." >>
+    g'4 c2 bes4 as8 g f4.^\strill es8 << es2. \\ es >> |
+    es2 es4 as2 g4  f8 as << { d,4.-\strill c8 <g c>2.\fermata } \\ { g2 c,2. } >>
+    \bar "|."
 }
