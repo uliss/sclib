@@ -1,0 +1,13 @@
+#(define barcode-ps '())
+#(define cc-logo    '())
+#(define cc-nc-logo '())
+#(define cc-sa-logo '())
+
+#(define info-version '())
+#(define info-composer-years '())
+#(define info-catalog-number '())
+#(define info-project '())
+#(define info-subtitle '())
+#(define info-instrument '())
+#(define -sp-parts '())
+#(define -sp-score '())
