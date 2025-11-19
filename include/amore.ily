@@ -13,7 +13,7 @@ amoreScordatura = #(define-scheme-function (accord)
             fontSize = #-4
             \override StaffSymbol.staff-space = #(magstep -4)
           } {
-            \override Staff.Clef #'space-alist = #'((first-note minimum-space . 3.0))
+            \override Staff.Clef.space-alist = #'((first-note minimum-space . 3.0))
             \clef treble
             \cadenzaOn
             #accord
