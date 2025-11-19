@@ -1,6 +1,6 @@
 \version "2.18.2"
 \include "../../include/sclib.ly"
-\include "info.ly"
+\include "info.ily"
 
 info-instrument = "Viola"
 info-project = #(project-url #{ \current-dir #})
