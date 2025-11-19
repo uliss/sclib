@@ -1,7 +1,7 @@
 \version "2.18.2"
 
-#(cond ((not (defined? 'barcode-ps))
-        (define barcode-ps "../../include/barcode.ps")))
+#(cond ((null? barcode-ps)
+        (set! barcode-ps "../../include/barcode.ps")))
 
 barcode = #(markup #:line
              (#:with-dimensions (cons 0.0 0.1) (cons 0.0 0.1)
