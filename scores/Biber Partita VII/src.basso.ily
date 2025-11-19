@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 bassPartA = \relative c {
     \clef bass
@@ -10,7 +10,7 @@ bassPartA = \relative c {
     c ~  c ~  c ~  c ~  c ~  c ~  c  |
     c ~ c ~ c ~ c ~ c |
     c c as as2 a4 g2.
-    R2.\fermataMarkup
+    R2.\fermata
     es'2.~ es ~ es ~ es ~ es ~ es ~ es ~ es ~ es ~ es
     es es c2 f4 bes,2. |
     es2. g, as as as4 bes2 |
@@ -24,7 +24,7 @@ bassPartA = \relative c {
     g2. ~ g g ~ g |
     g ~ g ~ g ~ g |
     g ~ g g ~ g |
-    c,4 r r R2.\fermataMarkup \bar "|."|
+    c,4 r r R2.\fermata \bar "|."|
 }
 
 bassPartB = \relative c {
@@ -182,7 +182,17 @@ bassPartG = \relative c {
         \relative c {
             c2 bes4 as2 g4 as bes2
             es,2.
-            as2 g4 f2 es4 f g2 c,2
+            as2 g4 f2 es4 f g2 c,2.
         }
     }
+    \scaleDurations 3/2
+    \repeat volta 2 {
+        \relative c {
+            c2 bes4 as2 g4 as bes2
+            es,2.
+            as2 g4 f2 es4 f g2 c,2.
+        }
+    }
+    \repeat volta 2 { \bassTheme }
+    \repeat volta 2 { \bassTheme }
 }
