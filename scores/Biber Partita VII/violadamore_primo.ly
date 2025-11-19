@@ -59,6 +59,7 @@ info-project = #(project-url #{ \current-dir #})
             \new Staff {
                 \time 4/4
                 \vdaPrimoPartB
+                \pageTurn
             }
 
             \layout {
@@ -100,7 +101,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
-                system-count = 8
+                system-count = 7
             }
         }
 
@@ -118,7 +119,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
-                system-count = 4
+                system-count = 5
             }
         }
 
@@ -129,6 +130,7 @@ info-project = #(project-url #{ \current-dir #})
             \new Staff {
                 \time 6/8
                 \vdaPrimoPartF
+                \pageTurn
             }
             \layout {
                 \context {
@@ -155,7 +157,7 @@ info-project = #(project-url #{ \current-dir #})
         }
         \paper {
             page-breaking = #ly:page-turn-breaking
-            %blank-page-penalty = 1
+            blank-page-penalty = 1
         }
     }
 }
