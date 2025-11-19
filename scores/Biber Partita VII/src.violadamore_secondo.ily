@@ -386,7 +386,7 @@ vdaSecondoPartG = \relative c' {
         c4 d8 es4 c8 g'4 g8 |
         f4 es8 d4 es8 es4^\strill d8 |
         << es4 \\ es >> f8 g4 es8 bes'4 bes8 |
-        c4 des8 es4 c8 bes4 c8 |
+        c4 des8 es4 c8 bes4 c8 \noPageBreak |
         as4 bes8 c4 as8 es'4 es8 |
         d4 c8 b-.( g-.) c b4^\strill c8 |
         << {<es, g c>2. s4.} \\ {c2. s4.} >>
@@ -407,4 +407,32 @@ vdaSecondoPartG = \relative c' {
         \vdaGthemeB
         \break
     }
+   
+    R4*3
+    r16 c''32 d es f es d es8 r r4 |
+    R4*3
+    r16 g,32 as bes c bes as bes8 r r4 |
+     \clef treble
+    r16 c32 d es f es d es8 es e e |
+    f32 c d e f g f e f16 g aes bes c c c c |
+    c c c c, << {c4.^\strill b8} \\ g2 >> |
+    << c4 \\ c >>  \clef alto r16 es32 f g as g f g4 |
+    r16 c,32 d es f es d e16 c d e d bes c d |
+    c16 as32 bes c des c bes c16 as bes c bes g as bes |
+    as32 bes c bes as g f es d16 bes' c d bes d es f |
+    es es,32 f g as g f g16 g32 as bes c bes as bes16 g as bes |
+    c16 as32 bes c des c bes c16 as bes c bes g as bes |
+    as8 as32 bes as g as16 bes c d es32 f g f es d c bes |
+    as16 c f es << {d4.^\strill ~ d16 c} \\ {g2} >> |
+    << {<es g c>2.} \\ c2. >>  |
+    
+    \clef alto
+    \break
+    << <g c es>2_"pian." \\ c, >> d'4 c d es8 g f es
+    << <f bes>4 \\ d >> as'^\strill |
+    << g2 \\ es>> g4 |
+    c2 bes4 as bes c8 es, d c b4.^\strill c8
+    << c2.\fermata \\ c >> \bar "|."
+      
+    
 }
