@@ -136,7 +136,7 @@ violinI-partI = \relative c'' {
   es8 c16 b c d es f g8 g4 f16 es |
   as8 as4 g16 f es8 c g b |
   \mark\default
-  c g c g f' es4 d8 ~ |
+  c g[ c g] f' es4 d8 ~ |
   d g, bes g es' d4 c8 ~ |
   c f, as f b d4 g,8 ~ |
   g f4 es16 d g8 c16 b c d es f |
