@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 \include "../../include/sclib.ly"
 \include "../../include/amore.ily"
 \include "info.ily"
