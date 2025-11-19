@@ -94,13 +94,17 @@ info-project = #(project-url #{ \current-dir #})
             }
             \new Staff {
                 \time 4/4
+                \clef treble
                 \vdaSecondoPartD
+                \pageBreak
+         
             }
             \layout {
                 \context {
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 7
             }
         }
 
@@ -118,7 +122,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
-                % system-count = 5
+                system-count = 5
             }
         }
 
@@ -135,6 +139,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 3
             }
         }
 
@@ -155,7 +160,7 @@ info-project = #(project-url #{ \current-dir #})
         }
         \paper {
             page-breaking = #ly:page-turn-breaking
-            %blank-page-penalty = 1
+            blank-page-penalty = 1
         }
     }
 }
