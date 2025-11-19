@@ -147,6 +147,7 @@ info-project = #(project-url #{ \current-dir #})
                     \Score
                     \sp-spacing-eights
                 }
+                system-count = 3
             }
         }
 
