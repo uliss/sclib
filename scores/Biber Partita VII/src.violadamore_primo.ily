@@ -331,7 +331,7 @@ vdaPrimoPartE = \relative c'' {
         as16( c) f,(^\strill es) |
         d8 << { g_"pian." f g f } \\ { es d es d } >>
         r8 r4 |
-        r8 << { g f4-\strill es2 } \\ { es8 d8.-\strill es16 es2 } >>
+        r8 << { ges f4-\strill es2 } \\ { es8 d8.-\strill es16 es2 } >>
     }
     \repeat volta 2 {
         as8._"fort." as16  as8 as
@@ -481,7 +481,7 @@ vdaPrimoPartG = \relative c' {
     as8 as32 bes as g as16 bes c d es32 f g f es d c bes |
     as16 c g' es << {d4.^\strill ~ d16 c} \\ { g2} >> |
     c16 es32 f g as g f es16 c32 d es f es d es8 r |
-    r16 es32 f g as g f g16 e f g g,4 |
+    r16 es32 f g as g f g16 es f g g,4 |
     r16 c32 d es f es d es16 c d es es,4 |
     R4*3 |
     r16 g32 as bes c bes as bes8 r r4 |
