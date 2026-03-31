@@ -1,11 +1,8 @@
-\version "2.18.2"
-
-#(cond ((not (defined? 'vdaPartOne))
-        (define vdaPartOne #{ s1 #} )))
+\version "2.24.0"
 
 \tag-quote "vda1" \vdaPartOne
 
-rI = #(define-scheme-function (parser location p1 p2)
+rI = #(define-scheme-function (p1 p2)
         (ly:pitch? ly:pitch?)
         #{
           #(make-music
@@ -46,7 +43,9 @@ violaPartOne = \relative c' {
   R2.*5 |
   \rI c c |
   c4 r r |
-  R2. * 13 |
+  R2. * 11 |
+  \tag #'cue { \cueDuring "vda1" #UP { \clef treble R2. s2.  \clef alto  } }
+  \tag #'score { R2. * 2  }
   \rI e g, |
   \rI g g |
   \rI g dis' |
@@ -55,7 +54,9 @@ violaPartOne = \relative c' {
   \rI fis fis |
   g4 r r |
   e a, b e r r |
-  R2. * 26 |
+  R2. * 25 |
+  \tag #'cue { \cueDuring "vda1" #UP { \clef treble R2. * 1  \clef alto  } }
+  \tag #'score { R2. * 1  }
   \rI c e |
   \rI e b |
   \rI b b |
@@ -65,7 +66,9 @@ violaPartOne = \relative c' {
   \rI d g, |
   a4 g g |
   g r r |
-  R2. * 29 |
+  R2. * 26 |
+  \tag #'cue { \cueDuring "vda1" #UP { \clef treble R2. * 3  \clef alto  } }
+  \tag #'score { R2. * 3  }
   \rI e' e |
   \rI e gis, |
   \rI gis gis
@@ -83,7 +86,7 @@ violaPartOne = \relative c' {
 
 }
 
-rF = #(define-scheme-function (parser location note)
+rF = #(define-scheme-function (note)
         (ly:music?)
         #{
           \repeat unfold 4 { #note }
@@ -116,21 +119,21 @@ violaPartTwo = \relative c' {
   a a e e a a e e a a e e a2\fermata \bar "|."
 }
 
-#(cond ((not (defined? 'vdaPartThree))
-        (define vdaPartThree #{ s1 #} )))
+%#(cond ((not (defined? 'vdaPartThree))
+%       (define vdaPartThree #{ s1 #} )))
 \tag-quote "vda3" \vdaPartThree
 
-rn = #(define-scheme-function (parser location note)
-               (ly:music?)
-               #{
-                 \repeat unfold 3 { \tuplet 3/2 4 { \repeat unfold 3 { #note } } }
-               #})
+rn = #(define-scheme-function (note)
+        (ly:music?)
+        #{
+          \repeat unfold 3 { \tuplet 3/2 4 { \repeat unfold 3 { #note } } }
+        #})
 
 violaPartThree = \relative c' {
-    \set beamExceptions = #'((end . (
+  \set beamExceptions = #'((end . (
                                     ((1 . 8) . (4))
                                     ((1 . 16) . (4))
-                                   )))
+                                    )))
 
   \repeat unfold 2 {
     c4 e gis, gis'
@@ -147,7 +150,9 @@ violaPartThree = \relative c' {
   e e e e |
   c'16 b a g f e d c |
   e8 e e e e e e e e4 r |
-  R2 * 26
+  R2 * 24
+  \tag #'cue { \cueDuring "vda3" #UP { \clef treble R2 * 2  \clef alto  } }
+  \tag #'score { R2 * 2  }
   \repeat unfold 2 {
     e4 g b, b' |
     d8 g, b4 c c,8 e |
@@ -156,7 +161,9 @@ violaPartThree = \relative c' {
   e16 d c b a g f e |
   g4 g'
   e r |
-  R2 * 17 |
+  R2 * 14 |
+  \tag #'cue { \cueDuring "vda3" #UP { \clef treble R2 * 3  \clef alto  } }
+  \tag #'score { R2 * 3  }
   g4 b dis, dis |
   fis8 b, dis4 e e8 g |
   b2 ~ b b4 r |
@@ -169,7 +176,9 @@ violaPartThree = \relative c' {
   g16 fis e d c b a g |
   dis'8 dis dis dis b b' b b|
   g4 r |
-  R2 * 14
+  R2 * 13
+  \tag #'cue { \cueDuring "vda3" #UP { \clef treble s2  \clef alto  } }
+  \tag #'score { R2 * 1  }
   f4 a cis, cis |
   e8 a, cis4 d d8 f |
   a2 ~ a a4 r |
@@ -177,7 +186,9 @@ violaPartThree = \relative c' {
   R2 |
   f'16 e d c bes a g f |
   a'8 a a a a a a a f4 r |
-  R2 * 31 |
+  R2 * 29 |
+  \tag #'cue { \cueDuring "vda3" #UP { \clef treble R2 * 2  \clef alto  } }
+  \tag #'score { R2 * 2  }
   \repeat unfold 2 {
     c4 e gis, gis' b8 e, gis4 |
     a a,8 c
@@ -197,3 +208,13 @@ violaPartThree = \relative c' {
 
 }
 
+
+
+%{
+convert-ly (GNU LilyPond) 2.24.4  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12, 2.23.13, 2.23.14, 2.24.0
+%}

@@ -17,7 +17,7 @@ do
 	f=`echo $file | grep -v 'src\,'`
 	if [ -n "$f" ] 
 	then
-		info_file="`dirname "$file"`/info.ly"
+		info_file="`dirname "$file"`/info.ily"
 		composer=`cat "$info_file" | sed -n 's/^info-composer[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`
 		if [ -z "$composer" ]; then continue; fi
 		title=`cat "$info_file" | sed -n 's/^info-title[[:blank:]]*=[[:blank:]]*"\([^"]*\)"/\1/p'`

@@ -1,6 +1,6 @@
-\version "2.18.2"
+\version "2.24.0"
 
-%\tag-quote "vda1" { \vdaPartOne }
+\tag-quote "vda1" \vdaPartOne
 
 violinII-partI = \relative a {
   a8-\tutti a'' a c, c a,
@@ -24,7 +24,9 @@ violinII-partI = \relative a {
   a4 r r |
   R2. * 5 |
   a,,8-\tutti e'' e a, a a,
-  R2. * 14 |
+  R2. * 12 |
+  \tag #'cue { \cueDuring "vda1" #UP { R2. s2.  } }
+  \tag #'score { R2. * 2  }
   r8 b'' b g g e, |
   e b'' b g g e, |
   e b'' b g g b, |
@@ -34,7 +36,9 @@ violinII-partI = \relative a {
   e,16 fis g a b c dis e fis g a b |
   g8 e a,, e'' b, dis' |
   e,4 r r |
-  R2. * 26
+  R2. * 24
+  \tag #'cue { \cueDuring "vda1" #UP { R2. * 2  } }
+  \tag #'score { R2. * 2  }
   c'8 g' g c, c c, |
   c g'' g c, c g, |
   g f'' f b, b g,
@@ -44,13 +48,17 @@ violinII-partI = \relative a {
   b16 g a b c d e f g8 g, |
   d c' d, c' d, b' |
   c4 r r |
-  R2. * 29
+  R2. * 26
+  \tag #'cue { \cueDuring "vda1" #UP { R2. * 3  } }
+  \tag #'score { R2. * 3  }
   c8 a' a c, c a, |
   a a'' a c, c e, |
   e b'' b gis gis e, |
   e b'' b gis gis d |
   c4 r r |
-  R2. * 12 |
+  R2. * 11 |
+  \tag #'cue { \cueDuring "vda1" #UP { \once \override MultiMeasureRest.staff-position = #-8  R2. } }
+  \tag #'score { R2. * 1  }
   c8 a' a c, c a, |
   a a'' a c, c a, |
   a a'' a c, c e, |
@@ -59,7 +67,7 @@ violinII-partI = \relative a {
   a2.\fermata \bar "|."
 }
 
-rf = #(define-scheme-function (parser location note)
+rf = #(define-scheme-function (note)
         (ly:music?)
         #{
           \repeat unfold 4 { #note }
@@ -101,7 +109,7 @@ violinII-partII = \relative c' {
 }
 
 
-%\tag-quote "vda3.2" { \vdaPartThree }
+\tag-quote "vda3.2" { \vdaPartThree }
 
 violinII-partIII = \relative c' {
   R2 |
@@ -109,10 +117,10 @@ violinII-partIII = \relative c' {
     e'16 d c b a gis fis e
   }
 
-    \set beamExceptions = #'((end . (
+  \set beamExceptions = #'((end . (
                                     ((1 . 8) . (4))
                                     ((1 . 16) . (4))
-                                   )))
+                                    )))
 
   a4 c b e, ~ e8 b' e b |
   c e a,4 ~ a8 e' a c, |
@@ -129,7 +137,7 @@ violinII-partIII = \relative c' {
   gis'16 fis? e d c b a gis |
   a e' c a b e b gis |
   a4 r |
-  a,8 c b a e' d c b a gis a c d e f d c gis a c d e f d c gis a d |
+  a,8-\solo c b a e' d c b a gis a c d e f d c gis a c d e f d c gis a d |
   e e16 fis gis8 e |
   r a,16 b c8 a |
   r e'16 fis gis8 e |
@@ -145,8 +153,9 @@ violinII-partIII = \relative c' {
   r8 g16 a b8 g |
   c4 r |
   r8 e f g |
-  c,4 r |
-  \repeat unfold 5 { g''16 f e d c b a  g }
+  c,4\tutti r |
+  g''16 f e d c b a  g
+  \repeat unfold 4 { g'16 f e d c b a  g }
   c4 e d g,~ g8 d' g d e g c,4 ~ |
   c8 g' c e, d4 g, ~ g e' d2 c4 r |
   R2 * 17
@@ -174,8 +183,11 @@ violinII-partIII = \relative c' {
   d'16 f d a a e' cis a |
   a f' d a a e' cis a |
   d4 r |
-  R2 * 13
-  a,8 c b a e' d c b a gis a c d e f d |
+  R2 * 11
+  \tag #'cue { \cueDuring "vda3.2" #UP { R2 * 2  } }
+  \tag #'score { R2 * 2  }
+
+  a,8-\solo c b a e' d c b a gis a c d e f d |
   c gis a c d e f d |
   c gis a d e e16 fis gis8 e |
   r8 a,16 b c8 a |
@@ -185,7 +197,7 @@ violinII-partIII = \relative c' {
   e4 gis a2 |
   d, c4 a |
   e'2 |
-  R2 |
+  R2-\tutti |
   \repeat unfold 5 { e'16 d c b a gis fis e }
   a4 c b e, ~ e8 b' e b |
   c e a,4 ~ | a8 e' a c, |
@@ -203,3 +215,13 @@ violinII-partIII = \relative c' {
   a e'c a b e b gis |
   a4\fermata r \bar "|."
 }
+
+
+%{
+convert-ly (GNU LilyPond) 2.24.4  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12, 2.23.13, 2.23.14, 2.24.0
+%}

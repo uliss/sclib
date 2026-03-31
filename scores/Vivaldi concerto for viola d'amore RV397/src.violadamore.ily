@@ -1,10 +1,9 @@
-\version "2.20.0"
+\version "2.24.0"
 
-\include "src.violinI.ily"
-\include "src.violinII.ily"
+#(if (not (defined? 'violinI-partIII))
+     (ly:parser-define! 'violinI-partIII #{ s1 #}))
 
-\tag-quote "v1.3" { \violinI-partIII }
-\tag-quote "v2.3" { \violinII-partIII }
+\tag-quote "v1.3"  \violinI-partIII
 
 vdaPartOne = \relative c' {
   <a c e a>8 <c' a'> <c a'> <e, c'> <e c'> <a, c e a>
@@ -72,22 +71,22 @@ vdaPartOne = \relative c' {
   }
 
   \repeat unfold 2 {
-     a' c, b c
-     e, c' b c
-     e, c' b c
+    a' c, b c
+    e, c' b c
+    e, c' b c
   }
 
   \repeat unfold 2 {
-     ais' cis, b cis
-     e, cis' b cis
-     e, cis' b cis
+    ais' cis, b cis
+    e, cis' b cis
+    e, cis' b cis
   }
 
   b'8 fis dis cis? b4 |
   \repeat unfold 2 {
-     gis'16 d c d
-     e, d' c d
-     e, d' c d
+    gis'16 d c d
+    e, d' c d
+    e, d' c d
   }
 
   \repeat unfold 2 {
@@ -191,8 +190,8 @@ vdaPartOne = \relative c' {
       s4 e,2
     }
   >>
-  
-   \tag-parts \break
+
+  \tag-parts \break
 
   <a, c e a>8 a'' a c, c <a, c e a>
   <a c e a>8 a'' a c, c <a, c e a>
@@ -237,11 +236,11 @@ vdaPartThree = \relative c'' {
   \clef treble
 
   \quote-mus "v1.3" "Violini I" {
-    \tag-parts \override MultiMeasureRest #'staff-position = #-8
+    \tag-parts \override MultiMeasureRest.staff-position = #-8
     R2 * 6 |
-    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    \tag-parts \override MultiMeasureRest.staff-position = #-6
     R2 * 18 |
-    \revert MultiMeasureRest #'staff-position
+    \revert MultiMeasureRest.staff-position
     %R2 * 3
     %R2 * 14
   }
@@ -250,7 +249,7 @@ vdaPartThree = \relative c'' {
   a4 b8. c16 |
   b4 a ~
   \repeat unfold 2 {
-     a8 e' \appoggiatura d c b16 a |
+    a8 e' \appoggiatura d c b16 a |
     bes8 gis a4 ~ |
   }
   a8 e' \appoggiatura d c b16 a |
@@ -258,7 +257,7 @@ vdaPartThree = \relative c'' {
   \set beamExceptions = #'((end . (
                                     ((1 . 8) . (4))
                                     ((1 . 16) . (4))
-                                   )))
+                                    )))
   gis'8( a b) d, |
   cis8 e16 d cis8 b16 a |
   fis'8( g a) c, |
@@ -272,11 +271,11 @@ vdaPartThree = \relative c'' {
   f16( e) d( c) b( a)
   g8 c \appoggiatura e d c16 b |
   c4 r |
-   \tag-parts \break
+  \tag-parts \break
   \quote-mus "v1.3" "Violini I" {
-    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    \tag-parts \override MultiMeasureRest.staff-position = #-6
     R2 * 13 |
-    \revert MultiMeasureRest #'staff-position
+    \revert MultiMeasureRest.staff-position
     %R2 * 3
     %R2 * 14
   }
@@ -309,9 +308,9 @@ vdaPartThree = \relative c'' {
   \set subdivideBeams = ##f
   e4 r
   \quote-mus "v1.3" "Violini I" {
-    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    \tag-parts \override MultiMeasureRest.staff-position = #-6
     R2 * 16 |
-    \revert MultiMeasureRest #'staff-position
+    \revert MultiMeasureRest.staff-position
     %R2 * 3
     %R2 * 14
   }
@@ -332,13 +331,13 @@ vdaPartThree = \relative c'' {
   f f' a d, cis e a cis, |
   d4 r |
   \quote-mus "v1.3" "Violini I" {
-    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    \tag-parts \override MultiMeasureRest.staff-position = #-6
     R2 * 11 |
-    \revert MultiMeasureRest #'staff-position
+    \revert MultiMeasureRest.staff-position
     %R2 * 3
     %R2 * 14
   }
-  
+
   \repeat unfold 2 {
     f16 d a d
     f16 d a d
@@ -384,13 +383,20 @@ vdaPartThree = \relative c'' {
   a4 r
 
   \quote-mus "v1.3" "Violini I" {
-    \tag-parts \override MultiMeasureRest #'staff-position = #-8
+    \tag-parts \override MultiMeasureRest.staff-position = #-8
     R2 * 5
-    \tag-parts \override MultiMeasureRest #'staff-position = #-6
+    \tag-parts \override MultiMeasureRest.staff-position = #-6
     R2 * 18
-    \revert MultiMeasureRest #'staff-position
+    \revert MultiMeasureRest.staff-position
     %R2 * 3
     %R2 * 14
   }
   \bar "|."
 }
+
+%{
+convert-ly (GNU LilyPond) 2.24.4  convert-ly: Processing `'...
+Applying conversion: 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12, 2.23.13, 2.23.14, 2.24.0
+%}

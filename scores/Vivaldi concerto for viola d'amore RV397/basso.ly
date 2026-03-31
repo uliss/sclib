@@ -10,7 +10,7 @@ info-project = #(project-url #{ \current-dir #})
 \include "../../include/housestyle.ly"
 
 \make-parts
-%\include "src.violadamore.ly"
+\include "src.violadamore.ily"
 \include "src.basso.ily"
 
 #(set-global-staff-size 19)
@@ -74,7 +74,7 @@ info-project = #(project-url #{ \current-dir #})
         piece =\markup \markup-piece "III. (Allegro)"
         opus = ""
       }
-      {
+      \keepWithTag #'cue  {
         \set Score.skipBars = ##t
         \clef bass
         \key a \minor

@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 #(define (make-eight o p)
    (make-music
@@ -9,7 +9,7 @@
     (ly:make-pitch o (ly:pitch-notename p) 0))
    )
 
-fig = #(define-music-function (parser location p1 p2) (ly:pitch? ly:pitch?)
+fig = #(define-music-function (p1 p2) (ly:pitch? ly:pitch?)
          (
            make-music 'SequentialMusic
            'elements (
@@ -36,7 +36,7 @@ fig = #(define-music-function (parser location p1 p2) (ly:pitch? ly:pitch?)
            )
          )
 
-figA = #(define-music-function (parser location p1 p2 p3) (ly:pitch? ly:pitch? ly:pitch?)
+figA = #(define-music-function (p1 p2 p3) (ly:pitch? ly:pitch? ly:pitch?)
           (
             make-music 'SequentialMusic
             'elements (
@@ -422,3 +422,16 @@ vdaPartThree = \relative c' {
   \dc-al-fine
   \bar "|."
 }
+
+%{
+convert-ly (GNU LilyPond) 2.24.4  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12,  Not smart enough to convert music following \fine.  Warning:
+\fine no longer enforces the end of the music.  If your piece has
+music following \fine that you want to exclude when it is unfolded,
+use \volta to exclude it. Please refer to the manual for details, and
+update manually. 2.23.13, 2.23.14, 2.24.0
+%}
