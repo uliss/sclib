@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 \include "barcode.ly"
 
 #(begin ; module import
@@ -9,34 +9,34 @@
 #(define git-hash (read-line (open-input-pipe "git log --pretty=format:'%h' -n 1")))
 #(define git-repo "https://github.com/uliss/sclib")
 
-#(cond ((not (defined? 'cc-logo))
-        (define cc-logo    "../../include/icons/cc.eps")))
-#(cond ((not (defined? 'cc-nc-logo))
-        (define cc-nc-logo "../../include/icons/nc.eps")))
-#(cond ((not (defined? 'cc-sa-logo))
-        (define cc-sa-logo "../../include/icons/sa.eps")))
+#(cond ((null? cc-logo)
+        (set! cc-logo    "../../include/icons/cc.eps")))
+#(cond ((null? cc-nc-logo)
+        (set! cc-nc-logo "../../include/icons/nc.eps")))
+#(cond ((null? cc-sa-logo)
+        (set! cc-sa-logo "../../include/icons/sa.eps")))
 
 #(define title-big-color (rgb-color 0.95 0.95 0.95))
 #(define title-main-color (rgb-color 0 0 0))
 #(define title-instrument-color (rgb-color 0.3 0.3 0.3))
 
 % Ensure that the configuration variables are present
-#(cond ((not (defined? 'info-version))
-        (define info-version "0.0alpha")))
-#(cond ((not (defined? 'info-composer-years))
-        (define info-composer-years "")))
-#(cond ((not (defined? 'info-catalog-number))
-        (define info-catalog-number "????")))
-#(cond ((not (defined? 'info-project))
-        (define info-project "")))
-#(cond ((not (defined? 'info-subtitle))
-        (define info-subtitle "")))
-#(cond ((not (defined? 'info-instrument))
-        (define info-instrument "")))
-#(cond ((not (defined? '-sp-parts))
-        (define -sp-parts #f)))
-#(cond ((not (defined? '-sp-score))
-        (define -sp-score #f)))
+#(cond ((null? info-version)
+        (set! info-version "0.0alpha")))
+#(cond ((null? info-composer-years)
+        (set! info-composer-years "")))
+#(cond ((null? info-catalog-number)
+        (set! info-catalog-number "????")))
+#(cond ((null? info-project)
+        (set! info-project "")))
+#(cond ((null? info-subtitle)
+        (set! info-subtitle "")))
+#(cond ((null? info-instrument)
+        (set! info-instrument "")))
+#(cond ((null? -sp-parts)
+        (set! -sp-parts #f)))
+#(cond ((null? -sp-score)
+        (set! -sp-score #f)))
 
 #(define sp-version
      (lambda () info-version))
@@ -178,7 +178,7 @@ fine = {
 }
 
 dc-al-fine = {
-    \once \override Score.RehearsalMark #'self-alignment-X = #RIGHT
+    \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
     \once \override Score.RehearsalMark.direction = #DOWN
     \mark \markup {\normalsize \italic "D.C. Al Fine "}
 }
@@ -243,7 +243,7 @@ dc-al-fine = {
                  \fill-line {
                      {
                          \left-column {
-                             \with-url #"http://lilypond.org" {
+                             \with-url "http://lilypond.org" {
                                  #(string-append "engraved by Serj Poltavski using lilypond v" (lilypond-version))
                              }
                              { #(string-append "revision: " (sp-version)) }
@@ -256,12 +256,12 @@ dc-al-fine = {
 
 sp-custos-note =
 #(define-music-function
-  (parser location note)
+  (note)
   (ly:music?)
   #{
       \tweak NoteHead.stencil #ly:text-interface::print
       \tweak NoteHead.text
-      \markup \musicglyph #"custodes.mensural.u0"
+      \markup \musicglyph "custodes.mensural.u0"
       \tweak Stem.stencil ##f
       #note
   #})
@@ -280,13 +280,13 @@ sp-custos-note =
                              \markup \italic "Solo"
                          #})))
 
-tutti = #(define-scheme-function (parser location) ()
+tutti = #(define-scheme-function () ()
              #{
                  ^\markup \sp-tutti
              #}
              )
 
-solo= #(define-scheme-function (parser location) ()
+solo= #(define-scheme-function () ()
            #{
                ^\markup \sp-solo
            #}
@@ -368,16 +368,16 @@ tuplet-number-only = { \tuplet-number-show \tuplet-bracket-hide }
          )
      )
 
-make-parts = #(define-scheme-function (parser location)()
+make-parts = #(define-scheme-function ()()
                   (make-parts- #t))
 
-make-score = #(define-scheme-function (parser location)()
+make-score = #(define-scheme-function ()()
                   #{
                       #(make-parts- #f)
                   #}
                   )
 
-score-only = #(define-scheme-function (parser location music)(ly:music?)
+score-only = #(define-scheme-function (music)(ly:music?)
                   #{
                       \removeWithTag #'parts {
                           \killCues { #music }
@@ -385,13 +385,13 @@ score-only = #(define-scheme-function (parser location music)(ly:music?)
                   #}
                   )
 
-tag-quote = #(define-scheme-function (parser location name music)(string? ly:music?)
+tag-quote = #(define-scheme-function (name music)(string? ly:music?)
                  #{
                      \addQuote #name { #music }
                  #})
 
 
-quote-mus = #(define-scheme-function (parser location quote-name instr mus)
+quote-mus = #(define-scheme-function (quote-name instr mus)
                  (string? string? ly:music?)
                  #{
                      \tag-parts \new CueVoice { \set instrumentCueName = \markup { \italic $instr }}
@@ -400,7 +400,7 @@ quote-mus = #(define-scheme-function (parser location quote-name instr mus)
                      }
                  #})
 
-quote-with-clef = #(define-scheme-function (parser location quote-name instr clef mus)
+quote-with-clef = #(define-scheme-function (quote-name instr clef mus)
                        (string? string? string? ly:music?)
                        #{
                            \tag-parts \new CueVoice { \set instrumentCueName = \markup { \italic $instr }}
@@ -409,10 +409,10 @@ quote-with-clef = #(define-scheme-function (parser location quote-name instr cle
                            }
                        #})
 
-tag-score = #(define-scheme-function (parser location music) (ly:music?)
+tag-score = #(define-scheme-function (music) (ly:music?)
                  #{ \tag #'score { #music } #})
 
-tag-parts = #(define-scheme-function (parser location music) (ly:music?)
+tag-parts = #(define-scheme-function (music) (ly:music?)
                  #{ \tag #'parts { #music } #})
 
 partsNoPageBreak = \tag-parts \noPageBreak
@@ -430,7 +430,7 @@ par-natural-pr = \markup {
     }
 }
 
-par-natural = #(define-scheme-function (parser location)()
+par-natural = #(define-scheme-function ()()
                    #{
                        ^\markup {
                            \override #'(baseline-skip . 2)
@@ -449,7 +449,7 @@ par-natural = #(define-scheme-function (parser location)()
                    )
 
 
-par-sharp = #(define-scheme-function (parser location)()
+par-sharp = #(define-scheme-function ()()
                  #{
                      ^\markup {
                          \override #'(baseline-skip . 2)
@@ -466,7 +466,7 @@ par-sharp = #(define-scheme-function (parser location)()
                  #}
                  )
 
-par-flat = #(define-scheme-function (parser location)()
+par-flat = #(define-scheme-function ()()
                 #{
                     ^\markup {
                         \override #'(baseline-skip . 2)
@@ -488,3 +488,13 @@ rm-left = \once \override Score.RehearsalMark.self-alignment-X = #-1
 rm-center = \once \override Score.RehearsalMark.self-alignment-X = #0
 rm-right = \once \override Score.RehearsalMark.self-alignment-X = #1
 
+
+
+%{
+convert-ly (GNU LilyPond) 2.24.2  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0, 2.23.1, 2.23.2, 2.23.3,
+2.23.4, 2.23.5, 2.23.6, 2.23.7, 2.23.8, 2.23.9, 2.23.10, 2.23.11,
+2.23.12, 2.23.13, 2.23.14, 2.24.0
+%}
