@@ -1,6 +1,13 @@
 #!/bin/bash
 
-LILY="/Applications/LilyPond.app/Contents/Resources/bin/lilypond -dno-point-and-click --pdf "
+APP=$(which lilypond)
+if [ -z "$APP" ]
+then
+APP="/Applications/LilyPond.app/Contents/Resources/bin/lilypond"
+fi
+
+LILY="$APP -dno-point-and-click --pdf "
+
 CWD=`pwd`
 
 mkdir -p pdf
